@@ -26,8 +26,8 @@ var clientID = '159e54fed6354cacae99784052811c29',
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://live-gram.herokuapp.com/callback');
-Instagram.set('redirect_uri', 'http://live-gram.herokuapp.com/');
+Instagram.set('callback_url', 'http://test-gram.herokuapp.com/callback');
+Instagram.set('redirect_uri', 'http://test-gram.herokuapp.com/');
 Instagram.set('maxSockets', 10);
 
 /**
@@ -39,21 +39,7 @@ Instagram.subscriptions.subscribe({
   object: 'tag',
   object_id: 'lineufc',
   aspect: 'media',
-  callback_url: 'http://live-gram.herokuapp.com/callback',
-  type: 'subscription',
-  id: '#'
-});
-
-/**
- * Uses the library "instagram-node-lib" to Subscribe to the Instagram API Real Time
- * with the tag "hashtag" lollapalooza2013
- * @type {String}
- */
-Instagram.subscriptions.subscribe({
-  object: 'tag',
-  object_id: 'lineucats',
-  aspect: 'media',
-  callback_url: 'http://live-gram.herokuapp.com/callback',
+  callback_url: 'http://test-gram.herokuapp.com/callback',
   type: 'subscription',
   id: '#'
 });

@@ -37,7 +37,7 @@ Instagram.set('maxSockets', 10);
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'nofilter',
+  object_id: 'sunrise',
   aspect: 'media',
   callback_url: 'http://test-gram.herokuapp.com/callback',
   type: 'subscription',
