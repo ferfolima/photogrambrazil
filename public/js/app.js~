@@ -12,12 +12,25 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
+            this.postToServer();
             this.mostRecent();
             this.getData();
             this.aboutInfo();
             this.mobileNav();
         },
 
+
+
+        postToServer: function() {
+            post('/callback', function(req, res) {
+                sendMessage('http://test-gram.herokuapp.com/subscribe/?hub.tag=lineufc');
+            });
+            res.end();
+        });
+
+
+
+        }
         /**
          * [Interaction to open mobile navigation]
          */
@@ -61,7 +74,7 @@
             var lastAnimate, lastSrc, nextSrc, last,
                 current = data.data[0].images.standard_resolution.url,
                 w = $(document).width();
-                var clean = $('#imgContent').find('a').remove();
+                var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
                     source = $('#mostRecent-tpl').html(),
@@ -106,7 +119,7 @@
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
-                var clean = $('#imgContent').find('a').remove();
+                var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
                     source = $('#firstShow-tpl').html(),
