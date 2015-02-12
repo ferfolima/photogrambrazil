@@ -127,7 +127,7 @@ app.get('/subscribe', function(req, res) {
             Instagram.tags.recent({
                 name: hashtag,
                 complete: function(data) {
-                    socket.emit('firstShow', { firstShow: data });
+                    socket.once('firstShow', { firstShow: data });
                 }
             });
         });

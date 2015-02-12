@@ -115,8 +115,8 @@
                     imgWrap = $('#imgContent');
 
                 imgWrap.html(result);
-                socket.emit('firstShow', {firstShow: ''});
             });
+            //socket.removeAllListeners('firstShow');
         },
 
         /**
