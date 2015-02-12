@@ -111,7 +111,6 @@ app.get('/subscribe', function(req, res) {
                   name: hashtag,
                   complete: (function (data) {
                     socket.volatile.emit('firstShow', {firstShow: data });
-                });
             }, 100);
 
             socket.on('disconnect', function () {
