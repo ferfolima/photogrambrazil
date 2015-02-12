@@ -42,6 +42,16 @@ Instagram.set('maxSockets', 10);
 //Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
+io.configure(function () {
+  io.set("transports", [
+    'websocket'
+    , 'xhr-polling'
+    , 'flashsocket'
+    , 'htmlfile'
+    , 'jsonp-polling'
+  ]);
+  io.set("polling duration", 10);
+});
 
 /**
  * Set your app main configuration
@@ -68,19 +78,6 @@ app.get("/views", function(req, res){
 // https://api.instagram.com/v1/subscriptions?client_secret=YOUR_CLIENT_ID&client_id=YOUR_CLIENT_SECRET
 
 /**
- * On socket.io connection we get the most recent posts
- * and send to the client side via socket.emit
- */
-io.sockets.on('connection', function (socket) {
-  Instagram.tags.recent({
-      name: 'lineufc',
-      complete: function(data) {
-        socket.emit('firstShow', { firstShow: data });
-      }
-  });
-});
-
-/**
  * Needed to receive the handshake
  */
 app.get('/callback', function(req, res){
@@ -101,16 +98,18 @@ app.get('/subscribe', function(req, res){
             type: 'subscription',
             id: '#'
         });
-        io.configure(function () {
-            io.set("transports", [
-                    'websocket'
-                  , 'xhr-polling'
-                  , 'flashsocket'
-                  , 'htmlfile'
-                  , 'jsonp-polling'
-            ]);
-            io.set("polling duration", 10);
-        });
+        /**
+         * On socket.io connection we get the most recent posts
+         * and send to the client side via socket.emit
+         */
+         io.sockets.on('connection', function (socket) {
+             Instagram.tags.recent({
+                 name: 'lineufc',
+                 complete: function(data) {
+                     socket.emit('firstShow', { firstShow: data });
+                 }
+             });
+         });
     }
     return hashtag;
 });
