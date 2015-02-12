@@ -65,15 +65,19 @@ app.configure(function(){
     app.use(express.errorHandler());
 });
 
-app.get("/", function(req, res){
-  Instagram.subscriptions.subscribe({
-    object: 'tag',
-    object_id: 'sunrise',
-    aspect: 'media',
-    callback_url: 'http://test-gram.herokuapp.com/callback',
-    type: 'subscription',
-    id: '#'
-  });
+app.get("/subscribe", function(req, res){
+    var hashtag, parsedRequest;
+    parsedRequest = url.parse(request.url, true);
+    if (parsedRequest['query']['tag'] != null) && parsedRequest['query']['tag'].length > 0) {
+        hashtag = parsedRequest['query']['tag'];
+        Instagram.subscriptions.subscribe({
+            object: 'tag',
+            object_id: hashtag,
+            aspect: 'media',
+            callback_url: 'http://test-gram.herokuapp.com/callback',
+            type: 'subscription',
+            id: '#'
+        });
 });
 
 
