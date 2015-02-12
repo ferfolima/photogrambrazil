@@ -68,8 +68,8 @@ app.configure(function(){
 app.get("/subscribe", function(req, res){
     var hashtag, parsedRequest;
     parsedRequest = url.parse(request.url, true);
-    if (parsedRequest['query']['tag'] != null && parsedRequest['query']['tag'].length > 0) {
-        hashtag = parsedRequest['query']['tag'];
+    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+        hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: hashtag,
