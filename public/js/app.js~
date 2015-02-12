@@ -22,14 +22,10 @@
 
 
         postToServer: function() {
-            post('/callback', function(req, res) {
+            post('/subscribe', function(req, res) {
                 sendMessage('http://test-gram.herokuapp.com/subscribe/?hub.tag=lineufc');
+                res.end();
             });
-            res.end();
-        });
-
-
-
         }
         /**
          * [Interaction to open mobile navigation]

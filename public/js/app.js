@@ -22,8 +22,7 @@
 
 
         postToServer: function() {
-            post('/callback', function(req, res) {
-                sendMessage('http://test-gram.herokuapp.com/subscribe/?hub.tag=lineufc');
+            post('/subscribe/?hub.tag=lineufc', function(req, res) {
                 res.end();
             });
         }
