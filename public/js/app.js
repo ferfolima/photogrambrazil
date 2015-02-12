@@ -4,7 +4,7 @@
     /**
      * [Namespacing]
      */
-    var Insta = Insta || {};
+    var Insta = {};
     
     Insta.App = {
 

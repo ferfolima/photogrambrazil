@@ -113,7 +113,6 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
                     imgWrap = $('#imgContent');
-                data = null;
 
                 imgWrap.html(result);
             });
