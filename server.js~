@@ -107,7 +107,7 @@ app.get('/subscribe', function(req, res) {
                 }
             });
         });
-        io.sockets.on('disconnect', function () {
+        io.sockets.on('disconnect', function (socket) {
             socket.emit('firstShow', { firstShow: '' });
         });
     }
