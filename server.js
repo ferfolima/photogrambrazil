@@ -99,20 +99,17 @@ app.get('/subscribe', function(req, res) {
             id: '#'
         });
 
-         /*io.sockets.on('connection', function (socket) {
-             Instagram.tags.recent({
-                 name: hashtag,
-                 complete: function(data) {
-                     socket.emit('firstShow', { firstShow: data });
-                 }
-             });
-         });*/
-         Instagram.tags.recent({
-             name: hashtag,
-             complete: function(data) {
-                 io.sockets.emit('firstShow', { firstShow: data });
-             }
-         });
+        io.sockets.on('connection', function (socket) {
+            Instagram.tags.recent({
+                name: hashtag,
+                complete: function(data) {
+                    socket.emit('firstShow', { firstShow: data });
+                }
+            });
+            socket.on('disconnect', function () {
+                clearInterval(tweets);
+            });
+        });
     }
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
