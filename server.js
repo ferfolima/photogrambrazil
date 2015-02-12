@@ -96,6 +96,24 @@ app.get('/callback', function(req, res){
     var handshake =  Instagram.subscriptions.handshake(req, res);
 });
 
+
+app.get("/subscribe", function(req, res){
+    var hashtag, parsedRequest;
+    parsedRequest = url.parse(request.url, true);
+    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+        hashtag = parsedRequest['query']['hub.tag'];
+        Instagram.subscriptions.subscribe({
+            object: 'tag',
+            object_id: hashtag,
+            aspect: 'media',
+            callback_url: 'http://test-gram.herokuapp.com/callback',
+            type: 'subscription',
+            id: '#'
+        });
+    }
+    return hashtag;
+});
+
 /**
  * for each new post Instagram send us the data
  */
