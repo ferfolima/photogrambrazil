@@ -35,19 +35,19 @@ Instagram.set('maxSockets', 10);
  * with the tag "hashtag" lollapalooza
  * @type {String}
  */
-//Instagram.subscriptions.subscribe({
-//  object: 'tag',
-//  object_id: 'sunrise',
-//  aspect: 'media',
-//  callback_url: 'http://test-gram.herokuapp.com/callback',
-//  type: 'subscription',
-//  id: '#'
-//});
+Instagram.subscriptions.subscribe({
+  object: 'tag',
+  object_id: 'sunrise',
+  aspect: 'media',
+  callback_url: 'http://test-gram.herokuapp.com/callback',
+  type: 'subscription',
+  id: '#'
+});
 
 
 // if you want to unsubscribe to any hashtag you subscribe
 // just need to pass the ID Instagram send as response to you
-Instagram.subscriptions.unsubscribe({ id: '3668016' });
+//Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
 io.configure(function () {

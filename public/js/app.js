@@ -1,6 +1,5 @@
 (function() {
     var socket = io.connect('http://test-gram.herokuapp.com');
-    var Instagram = require('instagram-node-lib');
 
     /**
      * [Namespacing]
@@ -20,17 +19,6 @@
             this.mobileNav();
         },
 
-	subscribeTag:function() {
-		Instagram.subscriptions.subscribe({
-  			object: 'tag',
-			object_id: 'sunrise',
-			aspect: 'media',
-			callback_url: 'http://test-gram.herokuapp.com/callback',
-			type: 'subscription',
-			id: '#'
-		});
-
-	},
         /**
          * [Interaction to open mobile navigation]
          */
