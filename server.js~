@@ -120,12 +120,7 @@ app.get('/unsubscribe', function(req, res) {
         Instagram.subscriptions.unsubscribe({ id: tagid });
 
         io.sockets.on('connection', function (socket) {
-            Instagram.tags.recent({
-                name: '',
-                complete: function(data) {
-                    socket.emit('firstShow', { firstShow: '' });
-                }
-            });
+            socket.emit('firstShow', { firstShow: '' });
         });
     }
     res.redirect('http://test-gram.herokuapp.com');
