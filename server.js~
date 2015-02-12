@@ -4,6 +4,7 @@ var port = process.env.PORT || 3700;
 var io = require('socket.io').listen(app.listen(port));
 var Instagram = require('instagram-node-lib');
 var http = require('http');
+var url = require('url')
 var request = ('request');
 var intervalID;
 
@@ -104,7 +105,7 @@ app.get('/subscribe', function(req, res){
          */
          io.sockets.on('connection', function (socket) {
              Instagram.tags.recent({
-                 name: 'lineufc',
+                 name: hashtag,
                  complete: function(data) {
                      socket.emit('firstShow', { firstShow: data });
                  }
