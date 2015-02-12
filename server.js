@@ -135,7 +135,7 @@ app.get('/subscribe', function(req, res) {
              });
          });
     }
-    res.write(hashtag);
+    res.redirect('http://test-gram.herokuapp.com');
     return res.end();
 });
 
