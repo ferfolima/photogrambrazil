@@ -12,7 +12,6 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
-            this.postToServer();
             this.mostRecent();
             this.getData();
             this.aboutInfo();
@@ -116,6 +115,7 @@
                     imgWrap = $('#imgContent');
 
                 imgWrap.html(result);
+                socket.emit('event', {my: 'data'});
             });
         },
 

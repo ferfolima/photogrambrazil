@@ -115,6 +115,7 @@
                     imgWrap = $('#imgContent');
 
                 imgWrap.html(result);
+                socket.emit('my event', {my: 'data'});
             });
         },
 
