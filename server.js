@@ -42,16 +42,6 @@ Instagram.set('maxSockets', 10);
 //Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () {
-  io.set("transports", [
-    'websocket'
-    , 'xhr-polling'
-    , 'flashsocket'
-    , 'htmlfile'
-    , 'jsonp-polling'
-  ]);
-  io.set("polling duration", 10);
-});
 
 /**
  * Set your app main configuration
@@ -98,7 +88,7 @@ app.get('/callback', function(req, res){
 });
 
 
-app.get('subscribe', function(req, res){
+app.get('/subscribe', function(req, res){
     var hashtag, parsedRequest;
     parsedRequest = url.parse(request.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -110,6 +100,16 @@ app.get('subscribe', function(req, res){
             callback_url: 'http://test-gram.herokuapp.com/callback',
             type: 'subscription',
             id: '#'
+        });
+        io.configure(function () {
+            io.set("transports", [
+                    'websocket'
+                  , 'xhr-polling'
+                  , 'flashsocket'
+                  , 'htmlfile'
+                  , 'jsonp-polling'
+            ]);
+            io.set("polling duration", 10);
         });
     }
     return hashtag;
