@@ -99,12 +99,12 @@ app.get('/subscribe', function(req, res) {
             id: '#'
         });
 
-	/*Instagram.tags.recent({
+	Instagram.tags.recent({
             name: hashtag,
             complete: function(data) {
                 io.sockets.emit('firstShow', { firstShow: data });
             }
-        });*/
+        });
         
         /*io.sockets.on('connection', function (socket) {
 
