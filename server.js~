@@ -106,15 +106,31 @@ app.get('/subscribe', function(req, res) {
                     socket.emit('firstShow', { firstShow: data });
                 }
             });
-            socket.on('disconnect', function () {
-                console.log(socket + " disconnected");
-            });
         });
     }
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
 });
 
+app.get('/unsubscribe', function(req, res) {
+    var tagid, parsedRequest;
+    parsedRequest = url.parse(req.url, true);
+    if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
+        tagid = parsedRequest['query']['hub.tagid'];
+        Instagram.subscriptions.unsubscribe({ id: tagid });
+
+        io.sockets.on('connection', function (socket) {
+            Instagram.tags.recent({
+                name: '',
+                complete: function(data) {
+                    socket.emit('firstShow', { firstShow: '' });
+                }
+            });
+        });
+    }
+    res.redirect('http://test-gram.herokuapp.com');
+    return res.end();
+});
 /**
  * for each new post Instagram send us the data
  */
