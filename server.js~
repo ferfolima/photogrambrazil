@@ -106,9 +106,9 @@ app.get('/subscribe', function(req, res) {
                     socket.emit('firstShow', { firstShow: data });
                 }
             });
-        });
-        io.sockets.on('disconnect', function (socket) {
-            socket.emit('firstShow', { firstShow: '' });
+            socket.on('disconnect', function () {
+                console.log(socket + " disconnected");
+            });
         });
     }
     res.redirect('http://test-gram.herokuapp.com');

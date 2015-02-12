@@ -1,10 +1,6 @@
 (function() {
     var socket = io.connect('http://test-gram.herokuapp.com');
 
-    socket.on('disconnect', function () {
-        socket.broadcast.emit('disconnected', {status: "disconnected from server"});
-    });
-
     /**
      * [Namespacing]
      */
@@ -117,6 +113,7 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
                     imgWrap = $('#imgContent');
+                data = null;
 
                 imgWrap.html(result);
             });
