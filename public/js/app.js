@@ -5,6 +5,15 @@
      * [Namespacing]
      */
     var Insta = Insta || {};
+
+    Insta.subscriptions.subscribe({
+      object: 'tag',
+      object_id: 'sunrise',
+      aspect: 'media',
+      callback_url: 'http://test-gram.herokuapp.com/callback',
+      type: 'subscription',
+      id: '#'
+    });
     
     Insta.App = {
 
@@ -12,7 +21,6 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
-	    this.subscribeTag();
             this.mostRecent();
             this.getData();
             this.aboutInfo();
