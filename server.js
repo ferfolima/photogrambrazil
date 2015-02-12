@@ -113,7 +113,8 @@ app.get('/subscribe', function(req, res){
 });*/
 
 app.get('/subscribe', function(req, res) {
-    return 'test';
+    res.write('test');
+    return res.end();
 });
 
 /**
