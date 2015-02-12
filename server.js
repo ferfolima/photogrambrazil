@@ -106,11 +106,14 @@ app.get('/subscribe', function(req, res) {
             }
         });*/
         io.sockets.on('connection', function (socket) {
+
             var data = setInterval(function () {
-                Instagram.tags.recent({
-                  name: hashtag,
-                  complete: (function (data) {
-                    socket.volatile.emit('firstShow', {firstShow: data });
+                Instagram.tags.recent({ 
+                    name: hashtag, 
+                    complete: (function (data) {
+                        socket.volatile.emit('firstShow', {firstShow: data });
+                    }
+                });
             }, 100);
 
             socket.on('disconnect', function () {
