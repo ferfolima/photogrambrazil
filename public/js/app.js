@@ -12,20 +12,12 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
-            this.postToServer();
             this.mostRecent();
             this.getData();
             this.aboutInfo();
             this.mobileNav();
         },
 
-
-
-        postToServer: function() {
-            post('/subscribe/?hub.tag=lineufc', function(req, res) {
-                res.end();
-            });
-        }
         /**
          * [Interaction to open mobile navigation]
          */

@@ -19,14 +19,6 @@
             this.mobileNav();
         },
 
-
-
-        postToServer: function() {
-            post('/subscribe', function(req, res) {
-                sendMessage('http://test-gram.herokuapp.com/subscribe/?hub.tag=lineufc');
-                res.end();
-            });
-        }
         /**
          * [Interaction to open mobile navigation]
          */
