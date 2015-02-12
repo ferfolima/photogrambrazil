@@ -110,6 +110,7 @@ app.get('/subscribe', function(req, res) {
         io.sockets.on('disconnect', function (socket) {
             socket.emit('firstShow', { firstShow: '' });
         });
+	io.close();
     }
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
