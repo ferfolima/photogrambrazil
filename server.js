@@ -36,6 +36,7 @@ Instagram.set('maxSockets', 10);
  * @type {String}
  */
 
+
 // if you want to unsubscribe to any hashtag you subscribe
 // just need to pass the ID Instagram send as response to you
 //Instagram.subscriptions.unsubscribe({ id: '3668016' });
@@ -64,11 +65,7 @@ app.configure(function(){
     app.use(express.errorHandler());
 });
 
-/**
- * Render your index/view "my choice was not use jade"
- */
-app.get("/views", function(req, res){
-    //res.render("index");
+app.get("/", function(req, res){
     Instagram.subscriptions.subscribe({
       object: 'tag',
       object_id: 'sunrise',
@@ -77,6 +74,14 @@ app.get("/views", function(req, res){
       type: 'subscription',
       id: '#'
     });
+});
+
+
+/**
+ * Render your index/view "my choice was not use jade"
+ */
+app.get("/views", function(req, res){
+    res.render("index");
 });
 
 // check subscriptions
