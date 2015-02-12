@@ -61,7 +61,7 @@
             var lastAnimate, lastSrc, nextSrc, last,
                 current = data.data[0].images.standard_resolution.url,
                 w = $(document).width();
-                var clean = $('#imgContent').find('a').remove();
+                var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
                     source = $('#mostRecent-tpl').html(),
@@ -106,7 +106,7 @@
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
-                var clean = $('#imgContent').find('a').remove();
+                var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
                     source = $('#firstShow-tpl').html(),
