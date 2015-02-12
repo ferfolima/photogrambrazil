@@ -1,6 +1,10 @@
 (function() {
     var socket = io.connect('http://test-gram.herokuapp.com');
 
+    socket.on('disconnect', function () {
+        socket.broadcast.emit('disconnected', {status: "disconnected from server"});
+    });
+
     /**
      * [Namespacing]
      */
