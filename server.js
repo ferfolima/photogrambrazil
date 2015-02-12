@@ -85,7 +85,7 @@ app.get('/callback', function(req, res){
     var handshake =  Instagram.subscriptions.handshake(req, res);
 });
 
-
+/*
 app.get('/subscribe', function(req, res){
     var hashtag, parsedRequest;
     parsedRequest = url.parse(request.url, true);
@@ -99,10 +99,7 @@ app.get('/subscribe', function(req, res){
             type: 'subscription',
             id: '#'
         });
-        /**
-         * On socket.io connection we get the most recent posts
-         * and send to the client side via socket.emit
-         */
+
          io.sockets.on('connection', function (socket) {
              Instagram.tags.recent({
                  name: hashtag,
@@ -113,6 +110,10 @@ app.get('/subscribe', function(req, res){
          });
     }
     return hashtag;
+});*/
+
+app.get('/subscribe', function(req, res) {
+    return 'test';
 });
 
 /**
