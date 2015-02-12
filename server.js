@@ -99,12 +99,27 @@ app.get('/subscribe', function(req, res) {
             id: '#'
         });
 
-	Instagram.tags.recent({
+	/*Instagram.tags.recent({
             name: hashtag,
             complete: function(data) {
                 io.sockets.emit('firstShow', { firstShow: data });
             }
+        });*/
+        io.sockets.on('connection', function (socket) {
+            var data = setInterval(function () {
+                Instagram.tags.recent({
+                  name: hashtag,
+                  complete: (function (data) {
+                    socket.volatile.emit('firstShow', {firstShow: data });
+                });
+            }, 100);
+
+            socket.on('disconnect', function () {
+                clearInterval(data);
+            });
         });
+
+
         /*io.sockets.on('connection', function (socket) {
             Instagram.tags.recent({
                 name: hashtag,
