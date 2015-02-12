@@ -104,7 +104,7 @@ app.get('/subscribe', function(req, res) {
             complete: function(data) {
                 io.sockets.emit('firstShow', { firstShow: data });
             }
-        });
+        });	
         
         /*io.sockets.on('connection', function (socket) {
 
