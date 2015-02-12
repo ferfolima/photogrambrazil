@@ -105,7 +105,8 @@ app.get('/subscribe', function(req, res) {
                 io.sockets.emit('firstShow', { firstShow: data });
             }
         });*/
-        io.sockets.on('connection', function (socket) {
+        
+        /*io.sockets.on('connection', function (socket) {
 
             var data = setInterval(function () {
                 Instagram.tags.recent({ 
@@ -119,7 +120,7 @@ app.get('/subscribe', function(req, res) {
             socket.on('disconnect', function () {
                 clearInterval(data);
             });
-        });
+        });*/
 
 
         /*io.sockets.on('connection', function (socket) {

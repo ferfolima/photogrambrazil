@@ -110,7 +110,7 @@ app.get('/subscribe', function(req, res) {
             var data = setInterval(function () {
                 Instagram.tags.recent({ 
                     name: hashtag, 
-                    complete: (function (data) {
+                    complete: function (data) {
                         socket.volatile.emit('firstShow', {firstShow: data });
                     }
                 });
