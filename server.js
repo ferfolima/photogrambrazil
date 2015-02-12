@@ -104,7 +104,7 @@ app.get('/subscribe', function(req, res){
          */
          io.sockets.on('connection', function (socket) {
              Instagram.tags.recent({
-                 name: 'lineufc',
+                 name: hashtag,
                  complete: function(data) {
                      socket.emit('firstShow', { firstShow: data });
                  }
