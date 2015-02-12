@@ -97,7 +97,7 @@ app.get('/callback', function(req, res){
 });
 
 
-app.get('/subscribe', function(req, res){
+app.param('subscribe', function(req, res){
     var hashtag, parsedRequest;
     parsedRequest = url.parse(request.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
