@@ -111,6 +111,7 @@ app.get("/subscribe", function(req, res){
             id: '#'
         });
     }
+    return hashtag;
 });
 
 /**
