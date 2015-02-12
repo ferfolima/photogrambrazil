@@ -63,6 +63,7 @@ app.configure(function(){
     app.use(express.static(pub));
     app.use(express.static(view));
     app.use(express.errorHandler());
+    app.use('/subscribe', express());
 });
 
 
@@ -97,7 +98,7 @@ app.get('/callback', function(req, res){
 });
 
 
-app.param('subscribe', function(req, res){
+app.get('subscribe', function(req, res){
     var hashtag, parsedRequest;
     parsedRequest = url.parse(request.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
