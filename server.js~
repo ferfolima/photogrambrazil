@@ -113,7 +113,29 @@ app.get('/subscribe', function(req, res){
 });*/
 
 app.get('/subscribe', function(req, res) {
-    res.write('test');
+    var hashtag, parsedRequest;
+    parsedRequest = url.parse(request.url, true);
+    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+        hashtag = parsedRequest['query']['hub.tag'];
+        Instagram.subscriptions.subscribe({
+            object: 'tag',
+            object_id: hashtag,
+            aspect: 'media',
+            callback_url: 'http://test-gram.herokuapp.com/callback',
+            type: 'subscription',
+            id: '#'
+        });
+
+         io.sockets.on('connection', function (socket) {
+             Instagram.tags.recent({
+                 name: hashtag,
+                 complete: function(data) {
+                     socket.emit('firstShow', { firstShow: data });
+                 }
+             });
+         });
+    }
+    res.write(hashtag);
     return res.end();
 });
 
