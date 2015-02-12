@@ -65,7 +65,7 @@ app.configure(function(){
     app.use(express.errorHandler());
 });
 
-app.get("/subscribe", function(req, res){
+app.get("/", function(req, res){
     var hashtag, parsedRequest;
     parsedRequest = url.parse(request.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
