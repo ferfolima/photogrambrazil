@@ -60,9 +60,8 @@
 
 			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
 			<center><form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
-			<input type="text" name="hub.tag" value="hashtag">
-			<pre>
-			<input type="submit" name="submit" >
+			<input type="text" value="hub.tag" onblur="if(this.value == '') { this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.value=''}">
+			<input type="submit" name="submit" value="Assinar">
 			</form></center>
 		</div>
 	</div>
