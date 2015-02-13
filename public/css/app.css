@@ -112,9 +112,9 @@ a:hover {
 ************/
 .nav {
   position: fixed;
-  right: 20px;
+  right: 50px;
   bottom: 0;
-  width: 20px;
+  width: 50px;
   background: rgba(255,255,255, 0.9);
 
 }
