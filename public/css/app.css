@@ -289,7 +289,7 @@ a:hover {
     width: 100%;
     background: #fff;
     padding: 0;
-    border-top: none;
+    border-bottom: none;
     box-shadow: 0 5px 16px -3px #000;
   }
   /* header */
