@@ -50,7 +50,7 @@
 	<div class="aboutWrap active">
 		<div id="about">
 			<span class="btClose Hdb Hfr" id="js-closeAbout">
-				<a href="#close" title="close about" class="Hir">close</a>
+				<a href="#close" title="Fechar janela" class="Hir">close</a>
 			</span>
 			<h1 class="tit">Faca seu evento com o Test-gram</h1>
 			<p class="desc">Videos. Fotos. Momentos.</p>
@@ -59,6 +59,12 @@
 			<p class="desc"> <strong class="Hfwb">Test-gram</strong> ira pedir fotos para o instagram e esperar a resposta, procurando por fotos e post que tenham a hashtag desejada. </p>
 
 			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
+			<form action="http://test-gram.heroku.com/subscribe/?hub.tag=lineufc">
+			HashTag:<br>
+			<input type="text" name="hashtag">
+			<br>
+			<input type="submit" name="Assinar">
+			</form>
 		</div>
 	</div>
 
