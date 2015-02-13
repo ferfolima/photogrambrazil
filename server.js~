@@ -123,11 +123,11 @@ app.get('/subscribe', function(req, res) {
         });*/
 
 
-        io.sockets.on('connection', function (socket) {
+        io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
                 name: hashtag,
                 complete: function(data) {
-                    socket.once('firstShow', { firstShow: data });
+                    socket.emit('firstShow', { firstShow: data });
                 }
             });
         });
