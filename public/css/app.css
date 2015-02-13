@@ -294,7 +294,7 @@ a:hover {
   }
   /* header */
   #aside header {
-    float: left;
+    float: right;
   }
   .logo {
     padding: 0;
