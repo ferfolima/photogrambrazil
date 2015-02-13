@@ -212,7 +212,6 @@ a:hover {
 ************/
 #imgContent {
 	width: 100%;
-	padding: 8px;
 }
 #imgContent .animated {
 	position: relative;
@@ -239,7 +238,6 @@ a:hover {
 #imgContent a {
 	float: left;
 	width: 16.66666%;
-	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 #imgContent img {
 	width: 100%;
