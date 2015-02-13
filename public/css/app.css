@@ -219,7 +219,7 @@ a:hover {
 #imgContent img { display: block; }
 #imgContent a {
 	float: left;
-	width: 16.640625%;
+	width: 10%;
 }
 #imgContent img {
 	width: 100%;
@@ -343,7 +343,7 @@ a:hover {
   #imgContent a {
     display: block;
     float: none;
-    width: 90%;
+    width: 100%;
   }
   /* footer */
   #footer {
