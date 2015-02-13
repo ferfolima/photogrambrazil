@@ -220,7 +220,7 @@ a:hover {
 #imgContent a {
 	float: left;
 	width: 16.640625%;
-	padding: 5% 5% 5% 5%;
+	padding: 0 1% 0 1%;
 }
 #imgContent img {
 	width: 100%;
