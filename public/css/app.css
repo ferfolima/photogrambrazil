@@ -210,8 +210,7 @@ a:hover {
 ************/
 #imgContent {
 	width: 100%;
-        position:fixed;
-	top: 8px;
+	padding: 8px;
 }
 #imgContent .animated {
 	position: relative;
