@@ -217,7 +217,7 @@ a:hover {
 	position: relative;
 	z-index: 10;
 }
-#imgContent a, 
+
 #imgContent img { 
 	-webkit-transition: all 0.5s ease;
 	   -moz-transition: all 0.5s ease;
