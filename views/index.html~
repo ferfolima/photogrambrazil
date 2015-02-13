@@ -86,7 +86,7 @@
 		<nav class="nav">
 			<ul>
 				<li>
-					<a href="#" title="about" class="extra" id="js-btAbout"> about </a>
+					<a href="#" title="about" class="extra" id="js-btAbout"> Sobre </a>
 				</li>
 			</ul>
 		</nav>
