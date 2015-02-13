@@ -342,6 +342,7 @@ a:hover {
   /* content */
   #imgContent a {
     display: block;
+    padding: 2% 2% 2% 2%;
     float: none;
     width: 100%;
   }
