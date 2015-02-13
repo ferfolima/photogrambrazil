@@ -59,12 +59,12 @@
 			<p class="desc"> <strong class="Hfwb">Test-gram</strong> ira pedir fotos para o instagram e esperar a resposta, procurando por fotos e post que tenham a hashtag desejada. </p>
 
 			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
-			<form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
-			HashTag:<br><br>
+			<center><form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
+			HashTag:
 			<input type="text" name="hub.tag">
 			<br><br>
 			<input type="submit" name="submit" >
-			</form>
+			</form></center>
 		</div>
 	</div>
 
