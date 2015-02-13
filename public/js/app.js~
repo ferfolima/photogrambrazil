@@ -116,7 +116,6 @@
 
                 imgWrap.html(result);
             });
-            //socket.removeAllListeners('firstShow');
         },
 
         /**

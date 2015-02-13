@@ -125,13 +125,13 @@
             var about = $('.aboutWrap'),
                 btClose = $('#js-closeAbout').find('a'),
                 bt = $('#js-btAbout'),
-                user = localStorage.getItem('user');
+                /*user = localStorage.getItem('user');
 
             if( user ) {
                 about.removeClass('active');
             } else {
                 localStorage.setItem('user', 'visited');
-            }
+            }*/
 
             btClose.on('click', function(e) {
                 e.preventDefault();
