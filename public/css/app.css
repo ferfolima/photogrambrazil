@@ -110,21 +110,17 @@ a:hover {
 /***********
 * @nav
 ************/
-.nav {
-  position: fixed;
-  right: 40px;
-  bottom: 10px;
-  width: 40px;
-  background: rgba(255,255,255, 0.9);
 
+.nav {
+  position: relative;
+	background: rgba(255,255,255, 0.9);
 }
 
 .nav a {
 	display: block;
-	padding: 0 0 0 0;
+	padding: 2% 0 2% 12%;
 	font-size: 18px;
 	font-size: 1.1rem;
-	font-weight: bold;
 }
 .nav .latest { 
 	font-weight: bold;
