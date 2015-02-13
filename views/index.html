@@ -120,15 +120,15 @@
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<a href="{{link}}" title="{{caption.text}}" target="_blank">
-			<img src="{{images.standard_resolution.url}}" alt="{{user.sername}}: {{caption.text}}" />
+		<a href="{{link}}" title="{{user.username}}: {{caption.text}}" target="_blank">
+			<img src="{{images.standard_resolution.url}}" alt="{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a href="{{data.0.link}}" title="{{data.0.caption.text}}" target="_blank" class="Hvh">
-			<img src="{{data.0.images.standard_resolution.url}}" alt="{{data.0.caption.text}}" />
+		<a href="{{data.0.link}}" title="{{data.0.user.username}}: {{data.0.caption.text}}" target="_blank" class="Hvh">
+			<img src="{{data.0.images.standard_resolution.url}}" alt="{{data.0.user.username}}: {{data.0.caption.text}}" />
 		</a>
 	</script>
 
