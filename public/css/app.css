@@ -342,9 +342,8 @@ a:hover {
   /* content */
   #imgContent a {
     display: block;
-    padding: 2% 2% 2% 2%;
     float: none;
-    width: 100%;
+    width: 90%;
   }
   /* footer */
   #footer {
