@@ -63,7 +63,7 @@
 			HashTag:<br><br>
 			<input type="text" name="hub.tag">
 			<br><br>
-			<input type="submit" name="Assinar">
+			<input type="submit" name="submit" >
 			</form>
 		</div>
 	</div>
