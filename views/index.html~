@@ -54,13 +54,13 @@
 			</span>
 			<h1 class="tit">Faca seu evento com o Test-gram</h1>
 			<p class="desc">Videos. Fotos. Momentos.</p>
-			<p class="desc">Com <a href="http://test-gram.heroku.com" title="test-Gram">test-gram</a> voce podera deixar seu evento muito mais animado e divertido.</p>
+			<p class="desc">Com <a href="http://test-gram.heroku.com" title="test-Gram">Test-gram</a> voce podera deixar seu evento muito mais animado e divertido.</p>
 
 			<p class="desc"> <strong class="Hfwb">Test-gram</strong> ira pedir fotos para o instagram e esperar a resposta, procurando por fotos e post que tenham a hashtag desejada. </p>
 
 			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
 			<center><form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
-			<input type="text" name="hub.tag" onblur="if(this.value == '') { this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.value=''}">
+			<input type="text" name="hub.tag" value="Hashtag" onblur="if(this.value == '') { this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.value=''}">
 			<input type="submit" name="submit" >
 			</form></center>
 		</div>
