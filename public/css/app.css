@@ -224,7 +224,6 @@ a:hover {
 	     -o-transition: all 0.5s ease;
 	    -ms-transition: all 0.5s ease;
 	        transition: all 0.5s ease;
-	border: 10px solid  #fff;
 	display: block; 
 }
 #imgContent img:hover {
