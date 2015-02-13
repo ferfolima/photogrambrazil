@@ -121,9 +121,10 @@ a:hover {
 
 .nav a {
 	display: block;
-	padding: 2% 0 2% 12%;
+	padding: 0 0 0 0;
 	font-size: 18px;
 	font-size: 1.1rem;
+	font-weight: bold;
 }
 .nav .latest { 
 	font-weight: bold;
