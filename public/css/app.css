@@ -12,9 +12,10 @@
    Base styles: opinionated defaults
    ========================================================================== */
 * {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -91,7 +92,7 @@ a:hover {
 #aside {
 	position: fixed;
 	left: 0;
-	width: 16.640625%;
+	width: 16.66666%;
 	z-index: 40;
   border-top: 8px solid #f34e52;
 }
@@ -219,12 +220,22 @@ a:hover {
 }
 #imgContent a, 
 #imgContent img { 
+	-webkit-transition: all 0.5s ease;
+	   -moz-transition: all 0.5s ease;
+	     -o-transition: all 0.5s ease;
+	    -ms-transition: all 0.5s ease;
+	        transition: all 0.5s ease;
+	border: 10px solid  #fff;
 	display: block; 
-	opacity: 1;
-	filter: alpha(opacity=100);}
+}
 #imgContent img:hover {
-	opacity: 0.5;
-	filter: alpha(opacity=50);}
+	border-radius: 50%;
+	  -webkit-transform: rotate(360deg);
+	     -moz-transform: rotate(360deg);
+	       -o-transform: rotate(360deg);
+	      -ms-transform: rotate(360deg);
+	          transform: rotate(360deg);
+}
 #imgContent a {
 	float: left;
 	width: 16.66666%;
