@@ -218,7 +218,13 @@ a:hover {
 	z-index: 10;
 }
 #imgContent a, 
-#imgContent img { display: block; }
+#imgContent img { 
+	display: block; 
+	opacity: 1;
+	filter: alpha(opacity=100);}
+#imgContent img:hover {
+	opacity: 0.5;
+	filter: alpha(opacity=50);}
 #imgContent a {
 	float: left;
 	width: 16.66666%;
