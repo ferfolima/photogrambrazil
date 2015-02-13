@@ -70,10 +70,10 @@
 	<!--********************************
 	ASIDE
 	*********************************-->
-	<!--<aside id="aside">-->
-		<!--<header>
+	<aside id="aside">
+		<header>
 			<h1 class="logo"><a href="#" title="Test-gram - seu evento coberto por seus amigos" class="Hdb"><img src="/images/logo-square.png" alt="Lollagram - Lollapalooza on instagram everywhere" class="Hdib"></a></h1>
-		</header>-->
+		</header>
 
 		<!-- mobile nav button -->
 		<!--<a href="#mobile-navigation" class="mobNav" id="js-mobNav">
@@ -83,14 +83,14 @@
 		</a>-->
 		<!-- mobile nav button / end -->
 
-		<!--<nav class="nav">
+		<nav class="nav">
 			<ul>
 				<li>
 					<a href="#" title="about" class="extra" id="js-btAbout"> about </a>
 				</li>
 			</ul>
-		</nav>-->
-	<!--</aside>-->
+		</nav>
+	</aside>
 
 	<!--********************************
 	IMAGE WRAPPER - content
@@ -103,7 +103,7 @@
 	<footer id="footer">
 		<div class="bottom">
 			<ul class="socialShare Hfl">
-				<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://lollagram.com&p[images][0]=http://lollagram.herokuapp.com//images/logo.png&p[title]=Experience%20Lollapalooza%20through%20Lollagram&p[summary]=Lollagram%20is%20a%20labor%20of%20love%20that%E2%80%99s%20designed%20to%20help%20you%20keep%20track%20of%20the%20Lollapalooza%20experience,%20through%20the%20eyes%20(or,%20more%20accurately,%20snapshots)%20of%20music%20lovers%20on%20the%20ground%20at%20Grant%20Park.%20Lollagram%20takes%20advantage%20of%20the%20Instagram%20API%20and%20aggregates%20the%20moments%20at%20Lollapalooza,%20creating%20a%20visual%20record%20of%20the%20bands,%20food,%20people,%20and%20city%20that%20make%20up%20this%20great%20musical%20tradition.%20With%2040%20million%20photos%20being%20uploaded%20to%20Instagram%20each%20day,%20we're%20excited%20to%20present%20snapshots%20from%20Lollapalooza%202013." class="icon icon-fb" target="_blank"></a></li>
+				<li><a href="http://www.facebook.com/ferfolima" class="icon icon-fb" target="_blank"></a></li>
 				<li><a href="http://twitter.com/home?status=EExperience%20Lollapalooza%20through%20Lollagram.%20Music.%20Photography.%20Chicago%20on%20www.lollagram.com" class="icon icon-tt" target="_blank"></a></li>
 				<li><a href="https://plus.google.com/share?url=http://lollagram.com" class="icon icon-g" target="_blank"></a></li>
 				<li><a href="mailto:?subject=Live%20Lolla%20Pics%20on%20Lollagram.com&body=Check%20out%20this%20site%20for%20real%20time%20photos%20from%20Lollapalooza%202013.%20http%3A%2F%2Fwww.lollagram.com" class="icon icon-email" target="_blank"></a></li>

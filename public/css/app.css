@@ -282,6 +282,7 @@ a:hover {
   .topFill {
     background: url(../images/mob-top-fill.jpg) no-repeat 0 0;
     left: 0;
+    margin: 0 0 0 0;
   }
   /* aside */
   #aside {
