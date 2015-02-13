@@ -121,7 +121,7 @@
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
 		<a href="{{link}}" title="{{caption.text}}" target="_blank">
-			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
+			<img src="{{images.standard_resolution.url}}" alt="{{user.sername && caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
