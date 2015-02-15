@@ -120,7 +120,9 @@
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+		<a title="@{{user.username}}: {{caption.text}}">
+			<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+		</a>
 	{{/each}}
 	</script>
 
