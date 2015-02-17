@@ -122,7 +122,7 @@
 	{{#each firstShow}}
 		<a title="@{{user.username}}: {{caption.text}}">
 			<input type="checkbox"/>
-			<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+			<img class="to-be-changed" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
