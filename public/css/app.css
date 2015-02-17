@@ -240,18 +240,37 @@ a:hover {
 	      -ms-transform: rotate(360deg);
 	          transform: rotate(360deg); 
 }
-#imgContent img:active {
+
+#imgContent a {
+	float: left;
+	width: 16.66666%;
+	padding: 0.25% 0.25% 0.25% 0.25%;
+}
+#imgContent img {
+	width: 100%;
+}
+
+.to-be-changed {
+	-webkit-transition: all 0.5s ease;
+	   -moz-transition: all 0.5s ease;
+	     -o-transition: all 0.5s ease;
+	    -ms-transition: all 0.5s ease;
+	        transition: all 0.5s ease;
+	border: 10px solid #fff;
+	float: left;
+	overflow: hidden;
+	-webkit-box-shadow: 5px 5px 5px #111;
+          box-shadow: 5px 5px 5px #111;
+	display: block; 
+}
+
+input[type=checkbox]:checked ~ .to-be-changed {
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg);
 	     -moz-transform: rotate(360deg);
 	       -o-transform: rotate(360deg);
 	      -ms-transform: rotate(360deg);
 	          transform: rotate(360deg); 
-}
-#imgContent img {
-	float: left;
-	width: 16.66666%;
-	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
 /***********
