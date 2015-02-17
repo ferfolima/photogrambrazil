@@ -120,9 +120,9 @@
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<input class="native-hidden" type="checkbox"/>
 		<a title="@{{user.username}}: {{caption.text}}">
-			<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+			<input type="checkbox"/>
+			<img class="to-be-changed" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
