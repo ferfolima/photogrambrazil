@@ -264,7 +264,7 @@ a:hover {
 
 /* basic css */
 input[type=checkbox]   { display:none; }
-label, p               { padding-left:50px; }
+label               { padding-left:50px; }
 #check-awesome         { position:relative; }
 
 /* checkbox css */
