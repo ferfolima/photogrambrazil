@@ -240,7 +240,6 @@ a:hover {
 input[type=checkbox]:checked ~ img {
 	border-radius: 50%;
 	width: 50%;
-	height: 50%;
 }
 
 input[type=checkbox]{
