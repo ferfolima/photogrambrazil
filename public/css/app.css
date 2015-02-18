@@ -235,8 +235,7 @@ a:hover {
 
 #imgContent a {
 	float: left;
-	width: 200px;
-	height: 200px;
+	display: block;
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
@@ -267,7 +266,6 @@ input[type=checkbox] {
 	opacity: 0;
 	z-index: 40;
 }
-
 
 /***********
 * @footer
