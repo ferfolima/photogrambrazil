@@ -235,13 +235,13 @@ a:hover {
 
 #imgContent a {
 	float: left;
-	width: 100%;
+	width: 200px;
+	height: 200px;
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
 input[type=checkbox]:checked ~ .native-hidden {
-	width: 100px;
-	height: 100px;
+	width: 50%;
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg);
 	     -moz-transform: rotate(360deg);
@@ -253,16 +253,14 @@ input[type=checkbox]:checked ~ .native-hidden {
 
 input[type=checkbox]:checked {
 	position: absolute;
-	width: 200px;
-	height: 200px;
+	width: 100%;
 	opacity: 0.2;
 	z-index: 0;
 }
 
 input[type=checkbox] {
 	position: absolute;
-	width: 200px;
-	height: 200px;
+	width: 100%;
 	opacity: 0;
 	z-index: 40;
 }
