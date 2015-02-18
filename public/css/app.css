@@ -227,20 +227,29 @@ a:hover {
 }
 
 #imgContent img { 
+	-webkit-transition: all 0.5s ease;
+	   -moz-transition: all 0.5s ease;
+	     -o-transition: all 0.5s ease;
+	    -ms-transition: all 0.5s ease;
+	        transition: all 0.5s ease;
 	border: 10px solid #fff;
-	margin-left: auto;
-	margin-right: auto;
+	float: left;
 	overflow: hidden;
 	-webkit-box-shadow: 5px 5px 5px #111;
           box-shadow: 5px 5px 5px #111;
 	display: block; 
 }
 
-input[type=checkbox]:checked ~ img {
-	border-radius: 90%;
+#imgContent input[type=checkbox]:checked ~ img {
+	border-radius: 50%;
+	  -webkit-transform: rotate(360deg) scale(0.5);
+	     -moz-transform: rotate(360deg) scale(0.5);
+	       -o-transform: rotate(360deg) scale(0.5);
+	      -ms-transform: rotate(360deg) scale(0.5);
+	          transform: rotate(360deg) scale(0.5); 
 }
 
-input[type=checkbox]{
+#imgContent input[type=checkbox]{
 	position: absolute;
 	width: 200px;
 	height: 200px;
