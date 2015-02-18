@@ -263,7 +263,6 @@ input[type=checkbox] {
 	width: 200px;
 	height: 200px;
 	opacity: 0;
-	z-index: 40;
 }
 
 /***********
