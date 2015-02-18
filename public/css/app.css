@@ -256,8 +256,6 @@ input[type=checkbox]:checked ~ .native-hidden {
 	       -o-transform: rotate(360deg);
 	      -ms-transform: rotate(360deg);
 	          transform: rotate(360deg); 
-	width: 100px;
-	height: 100px;
 }
 
 
