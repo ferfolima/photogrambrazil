@@ -250,7 +250,7 @@ a:hover {
 	width: 100%;
 }
 
-input[type=checkbox]:checked ~ .to-be-changed {
+input[type=image]:checked ~ .to-be-changed {
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg);
 	     -moz-transform: rotate(360deg);
@@ -259,7 +259,7 @@ input[type=checkbox]:checked ~ .to-be-changed {
 	          transform: rotate(360deg); 
 }
 
-input[type=checkbox] {
+input[type=image] {
 	float: left;
 	width: 16.66666%;
 	padding: 0.25% 0.25% 0.25% 0.25%;
