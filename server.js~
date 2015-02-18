@@ -118,7 +118,7 @@ app.get('/unsubscribe', function(req, res) {
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
         tagid = parsedRequest['query']['hub.tagid'];
-        Instagram.subscriptions.unsubscribe({ object_id: tagid });
+        Instagram.subscriptions.unsubscribe({ id: tagid });
     }
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
