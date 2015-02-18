@@ -249,7 +249,9 @@ input[type=checkbox]:checked ~ .native-hidden {
 }
 
 input[type=checkbox] {
-	float: left;
+	position: absolute;
+	left: 10px;
+	top: 10px;
 	width: 100%;
 }
 
