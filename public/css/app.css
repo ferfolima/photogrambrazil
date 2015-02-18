@@ -249,7 +249,7 @@ a:hover {
 	          transform: rotate(360deg); 
 }
 
-input[type=checkbox]:checked ~ .native-hidden {
+input[type=checkbox]:checked ~ .rotate-this-shit {
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg);
 	     -moz-transform: rotate(360deg);
@@ -258,14 +258,6 @@ input[type=checkbox]:checked ~ .native-hidden {
 	          transform: rotate(360deg); 
 }
 
-
-input[type=checkbox]:checked {
-	position: absolute;
-	width: 200px;
-	height: 200px;
-	opacity: 0.2;
-	z-index: 0;
-}
 
 input[type=checkbox] {
 	position: absolute;
