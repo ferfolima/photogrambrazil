@@ -261,8 +261,7 @@ input[type=checkbox]:checked ~ .to-be-changed {
 
 input[type=checkbox] {
 	position: absolute;
-	top: -9999px;
-	left: -9999px;
+	display:none;
 }
 
 /***********
