@@ -129,10 +129,8 @@
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-			<div id="check-awesome" class="form-group"> 
-				<input type="checkbox">
-				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
-			</div>
+			<input type="checkbox" id="check-me">
+			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 		</a>
 	</script>
 
