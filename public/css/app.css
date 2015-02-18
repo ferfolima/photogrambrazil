@@ -12,27 +12,27 @@
    Base styles: opinionated defaults
    ========================================================================== */
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-          box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+     	   -moz-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 html {
-  -webkit-font-smoothing: antialiased;
+  	-webkit-font-smoothing: antialiased;
 }
 
 /* font-family: 'Open Sans', sans-serif; */
 
 body {
 	background: url(../images/bg.jpg) repeat 0 0;
-  font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
-  overflow-x: hidden;
+	font-size: 62.5%;
+  	font-family: 'Open Sans', sans-serif;
+  	overflow-x: hidden;
 }
 
 img {
-  max-width: 100%;
+  	max-width: 100%;
 }
 
 ul, 
@@ -78,9 +78,9 @@ a:hover {
 .topFill {
 	position: fixed;
 	top: 0;
-  left: 13.5%;
+  	left: 13.5%;
 	background: url(../images/top-fill.jpg) repeat-x 0 0;
-  background-size: cover;
+ 	background-size: cover;
 	width: 100%;
 	height: 8px;
 	z-index: 45;
@@ -94,7 +94,7 @@ a:hover {
 	left: 0;
 	width: 16.66666%;
 	z-index: 40;
-  border-top: 8px solid #f34e52;
+  	border-top: 8px solid #f34e52;
 }
 
 /***********
@@ -104,7 +104,7 @@ a:hover {
 	background: #fff;
 }
 .logo img {
-  display: block;
+  	display: block;
 	width: 100%;
 }
 
@@ -113,7 +113,7 @@ a:hover {
 ************/
 
 .nav {
-  position: fixed;
+  	position: fixed;
 	bottom: 15px;
 	right:15px;
 	background: rgba(255,255,255, 0.9);
@@ -134,77 +134,83 @@ a:hover {
 
 /* mobile nav */
 .mobNav {
-  display: none;
-  margin: 25px 10px 0 0;
+  	display: none;
+  	margin: 25px 10px 0 0;
 }
 .mobNav:hover .iconBar {
-  background: #f34e52;
+  	background: #f34e52;
 }
 .iconBar {
-  background: #333;
-  display: block;
-  width: 22px;
-  height: 2px;
-  margin: 5px 0;
+  	background: #333;
+  	display: block;
+  	width: 22px;
+  	height: 2px;
+  	margin: 5px 0;
 }
 
 /***********
 * @about
 ************/
 .aboutWrap {
-  position: absolute;
-  top: 58px;
-  right: 0;
-  width: 100%;
-  z-index: 50;
-  transform: translateX(-10000px);
-  -webkit-transform: translateX(-10000px);
-  -moz-transform: translateX(-10000px);
-  -ms-transform: translateX(-10000px);
+  	position: absolute;
+  	top: 58px;
+  	right: 0;
+  	width: 100%;
+  	z-index: 50;
+  	transform: translateX(-10000px);
+  	-webkit-transform: translateX(-10000px);
+  	-moz-transform: translateX(-10000px);
+  	-ms-transform: translateX(-10000px);
 }
+
 .aboutWrap.active {
-  transform: translateX(0px);
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
+  	transform: translateX(0px);
+  	-webkit-transform: translateX(0px);
+  	-moz-transform: translateX(0px);
+  	-ms-transform: translateX(0px);
 }
 
 #about {
-  background: rgba(255,255,255, 0.9);
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2%;
-  -moz-box-shadow: inset 6px 4px 10px -7px #000;
-  -webkit-box-shadow: inset 6px 4px 10px -7px #000;
-  box-shadow: inset 6px 4px 10px -7px #000;
+  	background: rgba(255,255,255, 0.9);
+  	max-width: 700px;
+  	margin: 0 auto;
+  	padding: 2%;
+  	-moz-box-shadow: inset 6px 4px 10px -7px #000;
+  	-webkit-box-shadow: inset 6px 4px 10px -7px #000;
+  	box-shadow: inset 6px 4px 10px -7px #000;
 }
+
 #about .tit {
-  font-size: 28px;
-  font-size: 1.8rem;
+  	font-size: 28px;
+  	font-size: 1.8rem;
 }
 #about .desc {
-  font-size: 15px;
-  font-size: 0.9rem;
-  margin: 15px 0;
+  	font-size: 15px;
+  	font-size: 0.9rem;
+  	margin: 15px 0;
 }
+
 #about .tit, 
 #about .desc {
-  color: #1d1d1d;
+  	color: #1d1d1d;
 }
+
 #about .desc a {
-  font-weight: bold;
-  color: #333;
-  text-decoration: underline;
+  	font-weight: bold;
+  	color: #333;
+  	text-decoration: underline;
 }
+
 .btClose {
-  float: right;
-  margin: 2% 2% 0 0;
+  	float: right;
+  	margin: 2% 2% 0 0;
 }
+
 .btClose a {
-  background: url(../images/bt-close.png) no-repeat 0 0;
-  width: 42px;
-  height: 42px;
-  display: block;
+  	background: url(../images/bt-close.png) no-repeat 0 0;
+  	width: 42px;
+  	height: 42px;
+  	display: block;
 }
 
 /***********
@@ -214,6 +220,7 @@ a:hover {
 	width: 100%;
 	padding: 8px;
 }
+
 #imgContent .animated {
 	position: relative;
 	z-index: 10;
@@ -270,34 +277,49 @@ a:hover {
 	z-index: 30;
 	pointer-events: none;
 }
+
 #footer .bottom {
-  width: 100%;
-  height: 50px;
+  	width: 100%;
+  	height: 50px;
 	position: absolute;
-  bottom: 5px;
-  pointer-events: auto;
+  	bottom: 5px;
+  	pointer-events: auto;
 }
 
 /* social share */
 .socialShare {
-  margin: 10px 0 0 2%;
+  	margin: 10px 0 0 2%;
 }
+
 .socialShare li {
-  float: left;
-  margin: 0 10px 0 0;
+  	float: left;
+  	margin: 0 10px 0 0;
 }
+
 .socialShare .icon {
-  background: url(../images/sprite-social.png) no-repeat;
-  width: 25px;
-  height: 27px;
+  	background: url(../images/sprite-social.png) no-repeat;
+  	width: 25px;
+  	height: 27px;
 }
-.icon.icon-fb { background-position: 0px 3px; }
-.icon.icon-tt { background-position: -45px 0px; }
-.icon.icon-g { background-position: -90px 2px; }
-.icon.icon-email { background-position: -135px 1px; }
+
+.icon.icon-fb { 
+	background-position: 0px 3px; 
+}
+
+.icon.icon-tt { 
+	background-position: -45px 0px; 
+}
+
+.icon.icon-g { 
+	background-position: -90px 2px; 
+}
+
+.icon.icon-email { 
+	background-position: -135px 1px; 
+}
 
 .bottomLogo {
-  margin: -7px 5% 0 0;
+  	margin: -7px 5% 0 0;
 }
 
 /***********
@@ -306,7 +328,6 @@ a:hover {
 
 /* first breakpoint starts here */
 @media all and (max-width: 900px) {
-  /* about */
   .aboutWrap {
     top: 118px;
   }
