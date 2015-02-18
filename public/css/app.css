@@ -229,7 +229,7 @@ a:hover {
 }
 
 #imgContent a {
-	float: center;
+	float: left;
 	width: 200px;
 	height: 200px;
 	padding: 0.25% 0.25% 0.25% 0.25%;
