@@ -76,6 +76,10 @@ app.get("/views", function(req, res){
     res.render("index");
 });
 
+app.get("/slideshow", function(req, res){
+    red.render("slideshow");
+});
+
 // check subscriptions
 // https://api.instagram.com/v1/subscriptions?client_secret=YOUR_CLIENT_ID&client_id=YOUR_CLIENT_SECRET
 
