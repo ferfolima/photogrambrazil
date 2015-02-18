@@ -77,7 +77,7 @@ app.get("/views", function(req, res){
 });
 
 app.get("/slideshow", function(req, res){
-    res.render("slideshow");
+    res.render("views/slideshow");
 });
 
 // check subscriptions
