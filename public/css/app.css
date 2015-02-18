@@ -272,15 +272,6 @@ label                  { cursor:pointer; }
 label span             { display:block; position:absolute; left:0; 
   -webkit-transition-duration:0.3s; -moz-transition-duration:0.3s; transition-duration:0.3s;
 }
-label .circle          {
-  background:#FFF;
-  left:-30px;
-  top:-30px;
-  height:80px;
-  width:80px;
-  z-index:-1;
-  border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;
-}
 label .box     {
   border:2px solid #000;
   height:20px; 
@@ -305,11 +296,6 @@ label .check         {
 /* handling click events */
 
 /* when checkbox is checked */
-label .circle {
-  -webkit-animation   :growCircle 0.3s ease;
-  -moz-animation      :growCircle 0.3s ease;
-  animation           :growCircle 0.3s ease;
-}
 input[type=checkbox]:checked ~ label .box { 
   opacity:0;
   -webkit-transform   :scale(0) rotate(-180deg);
