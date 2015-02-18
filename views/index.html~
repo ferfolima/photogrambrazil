@@ -128,8 +128,9 @@
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a href="{{data.0.link}}" title="@{{data.0.user.username}}: {{data.0.caption.text}}" target="_blank" class="Hvh">
-			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{data.0.caption.text}}" />
+		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
+			<input type="checkbox"/>
+			<img class="native-hidden" src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 		</a>
 	</script>
 
