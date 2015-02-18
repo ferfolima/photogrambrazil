@@ -238,13 +238,8 @@ a:hover {
 	width: 16.66666%;
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
-#imgContent img {
-	width: 100%;
-}
 
 input[type=checkbox]:checked ~ .native-hidden {
-	width: 50%;
-	height: 50%;
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg);
 	     -moz-transform: rotate(360deg);
