@@ -21,6 +21,7 @@ var pub = __dirname + '/public',
  */
 var clientID = '159e54fed6354cacae99784052811c29',
     clientSecret = '39169f06d11a46798ce098db118c5aa7';
+    hashtag = '';
 
 /**
  * Set the configuration
@@ -86,7 +87,7 @@ app.get('/callback', function(req, res){
 });
 
 app.get('/subscribe', function(req, res) {
-    var hashtag, parsedRequest;
+    var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         hashtag = parsedRequest['query']['hub.tag'];
@@ -117,7 +118,7 @@ app.get('/unsubscribe', function(req, res) {
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
         tagid = parsedRequest['query']['hub.tagid'];
-        Instagram.subscriptions.unsubscribe({ id: tagid });
+        Instagram.subscriptions.unsubscribe({ object: hashtag });
     }
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();

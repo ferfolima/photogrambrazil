@@ -99,7 +99,14 @@
 	<!--********************************
 	IMAGE WRAPPER - content
 	*********************************-->
-	<div id="imgContent" class="Hcf"></div>
+	<div id="imgContent" class="Hcf">
+		<script id="mostRecent-tpl" type="text/x-handlebars-template">
+			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
+				<input type="checkbox"/>
+				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			</a>
+		</script>	
+	</div>
 
 	<!--********************************
 	FOOTER
@@ -125,13 +132,6 @@
 			<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}
-	</script>
-
-	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-			<input type="checkbox"/>
-			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
-		</a>
 	</script>
 
 	<!-- CALL MAIN APP SCRIPT -->	
