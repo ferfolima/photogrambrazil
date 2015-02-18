@@ -235,7 +235,8 @@ a:hover {
 
 #imgContent a {
 	float: left;
-	width: 16.66666%;
+	width: 200px;
+	height: 200px;
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
@@ -250,8 +251,6 @@ input[type=checkbox]:checked ~ .native-hidden {
 
 input[type=checkbox] {
 	position: absolute;
-	width: 100%;
-	height: 100%;
 	opacity: 0.5;
 }
 
