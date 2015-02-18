@@ -265,6 +265,12 @@ input[type=checkbox] {
 	height: 200px;
 }
 
+.native-hidden {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 /***********
 * @footer
 ************/
