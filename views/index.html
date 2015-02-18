@@ -108,12 +108,14 @@
 			</a>
 		{{/each}}
 		</script>
-		<script id="mostRecent-tpl" type="text/x-handlebars-template">
+		<div id="slideShowImages">
+		<script type="text/x-handlebars-template">
 			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
 				<input type="checkbox"/>
 				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 			</a>
-		</script>	
+		</script>
+		</div>	
 	</div>
 
 	<!--********************************
@@ -132,6 +134,7 @@
 
 	<!-- CALL MAIN APP SCRIPT -->	
 	<script src="/js/app.js"></script>
+	<script src="/js/slideShow.js"></script>
 
 	<!--[if lt IE 9]>
     </div>
