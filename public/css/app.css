@@ -219,15 +219,6 @@ a:hover {
 	z-index: 10;
 }
 
-#imgContent img { 
-	border: 10px solid #fff;
-	float: left;
-	overflow: hidden;
-	-webkit-box-shadow: 5px 5px 5px #111;
-          box-shadow: 5px 5px 5px #111;
-	display: block; 
-}
-
 #imgContent a {
 	float: left;
 	width: 200px;
@@ -235,9 +226,20 @@ a:hover {
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
+#imgContent img { 
+	border: 10px solid #fff;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	-webkit-box-shadow: 5px 5px 5px #111;
+          box-shadow: 5px 5px 5px #111;
+	display: block; 
+}
+
 input[type=checkbox]:checked ~ img {
 	border-radius: 50%;
 	width: 50%;
+	height: 50%;
 }
 
 input[type=checkbox]{
