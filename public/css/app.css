@@ -260,9 +260,9 @@ input[type=checkbox]:checked {
 }
 
 input[type=checkbox] {
-	float: left;
-	width: 100%;
-	padding: 0.25% 0.25% 0.25% 0.25%;
+	display:block;
+	width: 200px;
+	height: 200px;
 }
 
 /***********
