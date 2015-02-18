@@ -258,9 +258,8 @@ input[type=checkbox]{
 /* checkbox css */
 #imgContent img             { display:block; position:absolute; left:0; 
   -webkit-transition-duration:0.3s; -moz-transition-duration:0.3s; transition-duration:0.3s;
+    z-index:888;
 }
-
-
 /***********
 * @footer
 ************/

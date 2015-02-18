@@ -128,15 +128,6 @@
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<div id="check-awesome" class="form-group">    
-			<input type="checkbox" id="check-me">  
-				<label for="check-me">
-					<span class="circle"></span>
-					<span class="check"></span>
-					<span class="box"></span>
-					Notifications
-				</label>
-		</div>
 
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
 			<div id="check-awesome" class="form-group"> 
