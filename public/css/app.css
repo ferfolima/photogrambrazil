@@ -242,11 +242,11 @@ a:hover {
 
 input[type=checkbox]:checked ~ .native-hidden {
 	border-radius: 50%;
-	  -webkit-transform: rotate(360deg) scale(0.5);
-	     -moz-transform: rotate(360deg) scale(0.5);
-	       -o-transform: rotate(360deg) scale(0.5);
-	      -ms-transform: rotate(360deg) scale(0.5);
-	          transform: rotate(360deg) scale(0.5); 
+	  -webkit-transform: rotate(360deg) scale(1.5);
+	     -moz-transform: rotate(360deg) scale(1.5);
+	       -o-transform: rotate(360deg) scale(1.5);
+	      -ms-transform: rotate(360deg) scale(1.5);
+	          transform: rotate(360deg) scale(1.5); 
 }
 
 
