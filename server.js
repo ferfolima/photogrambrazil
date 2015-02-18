@@ -9,13 +9,6 @@ var request = ('request');
 var intervalID;
 
 /**
- * Set the paths for your files
- * @type {[string]}
- */
-var pub = __dirname + '/public',
-    view = __dirname + '/views';
-
-/**
  * Set the 'client ID' and the 'client secret' to use on Instagram
  * @type {String}
  */
@@ -58,12 +51,14 @@ io.configure(function () {
 /**
  * Set your app main configuration
  */
+app.set('views', __dirname + '/views');
+app.set('public', __dirname + '/public');
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(pub));
-app.use(express.static(view));
 app.use(express.errorHandler());
+app.engine('html', engines.mustache);
+app.set('view engine', 'html');
 
 
 /**
