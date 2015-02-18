@@ -268,11 +268,6 @@ input[type=checkbox] {
 	z-index: 40;
 }
 
-.native-hidden {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
 
 /***********
 * @footer
