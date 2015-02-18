@@ -66,7 +66,6 @@ app.configure(function(){
     app.use(express.static(view));
     app.use(express.errorHandler());
     app.use('/slideshow', express());
-    app.use('/subscribe', express());
 });
 
 
@@ -78,7 +77,7 @@ app.get("/views", function(req, res){
 });
 
 app.get("/slideshow", function(req, res){
-    res.render("slideshow");
+    res.render("slideshow.html");
 });
 
 // check subscriptions
