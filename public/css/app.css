@@ -250,6 +250,7 @@ input[type=checkbox]:checked ~ .native-hidden {
 
 input[type=checkbox] {
 	position: absolute;
+	opacity: 0;
 }
 
 .native-hidden {
