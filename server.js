@@ -51,14 +51,16 @@ io.configure(function () {
 /**
  * Set your app main configuration
  */
-app.set('views', __dirname + '/views');
-app.set('public', __dirname + '/public');
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(app.router);
-app.use(express.errorHandler());
-app.engine('html', engines.mustache);
-app.set('view engine', 'html');
+app.configure(function(){
+    app.set('views', __dirname + '/views');
+    app.set('public', __dirname + '/public');
+    app.use(express.bodyParser());
+    app.use(express.methodOverride());
+    app.use(app.router);
+    app.use(express.errorHandler());
+    app.engine('html', engines.mustache);
+    app.set('view engine', 'html');
+});
 
 
 /**
