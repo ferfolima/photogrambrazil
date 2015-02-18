@@ -230,13 +230,13 @@ a:hover {
 	overflow: hidden;
 	-webkit-box-shadow: 5px 5px 5px #111;
           box-shadow: 5px 5px 5px #111;
-	display: block; 
+	display: inline-block; 
 }
 
 #imgContent a {
 	float: left;
-	display: block;
-	width: 16.666%;
+	width: 200px;
+	height: 200px;
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
