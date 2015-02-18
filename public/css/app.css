@@ -247,6 +247,7 @@ input[type=checkbox]:checked ~ img {
 	       -o-transform: rotate(360deg) scale(0.5);
 	      -ms-transform: rotate(360deg) scale(0.5);
 	          transform: rotate(360deg) scale(0.5); 
+	width: 50%;
 }
 
 input[type=checkbox]{
