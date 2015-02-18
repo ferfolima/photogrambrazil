@@ -237,9 +237,9 @@ a:hover {
 }
 
 input[type=checkbox]:checked ~ img {
-	top: 50%;
 	border-radius: 50%;
-	width: 50%;
+	height: 50%;
+	vertical-align: middle;
 }
 
 input[type=checkbox]{
