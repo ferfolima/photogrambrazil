@@ -234,7 +234,7 @@ a:hover {
 	display: block; 
 }
 
-#wrapper td{
+#imgContent a .td{
 	vertical-align: middle;
 	text-align:center;
 }
