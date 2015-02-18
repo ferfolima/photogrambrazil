@@ -252,7 +252,7 @@ input[type=checkbox] {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	opacity: 0;
+	opacity: 0.5;
 }
 
 .native-hidden {
