@@ -120,7 +120,7 @@
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<input src="{{images.standard_resolution.url}}" type="checkbox"/>
+		<input style="content: url({{images.standard_resolution.url}})" type="checkbox"/>
 	{{/each}}
 	</script>
 
