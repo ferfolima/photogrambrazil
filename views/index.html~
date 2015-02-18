@@ -130,7 +130,9 @@
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
 			<input type="checkbox" id="check-me">
-			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			<div>
+				<img for="check-me" src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			</div>
 		</a>
 	</script>
 
