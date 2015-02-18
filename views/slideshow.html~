@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- For intranet testing only, remove in production. -->
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>Slide Show</title>
+	<style>
+		#slideShowImages { /* The following CSS rules are optional. */
+			border: 1px gray solid;
+			background-color: lightgray;
+		}	 
+	
+		#slideShowImages img { /* The following CSS rules are optional. */
+			border: 0.8em black solid;
+			padding: 3px;
+		}	 
+	</style>
+</head>
+
+<body>
+	<div id="slideShowImages">
+		<script id="slideShow-tpl" type="text/x-handlebars-template">
+			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
+				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			</a>
+		</script>	
+	</div>
+	<script src="/js/app.js"></script>	
+	<script src="/js/slideShow.js"></script>
+</body>
+
+</html>
