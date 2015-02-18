@@ -132,7 +132,7 @@
 			<div>
 			<input type="checkbox"/>
 			<img class="rotate-this-shit" src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
-			</div/
+			</div>
 		</a>
 	</script>
 

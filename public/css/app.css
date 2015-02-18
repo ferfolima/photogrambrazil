@@ -249,7 +249,7 @@ a:hover {
 	          transform: rotate(360deg) scale(0.5); 
 }
 
-input[type=checkbox]:checked ~ .rotate-this-shit {
+input[type=checkbox]:checked{
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg) scale(0.5);
 	     -moz-transform: rotate(360deg) scale(0.5);
