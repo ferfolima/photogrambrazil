@@ -136,12 +136,13 @@
 					<span class="box"></span>
 					Notifications
 				</label>
-				<p>Notify me about how great I am every hour.</p>
 		</div>
 
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-			<input type="checkbox"/>
-			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			<div id="check-awesome" class="form-group"> 
+				<input type="checkbox">
+				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			</div>
 		</a>
 	</script>
 
