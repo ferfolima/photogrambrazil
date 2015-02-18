@@ -226,9 +226,7 @@ a:hover {
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
-#check-awesome         { position:relative; }
-
-img { 
+label { 
 	cursor: pointer;
 	display: block; 
 	position: absolute;
@@ -238,7 +236,7 @@ img {
           box-shadow: 5px 5px 5px #111;
 }
 
-input[type=checkbox]:checked ~ img {
+input[type=checkbox]:checked ~ label {
 	  -webkit-transform: rotate(360deg) scale(0.5);
 	     -moz-transform: rotate(360deg) scale(0.5);
 	       -o-transform: rotate(360deg) scale(0.5);
