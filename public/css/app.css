@@ -238,11 +238,7 @@ img {
 	-webkit-box-shadow: 5px 5px 5px #111;
           box-shadow: 5px 5px 5px #111;
 	display: block; 
-	  -webkit-transform: rotate(360deg) scale(0.5);
-	     -moz-transform: rotate(360deg) scale(0.5);
-	       -o-transform: rotate(360deg) scale(0.5);
-	      -ms-transform: rotate(360deg) scale(0.5);
-	          transform: rotate(360deg) scale(0.5); 
+	z-index: 40;
 }
 
 input[type=checkbox]:checked ~ img {
@@ -259,7 +255,6 @@ input[type=checkbox]{
 	width: 200px;
 	height: 200px;
 	opacity: 0.1;
-	z-index: 40;
 }
 
 /***********
