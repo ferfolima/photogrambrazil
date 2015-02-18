@@ -219,6 +219,13 @@ a:hover {
 	z-index: 10;
 }
 
+#imgContent a {
+	float: left;
+	width: 200px;
+	height: 200px;
+	padding: 0.25% 0.25% 0.25% 0.25%;
+}
+
 #imgContent img { 
 	-webkit-transition-duration: 0.5s;
 	   -moz-transition-duration: 0.5s;
@@ -231,13 +238,6 @@ a:hover {
 	-webkit-box-shadow: 5px 5px 5px #111;
           box-shadow: 5px 5px 5px #111;
 	display: block; 
-}
-
-#imgContent a {
-	float: left;
-	width: 200px;
-	height: 200px;
-	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
 input[type=checkbox]:checked ~ img {
