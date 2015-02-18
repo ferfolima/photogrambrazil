@@ -220,11 +220,6 @@ a:hover {
 }
 
 #imgContent img { 
-	-webkit-transition: all 0.5s ease;
-	   -moz-transition: all 0.5s ease;
-	     -o-transition: all 0.5s ease;
-	    -ms-transition: all 0.5s ease;
-	        transition: all 0.5s ease;
 	border: 10px solid #fff;
 	float: center;
 	overflow: hidden;
@@ -234,7 +229,7 @@ a:hover {
 }
 
 #imgContent a {
-	float: left;
+	float: center;
 	width: 200px;
 	height: 200px;
 	padding: 0.25% 0.25% 0.25% 0.25%;
@@ -242,11 +237,6 @@ a:hover {
 
 input[type=checkbox]:checked ~ img {
 	border-radius: 50%;
-	  -webkit-transform: rotate(360deg) scale(0.5);
-	     -moz-transform: rotate(360deg) scale(0.5);
-	       -o-transform: rotate(360deg) scale(0.5);
-	      -ms-transform: rotate(360deg) scale(0.5);
-	          transform: rotate(360deg) scale(0.5); 
 	width: 50%;
 }
 
