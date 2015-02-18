@@ -220,6 +220,7 @@ a:hover {
 }
 
 #imgContent a {
+	text-align: center;
 	float: left;
 	width: 200px;
 	height: 200px;
@@ -228,6 +229,8 @@ a:hover {
 
 #imgContent img { 
 	border: 10px solid #fff;
+	margin-left: auto;
+	margin-right: auto;
 	vertical-align: middle;
 	overflow: hidden;
 	-webkit-box-shadow: 5px 5px 5px #111;
