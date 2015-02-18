@@ -219,12 +219,7 @@ a:hover {
 	z-index: 10;
 }
 
-#imgContent img { 
-	-webkit-transition: all 0.5s ease;
-	   -moz-transition: all 0.5s ease;
-	     -o-transition: all 0.5s ease;
-	    -ms-transition: all 0.5s ease;
-	        transition: all 0.5s ease;
+#imgContent img {
 	border: 10px solid #fff;
 	float: left;
 	overflow: hidden;
@@ -242,6 +237,7 @@ a:hover {
 
 input[type=checkbox]:checked ~ img {
 	border-radius: 50%;
+	width: 50%;
 	  -webkit-transform: rotate(360deg) scale(0.5);
 	     -moz-transform: rotate(360deg) scale(0.5);
 	       -o-transform: rotate(360deg) scale(0.5);
