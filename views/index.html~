@@ -129,8 +129,8 @@
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-			<input type="checkbox"/>
-			<img class="rotate-this-shit" src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			<input style="src:url({{data.0.images.standard_resolution.url}})" type="checkbox"/>
+			/*<img class="rotate-this-shit" src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />*/
 		</a>
 	</script>
 
