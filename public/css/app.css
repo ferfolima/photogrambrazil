@@ -220,11 +220,11 @@ a:hover {
 }
 
 #imgContent img { 
-	-webkit-transition: all 0.5s ease;
-	   -moz-transition: all 0.5s ease;
-	     -o-transition: all 0.5s ease;
-	    -ms-transition: all 0.5s ease;
-	        transition: all 0.5s ease;
+	-webkit-transition-duration: 0.5s;
+	   -moz-transition-duration: 0.5s;
+	     -o-transition-duration: 0.5s;
+	    -ms-transition-duration: 0.5s;
+	        transition-duration: 0.5s;
 	border: 10px solid #fff;
 	float: left;
 	overflow: hidden;
@@ -240,12 +240,7 @@ a:hover {
 	padding: 0.25% 0.25% 0.25% 0.25%;
 }
 
-
-#imgContent img {
-	display: inline-block;
-}
-
-#imgContent input[type=checkbox]:checked ~ img {
+input[type=checkbox]:checked ~ img {
 	border-radius: 50%;
 	  -webkit-transform: rotate(360deg) scale(0.5);
 	     -moz-transform: rotate(360deg) scale(0.5);
@@ -254,11 +249,10 @@ a:hover {
 	          transform: rotate(360deg) scale(0.5); 
 }
 
-#imgContent input[type=checkbox]{
+input[type=checkbox]{
 	position: absolute;
 	width: 200px;
 	height: 200px;
-	opacity: 0.05;
 	z-index: 40;
 }
 
