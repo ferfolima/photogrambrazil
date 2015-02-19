@@ -14,12 +14,18 @@
 		#slideShowImages img { /* The following CSS rules are optional. */
 			border: 0.8em black solid;
 			padding: 3px;
+		}
+		.center {
+		    margin-left: auto;
+		    margin-right: auto;
+		    width: 70%;
+		    background-color: #b0e0e6;
 		}	 
 	</style>
 </head>
 
 <body>
-	<div id="slideShowImages" align="center">
+	<div id="slideShowImages" class="center">
 		<!--<script id="slideShow-tpl" type="text/x-handlebars-template">
 			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
 				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
