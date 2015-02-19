@@ -1,4 +1,9 @@
-﻿window.addEventListener('click', slideShow, false);
+﻿if(window.hasEventListener('change', slideShow)){
+	window.removeEventListener('change', slideShow);
+}
+else{
+	window.addEventListener('click', slideShow, false);
+}
 
 function slideShow() {
   
