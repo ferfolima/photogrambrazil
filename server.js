@@ -9,13 +9,6 @@ var request = ('request');
 var intervalID;
 
 /**
- * Set the paths for your files
- * @type {[string]}
- */
-var pub = __dirname + '/public',
-    view = __dirname + '/views';
-
-/**
  * Set the 'client ID' and the 'client secret' to use on Instagram
  * @type {String}
  */
@@ -62,9 +55,22 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(pub));
-    app.use(express.static(view));
-    app.use(express.errorHandler())
+    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, 'views')));
+    app.use(express.errorHandler());
+    app.use('/subscribe', express());
+});
+
+
+/**
+ * Render your index/view "my choice was not use jade"
+ */
+app.get("/views", function(req, res){
+    res.render("index");
+});
+
+app.get("/slideshow", function(req, res){
+    res.render("slideshow");
 });
 
 // check subscriptions
