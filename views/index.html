@@ -33,10 +33,10 @@
         function OnChangeCheckbox (checkbox) {
             if (checkbox.checked) {
                 //alert ("The check box is checked.");
-                io.sockets.emit ("?Insert=" + checkbox.value);
+                socket.emit ('InsertPic', {id: checkbox.value});
             }
             else {
-                io.sockets.emit ("?Remove=" + checkbox.value);
+                alert ("?Remove=" + checkbox.value);
             }
         }
     </script>
@@ -71,10 +71,12 @@
 			<p class="desc"> <strong class="Hfwb">Test-gram</strong> ira pedir fotos para o instagram e esperar a resposta, procurando por fotos e post que tenham a hashtag desejada. </p>
 
 			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
-			<center><form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
-			<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
-			<input type="submit" name="submit" value="Assinar">
-			</form></center>
+			<center>
+				<form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
+					<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
+					<input type="submit" name="submit" value="Assinar">
+				</form>
+			</center>
 		</div>
 	</div>
 
@@ -111,23 +113,23 @@
 	<!--********************************
 	IMAGE WRAPPER - content
 	*********************************-->
-	<div id="imgContent" class="Hcf">
-		<script id="firstShow-tpl" type="text/x-handlebars-template">
-		{{#each firstShow}}
-			<a title="@{{user.username}}: {{caption.text}}">
-				<input type="checkbox" onclick="OnChangeCheckbox (this)"/>
-				<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
-			</a>
-		{{/each}}
-		</script>
-		<script id="mostRecent-tpl" type="text/x-handlebars-template">
-			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-				<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
-				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
-			</a>
-		</script>
-	</div>
+	<div id="imgContent" class="Hcf"></div>
 
+
+	<script id="firstShow-tpl" type="text/x-handlebars-template">
+	{{#each firstShow}}
+		<a title="@{{user.username}}: {{caption.text}}">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)"/>
+			<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+		</a>
+	{{/each}}
+	</script>
+	<script id="mostRecent-tpl" type="text/x-handlebars-template">
+		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
+			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+		</a>
+	</script>	
 	<!--********************************
 	FOOTER
 	*********************************-->
