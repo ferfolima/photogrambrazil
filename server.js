@@ -144,9 +144,9 @@ app.post('/callback', function(req, res) {
     res.end();
 });
 
-app.post('/include', function(req, res){
+app.post('/insert', function(req, res){
     var data = req.body;
-    io.sockets.emit('include', { include: data });
+    io.sockets.emit('insert', { include: data });
     res.end();
 });
 /**

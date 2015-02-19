@@ -35,8 +35,8 @@
                 //alert ("The check box is checked.");
                 $.ajax({  
 			         type: "POST",  
-			         url: "http://test-gram.herokuapp.com/InsertPic",  
-			         data: "pic=" + checkbox.value,  
+			         url: "http://test-gram.herokuapp.com/insert",  
+			         data: "insert=" + checkbox.value,  
 			         success: function(response){  
 			             $('#info').html("OK! Data Sent with Response:" + response);  
 			         },  
