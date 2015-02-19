@@ -65,7 +65,7 @@ app.configure(function(){
     app.use(express.static(pub));
     app.use(express.static(view));
     app.use(express.errorHandler());
-    app.set('view engine', 'jade');
+    app.set('view engine', 'ejs');
     app.use('/subscribe', express());
 });
 
@@ -74,7 +74,7 @@ app.configure(function(){
  * Render your index/view "my choice was not use jade"
  */
 app.get("/views", function(req, res){
-    res.render("index");
+    res.render("index.html");
 });
 
 app.get("/slideshow", function(req, res){
