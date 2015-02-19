@@ -27,8 +27,7 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
                     imgWrap = $('#slideShowImages');
-                    console.log("==========query========== " + query);
-                    console.log("==========result========== " + result);
+                    console.log("==========data========== " + data.insert.value);
 
                 imgWrap.prepend(result);
             });
