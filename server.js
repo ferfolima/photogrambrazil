@@ -149,6 +149,12 @@ app.post('/insert', function(req, res){
     io.sockets.emit('insert', { include: data });
     res.end();
 });
+
+app.post('/remove', function(req, res){
+    var data = req.body;
+    io.sockets.emit('remove', { include: data });
+    res.end();
+});
 /**
  * Send the url with the hashtag to the client side
  * to do the ajax call based on the url
