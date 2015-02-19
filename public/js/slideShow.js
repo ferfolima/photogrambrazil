@@ -23,20 +23,6 @@ function slideShow() {
   
   initializeGlobals();  
   
-  //if ( insufficientSlideShowMarkup() ) {
-  //  return; // Insufficient slide show markup - exit now.
-  //}
- 
-   // Assert: there's at least one slide image.
- 
-  if (globals.slideImages.length <= 1) {
-    return; // The solo slide image is already being displayed - exit now.
-  }
-  
-  // Assert: there's at least two slide images.
-  
-  initializeSlideShowMarkup();
-  
   globals.wrapperObject.addEventListener('click', toggleSlideShow, false); // If the user clicks a slide show image, it toggles the slide show on and off.
   
   if (globals.buttonObject) {
@@ -44,6 +30,21 @@ function slideShow() {
   } 
 
   globals.wrapperObject.addEventListener('change', initializeGlobals, false);
+
+  //if ( insufficientSlideShowMarkup() ) {
+  //  return; // Insufficient slide show markup - exit now.
+  //}
+ 
+   // Assert: there's at least one slide image.
+ 
+  //if (globals.slideImages.length <= 1) {
+  //  return; // The solo slide image is already being displayed - exit now.
+  //}
+  
+  // Assert: there's at least two slide images.
+  
+  initializeSlideShowMarkup();
+  
   
   startSlideShow();
   
