@@ -68,18 +68,6 @@ app.configure(function(){
     app.use('/subscribe', express());
 });
 
-
-/**
- * Render your index/view "my choice was not use jade"
- */
-app.get("/views", function(req, res){
-    res.render("slideshow");
-});
-
-app.get("/slideshow", function(req, res){
-    res.render("slideshow");
-});
-
 // check subscriptions
 // https://api.instagram.com/v1/subscriptions?client_secret=YOUR_CLIENT_ID&client_id=YOUR_CLIENT_SECRET
 
