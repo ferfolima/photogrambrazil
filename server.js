@@ -9,6 +9,13 @@ var request = ('request');
 var intervalID;
 
 /**
+ * Set the paths for your files
+ * @type {[string]}
+ */
+var pub = __dirname + '/public',
+    view = __dirname + '/views';
+
+/**
  * Set the 'client ID' and the 'client secret' to use on Instagram
  * @type {String}
  */
@@ -55,9 +62,10 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.use(express.static(path.join(__dirname, 'views')));
+    app.use(express.static(pub));
+    app.use(express.static(view));
     app.use(express.errorHandler());
+    app.set('view engine', 'jade');
     app.use('/subscribe', express());
 });
 
