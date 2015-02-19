@@ -32,7 +32,8 @@
 	<script type="text/javascript">
         function OnChangeCheckbox (checkbox) {
             if (checkbox.checked) {
-                alert ("The check box is checked.");
+                //alert ("The check box is checked.");
+                alert (document.getElementById("mycheck").value);
             }
             else {
                 alert ("The check box is not checked.");
@@ -121,7 +122,7 @@
 		</script>
 		<script id="mostRecent-tpl" type="text/x-handlebars-template">
 			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-				<input type="checkbox" onclick="OnChangeCheckbox (this)"/>
+				<input type="checkbox" id="mycheck" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
 				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 			</a>
 		</script>
