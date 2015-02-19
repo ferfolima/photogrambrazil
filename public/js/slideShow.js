@@ -1,4 +1,4 @@
-﻿window.addEventListener('SubtreeModified', slideShow, false);
+﻿window.addEventListener('focus', slideShow, false);
 
 function slideShow() {
   
