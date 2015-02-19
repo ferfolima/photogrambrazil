@@ -73,7 +73,7 @@ app.configure(function(){
  * Render your index/view "my choice was not use jade"
  */
 app.get("/views", function(req, res){
-    res.render("index");
+    res.render("slideshow");
 });
 
 app.get("/slideshow", function(req, res){
