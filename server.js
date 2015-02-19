@@ -146,13 +146,13 @@ app.post('/callback', function(req, res) {
 
 app.post('/insert', function(req, res){
     var data = req.body;
-    io.sockets.emit('insert', { insert: data });
+    io.sockets.emit('insert', data);
     res.end();
 });
 
 app.post('/remove', function(req, res){
     var data = req.body;
-    io.sockets.emit('remove', { remove: data });
+    io.sockets.emit('remove', data);
     res.end();
 });
 /**
