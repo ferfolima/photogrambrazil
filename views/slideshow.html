@@ -4,6 +4,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- For intranet testing only, remove in production. -->
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<link href="/css/js-image-slider.css" rel="stylesheet" type="text/css" />
 	<title>Slide Show</title>
 	<style>
 		#slideShowImages { /* The following CSS rules are optional. */
@@ -31,10 +32,10 @@
 	<div id="slideShowImages" class="center">
 	</div>
 	<script id="slideShow-tpl" type="text/x-handlebars-template">
-			<img src="{{insert}}" alt="{{insert}}" />
+			<a class="LazyImage" href="{{insert}}" title="{{insert}}" />
 	</script>
 </body>
 <script src="/js/slideShowImg.js"></script>
-<script src="/js/slideShow.js"></script>
+<script src="/js/js-image-slider.js"></script>
 
 </html>
