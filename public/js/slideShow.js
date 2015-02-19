@@ -29,7 +29,7 @@ function slideShow() {
  
    // Assert: there's at least one slide image.
  
-  if (globals.slideImages.length == 1) {
+  if (globals.slideImages.length >= 1) {
     return; // The solo slide image is already being displayed - exit now.
   }
   
