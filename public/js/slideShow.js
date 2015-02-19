@@ -29,7 +29,7 @@ function slideShow() {
     globals.buttonObject.addEventListener('click', toggleSlideShow, false); // This callback is used to toggle the slide show on and off.
   } 
 
-  globals.wrapperObject.addEventListener('change', initializeGlobals, false);
+  globals.wrapperObject.addEventListener('change', startOver, false);
 
   if ( insufficientSlideShowMarkup() ) {
     return; // Insufficient slide show markup - exit now.
@@ -48,6 +48,12 @@ function slideShow() {
   startSlideShow();
   
   /* FUNCTIONS ********************************************************************************************/
+
+  function startOver() {
+  	initializeGlobals();
+  	initializeSlideShowMarkup();
+  	startSlideShow();
+  }
   
   function initializeGlobals() {   
     globals.wrapperObject = (document.getElementById(globals.wrapperID) ? document.getElementById(globals.wrapperID) : null);
