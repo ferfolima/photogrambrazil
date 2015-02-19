@@ -9,6 +9,13 @@ var request = ('request');
 var intervalID;
 
 /**
+ * Set the paths for your files
+ * @type {[string]}
+ */
+var pub = __dirname + '/public',
+    view = __dirname + '/views';
+
+/**
  * Set the 'client ID' and the 'client secret' to use on Instagram
  * @type {String}
  */
@@ -52,13 +59,13 @@ io.configure(function () {
  * Set your app main configuration
  */
 app.configure(function(){
-    app.set('views', __dirname + '/views');
-    app.set('public', __dirname + '/public');
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
+    app.use(express.static(pub));
+    app.use(express.static(view));
     app.use(express.errorHandler());
-    app.set('view engine', 'html');
+    app.use('/subscribe', express());
 });
 
 
@@ -70,7 +77,7 @@ app.get("/views", function(req, res){
 });
 
 app.get("/slideshow", function(req, res){
-    res.render("slideshow.html");
+    res.render("slideshow");
 });
 
 // check subscriptions
