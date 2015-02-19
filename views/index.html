@@ -33,6 +33,7 @@
         function OnChangeCheckbox (checkbox) {
             if (checkbox.checked) {
                 //alert ("The check box is checked.");
+                var socket = io.connect('http://test-gram.herokuapp.com');
                 socket.emit ('InsertPic', {id: checkbox.value});
             }
             else {
