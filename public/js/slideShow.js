@@ -3,7 +3,6 @@
 function slideShow() {
   
   /* GLOBALS **********************************************************************************************/
-  var socket = io.connect('http://test-gram.herokuapp.com');
   var globals = {
     slideDelay: 4000, // The time interval between consecutive slides.
     fadeDelay: 35, // The time interval between individual opacity changes. This should always be much smaller than slideDelay.  
@@ -44,41 +43,7 @@ function slideShow() {
   } 
   getData();
   startSlideShow();
-  
 
-
-/**
-* [get data ajax and send to render method]
-*/
-  getData: function() {
-    var self = this;
-    socket.on('show', function(data) {
-      var url = data.show;
-      $.ajax({
-        url: url,
-        type: 'POST',
-        crossDomain: true,
-        dataType: 'jsonp'
-      }).done(function (data) {
-        self.renderTemplate(data);
-      }); 
-    });
-  },
-
-/**
-* [Render the images on the page and check for layout resize]
-*/
-  renderTemplate: function(data) {
-    var clean = $('slideShowImages').find('a').remove();
-    var
-      query = data,
-      source = $('#slideShow-tpl').html(),
-      compiledTemplate = Handlebars.compile(source),
-      result = compiledTemplate(query),
-      imgWrap = $('#slideShowImages');
-
-    imgWrap.prepend(result);
-  },
   /* FUNCTIONS ********************************************************************************************/
   
   function initializeGlobals() {   
