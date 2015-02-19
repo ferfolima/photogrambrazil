@@ -31,10 +31,20 @@
 
 	<script type="text/javascript">
         function OnChangeCheckbox (checkbox) {
-        	var socket = io.connect('http://test-gram.herokuapp.com:3700');
             if (checkbox.checked) {
                 //alert ("The check box is checked.");
-                socket.emit ('InsertPic', {id: checkbox.value});
+                $.ajax({  
+			         type: "POST",  
+			         url: "http://test-gram.herokuapp.com/InsertPic",  
+			         data: "pic=" + checkbox.value,  
+			         success: function(response){  
+			             $('#info').html("OK! Data Sent with Response:" + response);  
+			         },  
+			         error: function(e){  
+			             $('#info').html("OH NOES! Data not sent with Error:" + e);
+			         }  
+			     });
+                //socket.emit ('InsertPic', {id: checkbox.value});
             }
             else {
                 socket.emit ("RemovePic", {id: checkbox.value});

@@ -143,6 +143,12 @@ app.post('/callback', function(req, res) {
     });
     res.end();
 });
+
+app.post('/include', function(req, res){
+    var data = req.body;
+    io.sockets.emit('include', { include: data });
+    res.end();
+});
 /**
  * Send the url with the hashtag to the client side
  * to do the ajax call based on the url
