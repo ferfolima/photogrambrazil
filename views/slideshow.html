@@ -27,12 +27,10 @@
 <body>
 	<div id="slideShowImages" class="center">
 		<script id="slideShow-tpl" type="text/x-handlebars-template">
-			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
-			</a>
+			<img src="{{data}}" alt="" />
 		</script>
 	</div>
-	<script src="/js/slideShow.js"></script>
 </body>
+<script src="/js/slideShow.js"></script>
 
 </html>
