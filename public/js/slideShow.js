@@ -3,6 +3,7 @@
 function slideShow() {
   
   /* GLOBALS **********************************************************************************************/
+  
   var globals = {
     slideDelay: 4000, // The time interval between consecutive slides.
     fadeDelay: 35, // The time interval between individual opacity changes. This should always be much smaller than slideDelay.  
@@ -41,9 +42,9 @@ function slideShow() {
   if (globals.buttonObject) {
     globals.buttonObject.addEventListener('click', toggleSlideShow, false); // This callback is used to toggle the slide show on and off.
   } 
-  getData();
+  
   startSlideShow();
-
+  
   /* FUNCTIONS ********************************************************************************************/
   
   function initializeGlobals() {   
