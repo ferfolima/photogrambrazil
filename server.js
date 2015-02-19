@@ -144,6 +144,15 @@ app.post('/callback', function(req, res) {
     res.end();
 });
 
+function OnChangeCheckbox (checkbox) {
+    if (checkbox.checked) {
+        //alert ("The check box is checked.");
+        alert ("?Insert=" + checkbox.value);
+    }
+    else {
+        alert ("?Remove=" + checkbox.value);
+    }
+}
 /**
  * Send the url with the hashtag to the client side
  * to do the ajax call based on the url
