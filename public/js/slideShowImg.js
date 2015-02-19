@@ -29,6 +29,8 @@
                     imgWrap = $('#slider');
 
                 imgWrap.prepend(result);
+
+                populateSlider();
             });
         }
 
