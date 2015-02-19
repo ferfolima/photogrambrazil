@@ -30,7 +30,7 @@
 
                 imgWrap.prepend(result);
             });
-        },
+        }
 
     };
 
