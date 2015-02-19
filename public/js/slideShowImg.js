@@ -22,7 +22,7 @@
             socket.on('insert', function (data) {
                 var clean = $('slideShowImages').find('img').remove();
                 var
-                    query = data.insert.value,
+                    query = data,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
