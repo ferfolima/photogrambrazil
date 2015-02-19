@@ -1,4 +1,4 @@
-﻿window.addEventListener('load', slideShow, false);
+﻿window.addEventListener('click', slideShow, false);
 
 function slideShow() {
   
