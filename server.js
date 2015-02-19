@@ -65,6 +65,7 @@ app.configure(function(){
     app.use(express.static(pub));
     app.use(express.static(view));
     app.use(express.errorHandler());
+    app.set('view engine', 'jade');
     app.use('/subscribe', express());
 });
 
