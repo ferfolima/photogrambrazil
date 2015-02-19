@@ -32,10 +32,10 @@
 	<script type="text/javascript">
         function OnChangeCheckbox (checkbox, data) {
             if (checkbox.checked) {
-                alert (data);
+                alert ("The check box is checked.");
             }
             else {
-                alert (data);
+                alert ("The check box is not checked.");
             }
         }
     </script>
@@ -114,7 +114,7 @@
 		<script id="firstShow-tpl" type="text/x-handlebars-template">
 		{{#each firstShow}}
 			<a title="@{{user.username}}: {{caption.text}}">
-				<input type="checkbox" onclick="OnChangeCheckbox (this, data)"/>
+				<input type="checkbox" onclick="OnChangeCheckbox (this, firstShow)"/>
 				<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 			</a>
 		{{/each}}
