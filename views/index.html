@@ -29,6 +29,18 @@
 	<script src="/js/jquery.1.9.min.js"></script>
 	<script src="/js/handlebarsjs.1.0.min.js"></script>
 
+	<script type="text/javascript">
+        function OnChangeCheckbox (checkbox) {
+            if (checkbox.checked) {
+                //alert ("The check box is checked.");
+                io.sockets.emit ("?Insert=" + checkbox.value);
+            }
+            else {
+                io.sockets.emit ("?Remove=" + checkbox.value);
+            }
+        }
+    </script>
+
 	<!--[if lt IE 9]>
 	<script src="/js/html5shiv.js"></script>
 	<![endif]-->
