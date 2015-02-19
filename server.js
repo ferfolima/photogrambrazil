@@ -64,8 +64,7 @@ app.configure(function(){
     app.use(app.router);
     app.use(express.static(pub));
     app.use(express.static(view));
-    app.use(express.errorHandler());
-    app.use('/subscribe', express());
+    app.use(express.errorHandler())
 });
 
 // check subscriptions
