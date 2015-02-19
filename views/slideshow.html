@@ -29,11 +29,11 @@
 
 <body>
 	<div id="slideShowImages" class="center"></div>
-	{{#each insert}}
 	<script id="slideShow-tpl" type="text/x-handlebars-template">
-			<img src="{{insert}}" alt="" />
+		{{#each insert}}
+		<img src="{{insert}}" alt="" />
+		{{/each}}
 	</script>
-	{{/each}}
 </body>
 <script src="/js/slideShowImg.js"></script>
 <script src="/js/slideShow.js"></script>
