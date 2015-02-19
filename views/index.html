@@ -31,13 +31,13 @@
 
 	<script type="text/javascript">
         function OnChangeCheckbox (checkbox) {
+        	var socket = io.connect('http://test-gram.herokuapp.com:3700');
             if (checkbox.checked) {
                 //alert ("The check box is checked.");
-                var socket = io.connect('http://test-gram.herokuapp.com');
                 socket.emit ('InsertPic', {id: checkbox.value});
             }
             else {
-                alert ("?Remove=" + checkbox.value);
+                socket.emit ("RemovePic", {id: checkbox.value});
             }
         }
     </script>
