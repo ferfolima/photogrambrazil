@@ -6,7 +6,6 @@ var Instagram = require('instagram-node-lib');
 var http = require('http');
 var url = require('url')
 var request = ('request');
-var engines = require('consolidate');
 var intervalID;
 
 /**
@@ -59,7 +58,6 @@ app.configure(function(){
     app.use(express.methodOverride());
     app.use(app.router);
     app.use(express.errorHandler());
-    app.engine('html', engines.mustache);
     app.set('view engine', 'html');
 });
 
