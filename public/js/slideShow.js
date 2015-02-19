@@ -23,9 +23,9 @@ function slideShow() {
   
   initializeGlobals();  
   
-  if ( insufficientSlideShowMarkup() ) {
-    return; // Insufficient slide show markup - exit now.
-  }
+  //if ( insufficientSlideShowMarkup() ) {
+  //  return; // Insufficient slide show markup - exit now.
+  //}
  
    // Assert: there's at least one slide image.
  
