@@ -30,7 +30,7 @@
 	<script src="/js/handlebarsjs.1.0.min.js"></script>
 
 	<script type="text/javascript">
-        function OnChangeCheckbox (checkbox, data) {
+        function OnChangeCheckbox (checkbox) {
             if (checkbox.checked) {
                 alert ("The check box is checked.");
             }
@@ -114,14 +114,14 @@
 		<script id="firstShow-tpl" type="text/x-handlebars-template">
 		{{#each firstShow}}
 			<a title="@{{user.username}}: {{caption.text}}">
-				<input type="checkbox" onclick="OnChangeCheckbox (this, firstShow)"/>
+				<input type="checkbox" onclick="OnChangeCheckbox (this)"/>
 				<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 			</a>
 		{{/each}}
 		</script>
 		<script id="mostRecent-tpl" type="text/x-handlebars-template">
 			<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-				<input type="checkbox" onclick="OnChangeCheckbox (this, data)"/>
+				<input type="checkbox" onclick="OnChangeCheckbox (this)"/>
 				<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 			</a>
 		</script>
