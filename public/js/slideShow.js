@@ -1,4 +1,4 @@
-﻿window.addEventListener('focus', slideShow, false);
+﻿window.addEventListener('load', slideShow, false);
 
 function slideShow() {
   
@@ -42,6 +42,8 @@ function slideShow() {
   if (globals.buttonObject) {
     globals.buttonObject.addEventListener('click', toggleSlideShow, false); // This callback is used to toggle the slide show on and off.
   } 
+
+  globals.wrapperObject.addEventListener('change', initializeGlobals, false);
   
   startSlideShow();
   
