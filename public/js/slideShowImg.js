@@ -20,13 +20,13 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                var clean = $('sliderFrame').find('a').remove();
+                //var clean = $('sliderFrame').find('a').remove();
                 var
                     query = data,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
-                    imgWrap = $('#sliderFrame');
+                    imgWrap = $('#slider');
 
                 imgWrap.append(result);
 
