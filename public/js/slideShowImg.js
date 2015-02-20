@@ -11,6 +11,7 @@
         /**
          * [Application initialization method / call for the methods being initializated in order]
          */
+        var i = 0;
         init: function() {
             this.mostRecent();
         },
@@ -30,7 +31,8 @@
 
                 imgWrap.prepend(result);
 
-                populateSlider(result);
+                populateSlider(result, i);
+                i = i + 1;
             });
         }
 
