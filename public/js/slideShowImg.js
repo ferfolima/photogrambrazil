@@ -5,7 +5,7 @@
      * [Namespacing]
      */
     var Insta = Insta || {};
-    
+    var i;
     Insta.App = {
 
         /**
@@ -13,6 +13,7 @@
          */
         init: function() {
             this.mostRecent();
+            this.i = 0;
         },
 
         /**
@@ -28,9 +29,13 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#sliderFrame');
 
-                imgWrap.html(result);
-
-                populateSlider();
+                imgWrap.append(result);
+                this.i = this.i + 1;
+                if(this.i == 5){
+                    populateSlider();
+                    this.i = 0;
+                    imgWrap.empty();
+                }
             });
         }
 
