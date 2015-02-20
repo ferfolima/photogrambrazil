@@ -30,7 +30,7 @@
 
                 imgWrap.append(result);
 
-                //populateSlider();
+                populateSlider();
             });
         }
 
