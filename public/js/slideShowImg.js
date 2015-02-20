@@ -28,7 +28,7 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#slider');
 
-                imgWrap.append(result);
+                imgWrap.prepend(result);
 
                 populateSlider();
             });
