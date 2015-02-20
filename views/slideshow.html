@@ -13,24 +13,9 @@
     <script src="/js/slideShowImg.js"></script>
 
 	<script type="text/javascript">
-		var mcSlides = [];
-		function getSlides() {
-			if (mcSlides.length == 0) {
-		        var slider = document.getElementById("slider");
-		        var children = slider.childNodes;
-		        var j = 0;
-		        for (var i = 0; i < children.length; i++) {
-		            //assume slider's immediate children are all <img>, no <a>
-		            if (children[i].tagName == "IMG")
-		            	j = j + 1;
-		                
-		        }
-		        return j;
-		    }
-		    return mcSlides.length;
-		}
         function populateSlider() {
-            imageSlider.displaySlide(getSlides(), true, true);
+        	imageSlider.reload();
+            imageSlider.displaySlide(0, true, true);
         }
     </script>
 
