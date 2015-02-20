@@ -18,7 +18,7 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                //var clean = $('sliderFrame').find('a').remove();
+                var clean = $('sliderFrame').find('slide').remove();
                 var
                     query = data,
                     source = $('#slideShow-tpl').html(),
