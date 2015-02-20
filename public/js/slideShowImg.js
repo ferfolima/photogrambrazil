@@ -31,7 +31,7 @@
 
                 imgWrap.prepend(result);
 
-                populateSlider(result, i);
+                populateSlider();
                 i = i + 1;
             });
         }
