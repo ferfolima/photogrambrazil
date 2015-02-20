@@ -15,7 +15,7 @@
 	<script type="text/javascript">
         function populateSlider() {
             //Note: If the slider container has been set as invisible(e.g. display:none;), make sure set it visible before reload the imageSlider
-            imageSlider.reload();
+            //imageSlider.reload();
         }
     </script>
 
@@ -43,7 +43,7 @@
 <body>
 	<div id="sliderFrame"><div id="slider"></div></div>
 	<script id="slideShow-tpl" type="text/x-handlebars-template">
-		<img src="{{insert}}" alt="{{insert}}" />
+		<img src="{{insert}}" alt="{{insert}}" style="display:none;">
 	</script>
 	<script src="/js/js-image-slider.js" type="text/javascript"></script>
 </body>
