@@ -7,7 +7,6 @@
     var Insta = Insta || {};
     
     Insta.App = {
-        var i;
         /**
          * [Application initialization method / call for the methods being initializated in order]
          */
