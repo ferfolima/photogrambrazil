@@ -1,6 +1,6 @@
 var sliderOptions = {
     sliderId: "slider",
-    startSlide: "shuffle",
+    startSlide: "random",
     effect: "13",
     effectRandom: false,
     pauseTime: 1800,
