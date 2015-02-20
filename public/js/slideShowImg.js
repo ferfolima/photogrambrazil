@@ -7,12 +7,13 @@
     var Insta = Insta || {};
     
     Insta.App = {
-
+        var i;
         /**
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
             this.mostRecent();
+            this.i = 0;
         },
 
         /**
@@ -28,9 +29,13 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#sliderFrame');
 
-                imgWrap.html(result);
-
-                populateSlider();
+                imgWrap.append(result);
+                i = i + 1;
+                if(i == 5){
+                    populateSlider();
+                    i = 0;
+                    imgWrap.clear();
+                }
             });
         }
 
