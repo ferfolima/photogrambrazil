@@ -8,7 +8,8 @@
 {
     position:relative;
     width:640px;
-    top:100px;
+    top:80px;
+    bottom:80px;
     margin: 0 auto; /*center-aligned*/
 }
 
