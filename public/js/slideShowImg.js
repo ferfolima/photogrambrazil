@@ -5,7 +5,9 @@
      * [Namespacing]
      */
     var Insta = Insta || {};
+    
     Insta.App = {
+
         /**
          * [Application initialization method / call for the methods being initializated in order]
          */
@@ -18,7 +20,7 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                var clean = $('sliderFrame').find('slide').remove();
+                var clean = $('sliderFrame').find('a').remove();
                 var
                     query = data,
                     source = $('#slideShow-tpl').html(),
@@ -26,7 +28,8 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#sliderFrame');
 
-                imgWrap.append(result);
+                imgWrap.html(result);
+
                 populateSlider();
             });
         }
