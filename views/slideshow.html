@@ -18,18 +18,19 @@
 			if (mcSlides.length == 0) {
 		        var slider = document.getElementById("slider");
 		        var children = slider.childNodes;
+		        var j = 0;
 		        for (var i = 0; i < children.length; i++) {
 		            //assume slider's immediate children are all <img>, no <a>
 		            if (children[i].tagName == "IMG")
-		                mcSlides.push(children[i]);
+		            	j = j + 1;
+		                
 		        }
+		        return j;
 		    }
+		    return mcSlides.length;
 		}
         function populateSlider() {
-            //Note: If the slider container has been set as invisible(e.g. display:none;), make sure set it visible before reload the imageSlider
-            //imageSlider.reload();
-            getSlides();
-            imageSlider.displaySlide(2, true, true);
+            imageSlider.displaySlide(getSlides(), true, true);
         }
     </script>
 
