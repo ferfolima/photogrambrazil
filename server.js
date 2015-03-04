@@ -122,6 +122,15 @@ app.get('/subscribe', function(req, res) {
 
 app.get('/unsubscribe', function(req, res) {
     var self = this;
+    //var tagid, parsedRequest;
+    //parsedRequest = url.parse(req.url, true);
+    //if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
+    //    tagid = parsedRequest['query']['hub.tagid'];
+    //    Instagram.subscriptions.unsubscribe({ id: tagid });
+    //}
+    //res.redirect('http://test-gram.herokuapp.com');
+    //return res.end();
+    //console.log("\n\n\n" + self.tagid + "\n\n\n");
     Instagram.subscriptions.unsubscribe({
         object: 'tag',
         id: self.tagid
@@ -140,6 +149,7 @@ app.post('/callback', function(req, res) {
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
       self.tagid = tag.id;
+      console.log("\n" + tag.id);
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
       sendMessage(url);
 
