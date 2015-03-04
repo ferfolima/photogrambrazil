@@ -22,6 +22,7 @@ var pub = __dirname + '/public',
 var clientID = '159e54fed6354cacae99784052811c29',
     clientSecret = '39169f06d11a46798ce098db118c5aa7';
     hashtag = '';
+    tagid = '';
 
 /**
  * Set the configuration
@@ -119,12 +120,15 @@ app.get('/subscribe', function(req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
-    var tagid, parsedRequest;
-    parsedRequest = url.parse(req.url, true);
-    if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
-        tagid = parsedRequest['query']['hub.tagid'];
-        Instagram.subscriptions.unsubscribe({ id: tagid });
-    }
+    //var tagid, parsedRequest;
+    //parsedRequest = url.parse(req.url, true);
+    //if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
+    //    tagid = parsedRequest['query']['hub.tagid'];
+    //    Instagram.subscriptions.unsubscribe({ id: tagid });
+    //}
+    //res.redirect('http://test-gram.herokuapp.com');
+    //return res.end();
+    Instagram.subscriptions.unsubscribe({ id: tagid });
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
 });
@@ -137,6 +141,7 @@ app.post('/callback', function(req, res) {
     // Grab the hashtag "tag.object_id"
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
+      tagid = tag.id;
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id='+clientID;
       sendMessage(url);
 
