@@ -149,7 +149,7 @@ app.post('/callback', function(req, res) {
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
       self.tagid = tag.id;
-      console.log("\n" + tag.id);
+      console.log("\n" + tag);
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
       sendMessage(url);
 
