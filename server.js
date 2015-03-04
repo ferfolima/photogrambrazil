@@ -22,7 +22,7 @@ var pub = __dirname + '/public',
 var clientID = '159e54fed6354cacae99784052811c29',
     clientSecret = '39169f06d11a46798ce098db118c5aa7',
     hashtag = '',
-    tagid = ';
+    tagid = '';
 
 /**
  * Set the configuration
