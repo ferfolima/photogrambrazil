@@ -20,8 +20,8 @@ var pub = __dirname + '/public',
  * @type {String}
  */
 var clientID = '159e54fed6354cacae99784052811c29',
-    clientSecret = '39169f06d11a46798ce098db118c5aa7';
-    hashtag;
+    clientSecret = '39169f06d11a46798ce098db118c5aa7',
+    hashtag,
     tagid;
 
 /**
@@ -99,7 +99,7 @@ app.get('/subscribe', function(req, res) {
         this.hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.subscribe({
             object: 'tag',
-            object_id: hashtag,
+            object_id: this.hashtag,
             aspect: 'media',
             callback_url: 'http://test-gram.herokuapp.com/callback',
             type: 'subscription',
@@ -108,7 +108,7 @@ app.get('/subscribe', function(req, res) {
 
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
-                name: hashtag,
+                name: this.hashtag,
                 complete: function(data) {
                     socket.emit('firstShow', { firstShow: data });
                 }
