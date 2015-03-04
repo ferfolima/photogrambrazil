@@ -96,7 +96,7 @@ app.get('/subscribe', function(req, res) {
     var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-        hashtag = parsedRequest['query']['hub.tag'];
+        this.hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: hashtag,
@@ -141,7 +141,7 @@ app.post('/callback', function(req, res) {
     // Grab the hashtag "tag.object_id"
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
-      tagid = tag.id;
+      this.tagid = tag.id;
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id='+clientID;
       sendMessage(url);
 
