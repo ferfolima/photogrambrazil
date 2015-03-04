@@ -121,6 +121,7 @@ app.get('/subscribe', function(req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
+    var self = this;
     //var tagid, parsedRequest;
     //parsedRequest = url.parse(req.url, true);
     //if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
@@ -132,7 +133,7 @@ app.get('/unsubscribe', function(req, res) {
     console.log("\n\n\n" + this.tagid + "\n\n\n");
     Instagram.subscriptions.unsubscribe({
         object: 'tag',
-        id: tagid
+        id: self.tagid
     });
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
