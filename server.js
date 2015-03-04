@@ -130,7 +130,7 @@ app.get('/unsubscribe', function(req, res) {
     //}
     //res.redirect('http://test-gram.herokuapp.com');
     //return res.end();
-    console.log("\n\n\n" + this.tagid + "\n\n\n");
+    console.log("\n\n\n" + self.tagid + "\n\n\n");
     Instagram.subscriptions.unsubscribe({
         object: 'tag',
         id: self.tagid
