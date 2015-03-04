@@ -93,13 +93,14 @@ app.get('/callback', function(req, res){
 });
 
 app.get('/subscribe', function(req, res) {
+    var self = this;
     var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-        this.hashtag = parsedRequest['query']['hub.tag'];
+        self.hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.subscribe({
             object: 'tag',
-            object_id: this.hashtag,
+            object_id: self.hashtag,
             aspect: 'media',
             callback_url: 'http://test-gram.herokuapp.com/callback',
             type: 'subscription',
@@ -108,7 +109,7 @@ app.get('/subscribe', function(req, res) {
 
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
-                name: this.hashtag,
+                name: self.hashtag,
                 complete: function(data) {
                     socket.emit('firstShow', { firstShow: data });
                 }
@@ -131,7 +132,7 @@ app.get('/unsubscribe', function(req, res) {
     console.log("\n\n\n" + this.tagid + "\n\n\n");
     Instagram.subscriptions.unsubscribe({
         object: 'tag',
-        id: this.tagid
+        id: tagid
     });
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
@@ -140,13 +141,14 @@ app.get('/unsubscribe', function(req, res) {
  * for each new post Instagram send us the data
  */
 app.post('/callback', function(req, res) {
+    var self = this;
     var data = req.body;
 
     // Grab the hashtag "tag.object_id"
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
-      this.tagid = tag.id;
-      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id='+clientID;
+      self.tagid = tag.id;
+      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
       sendMessage(url);
 
     });
