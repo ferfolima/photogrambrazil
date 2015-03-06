@@ -38,6 +38,7 @@
                 
                 imgWrap = $('#mcts1');
                 for (var i = 0; i < imgArray.length; i++) {
+                    alert(imgArray[i]);
                     imgWrap.append(imgArray[i]);
                 }
                 query = data;
