@@ -34,7 +34,7 @@
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
-                imgWrap = $('#thumbs');
+                imgWrap = $('#mcts1');
 
                 imgWrap.append(result);
 

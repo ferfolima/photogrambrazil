@@ -2,16 +2,16 @@
 var mct1_Options =
 {
     sliderId: "mcts1",
-    direction: "horizontal",
-    scrollInterval: 1400,
-    scrollDuration: 800,
+    direction: "vertical",
+    scrollInterval: 2100,
+    scrollDuration: 600,
     hoverPause: true,
     autoAdvance: true,
     scrollByEachThumb: true,
     circular: true,
-    largeImageSlider: null,
+    largeImageSlider: imageSlider,
     inSyncWithLargeImageSlider: true,
-    license: "mylicense"
+    license: "mylicense" 
 };
 
 var thumbnailSlider = new ThumbnailSlider(mct1_Options);

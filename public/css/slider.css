@@ -4,67 +4,35 @@
 #mcts1 
 {
     box-sizing: content-box;
-    width:700px;
-    height:86px;
-    margin: 0 auto;
-    padding:36px 20px;
-    border:1px solid #dedcb4;
-    background:#f2f1ea url(loading.gif) no-repeat 50% 50%;
-    box-shadow: 0px 1px 11px #CCCCCC;
+    width:106px;/*for the vertical slider, this width is div.item's: width + 2 * borderWidth + paddingLeft + paddingRight */
+    height:300px;
+    margin-left: 40px;
+    padding:14px;
+    background: #f7f7f7 url(loading.gif) no-repeat 50% 50%;
+    border:1px solid #ddd;
+    box-shadow: 0px 1px 3px #CCCCCC;
     
     /* Do not alter the below settings*/
-    white-space:nowrap;
     position:relative;
     font-size:0px;
 }
-
 #mcts1>a, #mcts1>div, #mcts1>img {display:none;}
   
 /*-------- div.item is each thumbnail's wrapper created by the javascript ------*/
 #mcts1 div.item 
 {
+    width:100px;
     padding:2px;
-    margin-right:6px; /* this specifies the distance between each thumbnail */
+    margin: 0 0 6px 0; /* the 6px specifies the distance between each thumbnail */
     background-color:White;
-    border:1px solid #ddd;
+    border:1px solid #DDD;
     text-align:center;
-    position:relative;
+    position:relative;/*??*/
 }
 
 #mcts1 img 
 {
     border:none;
-}
-
-
-/*---------built-in navigation buttons-------*/
-#mcts1 .navPrev, #mcts1 .navNext, #mcts1 .navPlay, #mcts1 .navPause 
-{
-    width:16px; height:22px; position:absolute;  
-    background:url(navbuttons.png); 
-    display:inline-block; z-index:5; cursor:pointer;
-}
-#mcts1 .navPrev {background-position:0 -22px;top:60px;left:-40px;}
-#mcts1 .navPrev:hover {background-position:0 -44px;}
-#mcts1 .navPrevDisabled, #mcts1 .navPrevDisabled:hover {background-position:0 0;cursor:default;}
-
-#mcts1 .navNext {background-position:-16px -22px;top:60px;right:-40px;} 
-#mcts1 .navNext:hover {background-position:-16px -44px;} 
-#mcts1 .navNextDisabled, #mcts1 .navNextDisabled:hover {background-position:-16px 0; cursor:default;} 
-
-#mcts1 .navPause, #mcts1 .navPlay {left:360px;top:130px;}
-#mcts1 .navPause {background-position:0 -66px;} 
-#mcts1 .navPause:hover {background-position:0 -88px;} 
-#mcts1 .navPlay {background-position:-16px -66px;} 
-#mcts1 .navPlay:hover {background-position:-16px -88px;} 
-
-.navPrev, .navPlay, .navPause, .navNext 
-{
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   -o-user-select: none;
-   user-select: none;
 }
        
 /*---------built-in navigation bullets--------*/
@@ -74,25 +42,65 @@
     display:none;
 }
 
-/*--------- class1 that is for the slide with HTML content------------*/
-.class1 
+
+/*---------navigation buttons-------*/
+#mcts1 .navPrev, #mcts1 .navNext, #mcts1 .navPlay, #mcts1 .navPause 
 {
-    width:130px;
-    height: 80px;
-    background:#444;
-    text-align:center;
-    color:White;
-    font:normal 11px/14px Arial;
-    white-space:normal;
+    width:29px; height:29px;
+    position:absolute; top:240px;
+    background:url(navbuttons.png); 
+    display:block; z-index:5; cursor:pointer;
 }
-.class1 p
+#mcts1 .navPrev {background-position:0 -87px;left:-390px;}
+#mcts1 .navPrev:hover {background-position:-29px -87px;}
+#mcts1 .navPrevDisabled, #mcts1 .navPrevDisabled:hover {background-position:-58px -87px;cursor:default;}
+
+#mcts1 .navNext {background-position:0 -58px;left:-310px;} 
+#mcts1 .navNext:hover {background-position:-29px -58px;} 
+#mcts1 .navNextDisabled, #mcts1 .navNextDisabled:hover {background-position:-58px -58px; cursor:default;} 
+
+#mcts1 .navPause, #mcts1 .navPlay {left:-350px;}
+#mcts1 .navPause {background-position:0 0;} 
+#mcts1 .navPause:hover {background-position:-29px 0;} 
+#mcts1 .navPlay {background-position:0 -29px;} 
+#mcts1 .navPlay:hover {background-position:-29px -29px;} 
+
+.navPrev, .navPlay, .navPause, .navNext 
 {
-    margin-top:0;
-    margin-bottom:6px;
-    padding-top:6px;
-    font:bold 13px Verdana;
-    color:#F90;
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -o-user-select: none;
+   user-select: none;
 }
+
+        
+/*---------navigation bullets--------*/
+
+/* Note: When "ScrollAllInView" was set to true in the Javascript, the navBullets won't be displayed.*/
+.navBullets
+{
+    /*display:none;*/ /*set it display:none when you want to hide it*/
+	z-index:5;
+	cursor:pointer;
+	/*Specify the position of navigation buttons*/
+	position:absolute;
+	top:20px;
+	left:220px;
+	width:24px;
+}
+/*.navBullets div defines the style of each bullet*/
+.navBullets div 
+{
+    width:8px; height:8px;
+    background:transparent url(bullets.png) no-repeat 0 0;
+    float:left;overflow:hidden;vertical-align:middle;cursor:pointer;
+    margin-right:6px;/*margin-right determines the distance between each list item*/
+    _position:relative;/*IE6 hack*/
+}
+
+.navBullets div.focus {background-position:0 -8px;}
+
 
 
 /* --------- Others ------- */
@@ -101,3 +109,4 @@
     -webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
+
