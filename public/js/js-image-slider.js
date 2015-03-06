@@ -370,7 +370,7 @@ function mcImgSlider(k) {
                 b = 0
             } else if (b == "random") b = Math.floor(Math.random() * e);
             if (b) {
-                b = e;
+                b = pos;
                 a = 0;
                 while (1)
                     if (a++ == b) break;
