@@ -3,7 +3,7 @@
 #sliderFrame {position:relative;width:600px;}
 
 #slider, #slider div.sliderInner {
-    width:600px;height:228px;/* Must be the same size as the slider images */
+    width:640px;height:640px;/* Must be the same size as the slider images */
 }
 
 #slider {
