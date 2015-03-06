@@ -22,6 +22,7 @@
 #mcts1 div.item 
 {
     width:100px;
+    height:100px;
     padding:2px;
     margin: 0 0 6px 0; /* the 6px specifies the distance between each thumbnail */
     background-color:White;
