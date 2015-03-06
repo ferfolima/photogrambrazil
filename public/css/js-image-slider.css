@@ -1,4 +1,8 @@
 /* http://www.menucool.com */
+body {
+    background-color: black
+} 
+
 
 #sliderFrame, #sliderFrame div {
     box-sizing: content-box;
