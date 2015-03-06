@@ -1,34 +1,16 @@
 /* http://www.menucool.com */
-body {
-    background-color: black
-} 
 
-
-#sliderFrame, #sliderFrame div {
-    box-sizing: content-box;
-}
-
-/*slider frame*/
-#sliderFrame 
-{
-    width:600px;
-    margin:0 auto; /*center-aligned*/
-    padding:20px;
-    background:#000;
-    border:1px solid #000;
-    border-radius:6px;
-} 
+#sliderFrame {position:relative;width:600px;}
 
 #slider, #slider div.sliderInner {
-    width:600px;height:600px;/* Must be the same size as the slider images */
-    /*border:10px solid #FFF;*/
+    width:600px;height:228px;/* Must be the same size as the slider images */
 }
 
 #slider {
-	background:black url(loading.gif) no-repeat 50% 50%;
+	background:#fff url(loading.gif) no-repeat 50% 50%;
 	position:relative;
-	margin:0 auto; /*center-aligned*/
     transform: translate3d(0,0,0);
+    box-shadow: 0px 1px 7px #999999;
 }
 
 /* the link style (if an image is wrapped in a link) */
@@ -45,35 +27,34 @@ body {
 /* Caption styles */
 #slider div.mc-caption-bg, #slider div.mc-caption-bg2 {
 	position:absolute;
-	width:400px;
+	width:600px;
 	height:auto;
-	padding:10px 0;
-	left: 100px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
-	bottom: -40px;/*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+	padding:10px 0;/* 10px will increase the height.*/
+	left:0px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
+	top:270px;/*if the caption needs to be aligned from bottom, specify by bottom instead of bottom. i.e. top:150px;*/
 	z-index:3;
 	overflow:hidden;
-	font-size:0;
+	font-size: 0;
 }
 #slider div.mc-caption-bg {
     /* NOTE: Its opacity, when background is not transparent, is to be set through the sliderOptions.captionOpacity setting in the js-image-slider.js file.*/
 	background:transparent;/* or any other colors such as White, or: background:none; */
 }
-#slider div.mc-caption-bg2 {
-    background:none;
-}
 #slider div.mc-caption {
-	font:bold 13px/16px Arial;
-	color:#ccc;
+	font: normal 12px/16px Verdana;
+	color:#333;
 	z-index:4;
-	text-align:center;
-    background:none;
+	text-align:left;
 }
-#slider div.mc-caption a { 
-	color:#66FFFF;
+#slider div.mc-caption a {
+	color:#09F;
+}
+#slider div.mc-caption a:hover {
+	color:#06C;
 }
 
 
-/* ------ built-in navigation bullets wrapper that is relative to the #slider ------*/
+/* ------ built-in navigation bullets wrapper ------*/
 #slider div.navBulletsWrapper  {
 	display:none;
 }
@@ -103,25 +84,4 @@ body {
 }
 
 #slider>a, #slider video, #slider audio {display:none;}
-
-
-/* -- thumbnails -- */
-#thumbs 
-{
-    margin-top:50px;
-    text-align:center;
-    font-size:0;
-}
-#thumbs .thumb 
-{
-    display:inline-block;
-    *display:inline;zoom:1;/*IE6, IE7 hack*/
-    margin:0 1px;/*this determins the distance between each thumbnail*/
-    border:1px solid #333;
-    padding:4px;
-    background:black;
-}
-
-#thumbs .thumb img{border:1px solid #555; cursor:pointer; width:70px; height:70px; opacity:0.5;filter:alpha(opacity=50);}
-#thumbs .thumb-on img{border:1px solid #999; opacity:1;filter:alpha(opacity=100);}
 #slider div {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
