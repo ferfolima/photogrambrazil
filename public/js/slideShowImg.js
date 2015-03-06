@@ -30,13 +30,18 @@
 
                 imgWrap.append(result);
 
-                clean = $('mcts1').find('img').remove();
+                //clean = $('mcts1').find('img').remove();
+                imgWrap = document.getElementById('#mcts1');
+                imgWrap.innerText = '';
+                imgWrap = $('#mcts1');
+                imgArray = $('mcts1').find('img');
+                for (var i = 0; i < imgArray.length; i++) {
+                    imgWrap.append(imgArray[i]);
+                }
                 query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
-                imgWrap = $('#mcts1');
-
                 imgWrap.append(result);
 
                 populateSlider();
