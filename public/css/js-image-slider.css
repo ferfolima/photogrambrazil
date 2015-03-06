@@ -14,8 +14,8 @@ body {
     width:600px;
     margin:0 auto; /*center-aligned*/
     padding:20px;
-    background:#191919;
-    border:1px solid #066;
+    background:#000;
+    border:1px solid #000;
     border-radius:6px;
 } 
 
