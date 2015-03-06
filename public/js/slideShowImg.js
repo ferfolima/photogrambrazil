@@ -32,7 +32,15 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                imgWrap = document.getElementById('mcts1');
+                query = data;
+                source = $('#slideShowThumbs').html();
+                compiledTemplate = Handlebars.compile(source);
+                result = compiledTemplate(query);
+                imgWrap = $('#mcts1');
+
+                imgWrap.append(result);
+
+                /*imgWrap = document.getElementById('mcts1');
                 imgArray = imgWrap.getElementsByTagName("img");
                 imgWrap.innerHTML = '';
                 
@@ -45,7 +53,7 @@
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
-                imgWrap.append(result);
+                imgWrap.append(result);*/
 
                 populateSlider();
             });
