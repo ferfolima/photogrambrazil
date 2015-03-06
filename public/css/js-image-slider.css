@@ -21,7 +21,7 @@ body {
 
 #slider, #slider div.sliderInner {
     width:600px;height:600px;/* Must be the same size as the slider images */
-    border:10px solid #FFF;
+    /*border:10px solid #FFF;*/
 }
 
 #slider {
