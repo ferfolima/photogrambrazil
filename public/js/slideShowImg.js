@@ -32,10 +32,8 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                imgWrap = $('#mcts1');
-                imgArray = $('mcts1').find('img');
-
                 imgWrap = document.getElementById('mcts1');
+                imgArray = imgWrap.getElementsByTagName("img");
                 imgWrap.innerHTML = '';
                 
                 imgWrap = $('#mcts1');
