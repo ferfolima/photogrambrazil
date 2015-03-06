@@ -30,6 +30,7 @@
 
                 imgWrap.append(result);
 
+                clean = $('mcts1').find('img').remove();
                 query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
