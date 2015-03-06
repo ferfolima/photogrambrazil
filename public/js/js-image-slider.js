@@ -1,6 +1,6 @@
 var sliderOptions = {
     sliderId: "slider",
-    startSlide: pos,
+    startSlide: 0,
     effect: "13,17,13,13,5",
     effectRandom: true,
     pauseTime: 2600,
@@ -370,7 +370,7 @@ function mcImgSlider(k) {
                 b = 0
             } else if (b == "random") b = Math.floor(Math.random() * e);
             if (b) {
-                b = b % e;
+                b = e;
                 a = 0;
                 while (1)
                     if (a++ == b) break;
