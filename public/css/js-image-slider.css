@@ -7,7 +7,7 @@
 /*slider frame*/
 #sliderFrame 
 {
-    width:640px;
+    width:720px;
     margin:0 auto; /*center-aligned*/
     padding:20px;
     background:#191919;
@@ -16,7 +16,7 @@
 } 
 
 #slider, #slider div.sliderInner {
-    width:640px;height:640;/* Must be the same size as the slider images */
+    width:600px;height:600px;/* Must be the same size as the slider images */
 }
 
 #slider {
