@@ -30,13 +30,13 @@
 
                 imgWrap.append(result);
 
-                /*query = data;
+                query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
                 imgWrap = $('#mcts1');
 
-                imgWrap.append(result);*/
+                imgWrap.append(result);
 
                 populateSlider();
             });
