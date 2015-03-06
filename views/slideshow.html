@@ -12,18 +12,19 @@
 	<script src="/js/handlebarsjs.1.0.min.js"></script>
     <script src="/js/slideShowImg.js"></script>
 
-	<script type="text/javascript">
+	<script id="index" type="text/javascript">
 		var pos;
 		function beforeSlideChange(args) {
 			var self = this;
-		   //args[0]-currentSlide index, args[1]-currentImage
-		   self.pos = args[0];
+			//args[0]-currentSlide index, args[1]-currentImage
+			self.pos = args[0];
+			imageSlider.changeOptions({startSlide: self.pos});
 		}
 
         function populateSlider() {
-        	var self = this;
+        	//var self = this;
         	imageSlider.reload();
-            imageSlider.displaySlide(self.pos, true, true);
+            //imageSlider.displaySlide(self.pos, true, true);
         }
     </script>
 
