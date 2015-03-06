@@ -993,7 +993,6 @@ function mcImgSlider(k) {
         };
     return {
         displaySlide: function(c, b, a) {
-            reload();
             m.y(c, b, a)
         },
         next: function() {
