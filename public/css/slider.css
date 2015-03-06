@@ -5,10 +5,10 @@
 {
     box-sizing: content-box;
     width:106px;/*for the vertical slider, this width is div.item's: width + 2 * borderWidth + paddingLeft + paddingRight */
-    height:300px;
+    height:640px;
     margin-left: 40px;
     padding:14px;
-    background: #000 url(loading.gif) no-repeat 50% 50%;
+    background: #f7f7f7 url(loading.gif) no-repeat 50% 50%;
     border:1px solid #ddd;
     box-shadow: 0px 1px 3px #CCCCCC;
     
@@ -22,7 +22,6 @@
 #mcts1 div.item 
 {
     width:100px;
-    height:100px;
     padding:2px;
     margin: 0 0 6px 0; /* the 6px specifies the distance between each thumbnail */
     background-color:White;
@@ -33,8 +32,6 @@
 
 #mcts1 img 
 {
-    width:100px;
-    height:100px;
     border:none;
 }
        
@@ -84,13 +81,13 @@
 .navBullets
 {
     /*display:none;*/ /*set it display:none when you want to hide it*/
-	z-index:5;
-	cursor:pointer;
-	/*Specify the position of navigation buttons*/
-	position:absolute;
-	top:20px;
-	left:220px;
-	width:24px;
+    z-index:5;
+    cursor:pointer;
+    /*Specify the position of navigation buttons*/
+    position:absolute;
+    top:20px;
+    left:220px;
+    width:24px;
 }
 /*.navBullets div defines the style of each bullet*/
 .navBullets div 
@@ -110,6 +107,6 @@
 #mcts1 div, #mcts1 img
 {
     -webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
