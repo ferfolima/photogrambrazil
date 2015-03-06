@@ -13,11 +13,18 @@
     <script src="/js/slideShowImg.js"></script>
 
 	<script type="text/javascript">
+		var pos;
+		function afterSlideChange(args) {
+			var self = this;
+		   //args[0]-currentSlide index, args[1]-currentImage
+		   self.pos = args[0];
+		}
+
         function populateSlider() {
-        	//var pos = imageSlider.getPos();
+        	var self = this;
         	alert("Posicao do ultimo slide era ");
         	imageSlider.reload();
-            imageSlider.displaySlide(0, true, true);
+            imageSlider.displaySlide(self.pos, true, true);
         }
     </script>
 
