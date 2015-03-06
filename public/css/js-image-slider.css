@@ -7,7 +7,7 @@
 /*slider frame*/
 #sliderFrame 
 {
-    width:720px;
+    width:640px;
     margin:0 auto; /*center-aligned*/
     padding:20px;
     background:#191919;
@@ -16,7 +16,7 @@
 } 
 
 #slider, #slider div.sliderInner {
-    width:700px;height:306px;/* Must be the same size as the slider images */
+    width:640px;height:640;/* Must be the same size as the slider images */
 }
 
 #slider {
@@ -117,6 +117,6 @@
     background:black;
 }
 
-#thumbs .thumb img{border:1px solid #555; cursor:pointer; width:70px; height:44px; opacity:0.5;filter:alpha(opacity=50);}
+#thumbs .thumb img{border:1px solid #555; cursor:pointer; width:70px; height:70px; opacity:0.5;filter:alpha(opacity=50);}
 #thumbs .thumb-on img{border:1px solid #999; opacity:1;filter:alpha(opacity=100);}
 #slider div {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
