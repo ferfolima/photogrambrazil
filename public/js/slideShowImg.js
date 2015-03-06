@@ -31,10 +31,14 @@
                 imgWrap.append(result);
 
                 //clean = $('mcts1').find('img').remove();
-                imgWrap = document.getElementById('mcts1');
-                imgWrap.innerHTML = '';
+
                 imgWrap = $('#mcts1');
                 imgArray = $('mcts1').find('img');
+
+                imgWrap = document.getElementById('mcts1');
+                imgWrap.innerHTML = '';
+                
+                imgWrap = $('#mcts1');
                 for (var i = 0; i < imgArray.length; i++) {
                     imgWrap.append(imgArray[i]);
                 }
