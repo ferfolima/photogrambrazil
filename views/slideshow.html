@@ -18,13 +18,12 @@
 			var self = this;
 		   //args[0]-currentSlide index, args[1]-currentImage
 		   self.pos = args[0];
-		   alert("index atual é " + self.pos);
 		}
 
         function populateSlider() {
         	var self = this;
+        	imageSlider.displaySlide(self.pos, true, true);
         	imageSlider.reload();
-            imageSlider.displaySlide(self.pos, true, true);
         }
     </script>
 
