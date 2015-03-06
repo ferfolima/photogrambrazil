@@ -28,7 +28,7 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#slider');
 
-                imgWrap.prepend(result);
+                imgWrap.append(result);
 
                 query = data;
                 source = $('#slideShowThumbs').html();
@@ -36,7 +36,7 @@
                 result = compiledTemplate(query);
                 imgWrap = $('#thumbs');
 
-                imgWrap.prepend(result);
+                imgWrap.append(result);
 
                 populateSlider();
             });
