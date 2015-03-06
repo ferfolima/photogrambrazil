@@ -7,9 +7,10 @@
 /*slider frame*/
 #sliderFrame 
 {
-    width:720px;
+    width:600px;
     margin:0 auto; /*center-aligned*/
-    background:#000000;
+    padding:20px;
+    background:#191919;
     border:1px solid #066;
     border-radius:6px;
 } 
