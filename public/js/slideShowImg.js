@@ -30,6 +30,14 @@
 
                 imgWrap.prepend(result);
 
+                query = data;
+                source = $('#slideShowThumbs').html();
+                compiledTemplate = Handlebars.compile(source);
+                result = compiledTemplate(query);
+                imgWrap = $('#thumbs');
+
+                imgWrap.prepend(result);
+
                 populateSlider();
             });
         }
