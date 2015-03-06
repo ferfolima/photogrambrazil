@@ -7,7 +7,6 @@
     width:106px;/*for the vertical slider, this width is div.item's: width + 2 * borderWidth + paddingLeft + paddingRight */
     height:640px;
     margin-left: 40px;
-    padding:14px;
     background: #f7f7f7 url(loading.gif) no-repeat 50% 50%;
     border:1px solid #ddd;
     box-shadow: 0px 1px 3px #CCCCCC;
