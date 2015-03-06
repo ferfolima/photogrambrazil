@@ -20,7 +20,7 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                var clean = $('slider').remove();
+                //var clean = $('slider').find('img').remove();
                 var
                     query = data,
                     source = $('#slideShow-tpl').html(),
@@ -30,14 +30,14 @@
 
                 imgWrap.append(result);
 
-                clean = $('mcts1').remove();
+                //clean = $('mcts1').find('img').remove();
                 query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
-                imgWrap = $('#mcts1');
+                imgWrap = document.getElementById$('mcts1');
 
-                imgWrap.append(result);
+                imgWrap.innerHTML = result;
 
                 populateSlider();
             });
