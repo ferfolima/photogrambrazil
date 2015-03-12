@@ -24,7 +24,7 @@
                 Handlebars.registerHelper('link', function(context) {
                     return JSON.stringify(context);
                 });
-                var compileTemplate = Handlebars.compile('link'),
+                var compileTemplate = Handlebars.compile('link');
                 var standarResolution = compileTemplate(data);
                 var count = 0;
                 var thumbnail = "";
