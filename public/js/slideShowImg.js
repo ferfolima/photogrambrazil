@@ -22,7 +22,7 @@
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
                 var standarResolution = data.standard_resolution.url,
-                    thumbnail = data.thumbnail;
+                    thumbnail = data.thumbnail.url;
 
 
                 var
