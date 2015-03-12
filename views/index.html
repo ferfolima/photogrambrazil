@@ -33,6 +33,7 @@
         function OnChangeCheckbox (checkbox) {
             if (checkbox.checked) {
                 //alert ("The check box is checked.");
+                console.log(checkbox.value);
                 $.ajax({  
 			         type: "POST",  
 			         url: "http://test-gram.herokuapp.com/insert",  

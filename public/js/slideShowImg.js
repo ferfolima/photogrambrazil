@@ -21,12 +21,12 @@
         mostRecent: function() {
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
-                var standarResolution = json[data].standard_resolution.url,
-                    thumbnail = json[data].thumbnail.url;
+                var standarResolution = data.standard_resolution.url;
+                var thumbnail = data.thumbnail.url;
 
 
                 var
-                    query = standarResolution,
+                    query = data,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
@@ -36,7 +36,7 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = thumbnail;
+                query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
