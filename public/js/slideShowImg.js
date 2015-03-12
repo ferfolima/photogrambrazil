@@ -51,13 +51,13 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = thumbnail;
+                query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
-                result = compiledTemplate({thumbnails: query});
+                result = compiledTemplate(query);
                 imgWrap = $('#mcts1');
 
-                imgWrap.append(result);
+                imgWrap.append({thumbnails : result});
 
                 /*imgWrap = document.getElementById('mcts1');
                 imgArray = imgWrap.getElementsByTagName("img");
