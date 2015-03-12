@@ -22,7 +22,6 @@
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
                 var standarResolution = data.insert;
-                alert(standarResolution);
                 var count = 0;
                 var thumbnail = "";
                 standarResolution.split("/").forEach(function (item){
@@ -38,11 +37,11 @@
                     }
                 });
 
-                alert(standarResolution);
-                alert(thumbnail);
+                //alert(standarResolution);
+                //alert(thumbnail);
 
                 var
-                    query = data,
+                    query = standarResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
@@ -52,7 +51,7 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = data;
+                query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
