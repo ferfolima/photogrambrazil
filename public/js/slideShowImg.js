@@ -27,7 +27,7 @@
                 standarResolution.split("/").forEach(function (item){
                     count += 1;
                     if(count == 6){
-                        thumbnail += "s150x150/";
+                        thumbnail += "s150x150/" + item + "/";
                     }
                     else if(count == 7){
                         thumbnail += item;
