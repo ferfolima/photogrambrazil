@@ -19,28 +19,11 @@
         },
 
         /**
-         * [Interaction to open mobile navigation]
-         */
-        mobileNav: function() {
-            var btMobNav = $('#js-mobNav'),
-                nav = $('.nav');
-
-            btMobNav.on('click', function(e) {
-                e.preventDefault();
-                if( !nav.hasClass('active') ) {
-                    nav.addClass('active');
-                } else {
-                    nav.removeClass('active');
-                }
-            });
-
-        },
-
-        /**
          * [ render most recent pics defined by subscribed hashtag ]
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
+                /*
                 var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
@@ -49,7 +32,8 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#imgContent');
 
-                imgWrap.html(result);
+                imgWrap.html(result);*/
+                this.renderTemplate(data);
             });
         },
 
@@ -144,6 +128,24 @@
                     about.addClass('active');
                 } else {
                     about.removeClass('active');
+                }
+            });
+
+        },
+
+        /**
+         * [Interaction to open mobile navigation]
+         */
+        mobileNav: function() {
+            var btMobNav = $('#js-mobNav'),
+                nav = $('.nav');
+
+            btMobNav.on('click', function(e) {
+                e.preventDefault();
+                if( !nav.hasClass('active') ) {
+                    nav.addClass('active');
+                } else {
+                    nav.removeClass('active');
                 }
             });
 
