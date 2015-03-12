@@ -139,7 +139,7 @@
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
 		<a title="@{{user.username}}: {{caption.text}}">
-			<input type="checkbox" onclick="OnChangeCheckbox (this)"/>
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{images.standard_resolution.url}}"/>
 			<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}

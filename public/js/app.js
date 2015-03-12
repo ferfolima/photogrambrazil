@@ -37,6 +37,23 @@
         },
 
         /**
+         * [ render most recent pics defined by subscribed hashtag ]
+         */
+        mostRecent: function() {
+            socket.on('firstShow', function (data) {
+                var clean = $('imgContent').find('a').remove();
+                var
+                    query = data,
+                    source = $('#firstShow-tpl').html(),
+                    compiledTemplate = Handlebars.compile(source),
+                    result = compiledTemplate(query),
+                    imgWrap = $('#imgContent');
+
+                imgWrap.html(result);
+            });
+        },
+
+        /**
          * [get data ajax and send to render method]
          */
         getData: function() {
@@ -99,23 +116,6 @@
                         lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
                     }
                 });
-        },
-
-        /**
-         * [ render most recent pics defined by subscribed hashtag ]
-         */
-        mostRecent: function() {
-            socket.on('firstShow', function (data) {
-                var clean = $('imgContent').find('a').remove();
-                var
-                    query = data,
-                    source = $('#firstShow-tpl').html(),
-                    compiledTemplate = Handlebars.compile(source),
-                    result = compiledTemplate(query),
-                    imgWrap = $('#imgContent');
-
-                imgWrap.html(result);
-            });
         },
 
         /**
