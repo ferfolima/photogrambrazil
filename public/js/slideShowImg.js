@@ -37,8 +37,8 @@
                     }
                 });
 
-                console.log(standarResolution);
-                console.log(thumbnail);
+                alert(standarResolution);
+                alert(thumbnail);
 
                 var
                     query = standarResolution,
