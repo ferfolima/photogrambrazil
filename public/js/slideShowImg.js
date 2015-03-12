@@ -41,7 +41,7 @@
                 alert(thumbnail);
 
                 var
-                    query = standarResolution,
+                    query = data,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
@@ -51,7 +51,7 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = thumbnail;
+                query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
