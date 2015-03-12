@@ -12,7 +12,7 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
-            //this.mostRecent();
+            this.mostRecent();
             this.getData();
             this.aboutInfo();
             this.mobileNav();
@@ -23,7 +23,6 @@
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
-                /*
                 var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
@@ -32,9 +31,7 @@
                     result = compiledTemplate(query),
                     imgWrap = $('#imgContent');
 
-                imgWrap.html(result);*/
-                var self = this;
-                self.renderTemplate(data);
+                imgWrap.html(result);
             });
         },
 
