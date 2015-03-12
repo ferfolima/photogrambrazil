@@ -43,11 +43,9 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query}),
                     imgWrap = $('#slider');
-
                 imgWrap.append(result);
-                alert(result);
+                
                 //clean = $('mcts1').find('img').remove();
-
                 query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
@@ -55,7 +53,6 @@
                 imgWrap = $('#mcts1');
 
                 imgWrap.append(result);
-                alert(result);
                 populateSlider();
             });
         }
