@@ -37,6 +37,9 @@
                     }
                 });
 
+                console.log(standarResolution);
+                console.log(thumbnail);
+
                 var
                     query = standarResolution,
                     source = $('#slideShow-tpl').html(),
