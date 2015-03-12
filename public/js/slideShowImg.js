@@ -21,13 +21,24 @@
         mostRecent: function() {
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
-                //var standarResolution = data.standard_resolution.url;
-                
-                //var thumbnail = data.thumbnail.url;
-
+                var standarResolution = data;
+                var count = 0;
+                var thumbnail = "";
+                standarResolution.split("/").forEach(function (item){
+                    count += 1;
+                    if(count == 6){
+                        thumbnail += "s150x150/";
+                    }
+                    else if(count == 7){
+                        thumbnail += item;
+                    }
+                    else{
+                        thumbnail += item + "/";
+                    }
+                });
 
                 var
-                    query = data,
+                    query = standarResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
@@ -37,7 +48,7 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = data;
+                query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);
