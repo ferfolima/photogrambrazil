@@ -37,8 +37,8 @@
                     }
                 });
 
-                //alert(standarResolution);
-                //alert(thumbnail);
+                alert(standarResolution);
+                alert(thumbnail);
 
                 var
                     query = standarResolution,
