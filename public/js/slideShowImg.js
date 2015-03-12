@@ -41,20 +41,20 @@
                 alert(thumbnail);
 
                 var
-                    query = standarResolution,
+                    query = data,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
-                    result = compiledTemplate({insert: query}),
+                    result = compiledTemplate(query),
                     imgWrap = $('#slider');
 
                 imgWrap.append(result);
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = thumbnail;
+                query = data;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
-                result = compiledTemplate({insert: query}),
+                result = compiledTemplate(query);
                 imgWrap = $('#mcts1');
 
                 imgWrap.append({thumbnails : result});
