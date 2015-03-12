@@ -22,6 +22,7 @@
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
                 var standarResolution = data.text;
+                alert(standarResolution);
                 var count = 0;
                 var thumbnail = "";
                 standarResolution.split("/").forEach(function (item){
