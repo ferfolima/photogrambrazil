@@ -54,10 +54,10 @@
                 query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
-                result = compiledTemplate({insert: query});
+                result = compiledTemplate({thumbnails: query});
                 imgWrap = $('#mcts1');
 
-                imgWrap.append({thumbnails : result});
+                imgWrap.append(result);
 
                 /*imgWrap = document.getElementById('mcts1');
                 imgArray = imgWrap.getElementsByTagName("img");
