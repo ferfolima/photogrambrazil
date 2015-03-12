@@ -21,8 +21,12 @@
         mostRecent: function() {
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
+                var standarResolution = data.standard_resolution.url,
+                    thumbnail = data.thumbnail;
+
+
                 var
-                    query = data,
+                    query = standarResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
@@ -32,7 +36,7 @@
 
                 //clean = $('mcts1').find('img').remove();
 
-                query = data;
+                query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate(query);

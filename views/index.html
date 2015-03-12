@@ -139,14 +139,14 @@
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
 		<a title="@{{user.username}}: {{caption.text}}">
-			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{images.standard_resolution.url}}"/>
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{images}}"/>
 			<img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images}}"/>
 			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 		</a>
 	</script>	
