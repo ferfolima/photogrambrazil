@@ -44,7 +44,7 @@
                     query = standarResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
-                    result = compiledTemplate(query),
+                    result = compiledTemplate({insert: query}),
                     imgWrap = $('#slider');
 
                 imgWrap.append(result);
@@ -54,7 +54,7 @@
                 query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
-                result = compiledTemplate(query);
+                result = compiledTemplate({insert: query}),
                 imgWrap = $('#mcts1');
 
                 imgWrap.append({thumbnails : result});
