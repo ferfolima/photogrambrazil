@@ -33,7 +33,8 @@
                     imgWrap = $('#imgContent');
 
                 imgWrap.html(result);*/
-                this.renderTemplate(data);
+                var self = this;
+                self.renderTemplate(data);
             });
         },
 
