@@ -38,7 +38,7 @@
                 result = compiledTemplate(query);
                 imgWrap = $('#mcts1');
 
-                imgWrap.append(result);
+                imgWrap.append({thumbnails : result});
 
                 /*imgWrap = document.getElementById('mcts1');
                 imgArray = imgWrap.getElementsByTagName("img");
