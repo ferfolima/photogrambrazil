@@ -21,7 +21,11 @@
         mostRecent: function() {
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
-                var standarResolution = String(data);
+                Handlebars.registerHelper('json', function(context) {
+                    return JSON.stringify(context);
+                });
+
+                var standarResolution = {{json data}};
                 var count = 0;
                 var thumbnail = "";
                 standarResolution.split("/").forEach(function (item){
