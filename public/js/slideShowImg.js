@@ -21,7 +21,7 @@
         mostRecent: function() {
             socket.on('insert', function (data) {
                 //var clean = $('slider').find('img').remove();
-                var standarResolution = data.text;
+                var standarResolution = data.insert;
                 alert(standarResolution);
                 var count = 0;
                 var thumbnail = "";
