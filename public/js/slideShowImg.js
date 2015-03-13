@@ -38,12 +38,12 @@
 
                 var slideTag = document.getElementById("slider"); 
                 var imgTag = slideTag.getElementsByTagName("img");
-                imgTag.push(standarResolution);
                 var imgTagSrc = [];
                 document.getElementById("slider").innerHTML;
                 for (var i = 0; i < imgTag.length; i++) { 
                     imgTagSrc.push(imgTag[i].getAttribute("src")); 
                 }
+                imgTagSrc.push(standardResolution);
                 document.getElementById("slider").innerHTML = '';
                 var
                     query = imgTagSrc,
