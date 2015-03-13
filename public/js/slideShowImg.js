@@ -20,7 +20,6 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                //var clean = $('slider').find('div').remove();
                 var standarResolution = data.insert;
                 var count = 0;
                 var thumbnail = "";
@@ -37,8 +36,17 @@
                     }
                 });
 
+                var slideTag = document.getElementById("slider"); 
+                var imgTag = slideTag.getElementsByTagName("img");
+                imgTag.push(standarResolution);
+                var imgTagSrc = [];
+                document.getElementById("slider").innerHTML;
+                for (var i = 0; i < imgTag.length; i++) { 
+                    imgTagSrc.push(imgTag[i].getAttribute("src")); 
+                }
+                document.getElementById("slider").innerHTML = '';
                 var
-                    query = standarResolution,
+                    query = imgTagSrc,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query}),

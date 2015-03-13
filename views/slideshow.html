@@ -22,10 +22,12 @@
         <script type="text/javascript" src="/slick/slick.min.js"></script>
 
         <script id="slideShow-tpl" type="text/x-handlebars-template">
-            <div id='ferfoPic'><img src="{{insert}}" title="{{insert}}"/></div>
+        {{#each insert}}
+            <div><img src="{{insert}}" title="{{insert}}"/></div>
+        {{/each}}
         </script>
         <script id="slideShowThumbs" type="text/x-handlebars-template">
-            <div id='ferfoThumb'><img src="{{insert}}" title="{{insert}}"/></div>
+            <div><img src="{{insert}}" title="{{insert}}"/></div>
         </script>
 
         <script type="text/javascript">
