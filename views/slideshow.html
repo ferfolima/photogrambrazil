@@ -2,15 +2,10 @@
 <html>
 <head>
     <title>Test-gram Slideshow</title>
-    <link href="/css/generic.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
-    <script src="/js/socket.io.min.js"></script>
-    <script src="/js/handlebarsjs.1.0.min.js"></script>
-    <script src="/js/slideShowImg.js"></script>
-    
-
 </head>
+
 <body>      
     <div class="slider-for">
         <div><h3>1</h3></div>
@@ -29,6 +24,7 @@
     <script type="text/javascript" src="/slick/slick.min.js"></script>
 
     <script type="text/javascript">
+    $(document).ready(function(){
         $('.slider-for').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -44,6 +40,7 @@
           centerMode: true,
           focusOnSelect: true
         });
+    });
     </script>
 </body>
 </html>
