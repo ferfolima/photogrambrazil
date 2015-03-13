@@ -45,6 +45,7 @@
                 //}
                 //imgTagSrc.push(standardResolution);
                 //document.getElementById("slider").innerHTML = '';
+                var results = [];
                 var
                     query = standardResolution,
                     source = $('#slideShow-tpl').html(),
