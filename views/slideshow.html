@@ -6,14 +6,15 @@
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 </head>
 
-<body>      
-    <div class="slider-for">
+<body> 
+    <h2>Slider Syncing</h2>     
+    <div class="slider slider-for">
         <div><h3>1</h3></div>
         <div><h3>2</h3></div>
         <div><h3>3</h3></div>
     </div>
 
-    <div class="slider-nav">
+    <div class="slider slider-nav">
         <div><h3>1</h3></div>
         <div><h3>2</h3></div>
         <div><h3>3</h3></div>
@@ -23,8 +24,9 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="/slick/slick.min.js"></script>
 
-    <pre><code class="language-javascript">
-         $('.slider-for').slick({
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider-for').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
@@ -39,6 +41,7 @@
           centerMode: true,
           focusOnSelect: true
         });
-    </code></pre>
+    });
+    </script>
 </body>
 </html>
