@@ -20,7 +20,7 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                //var clean = $('slider').find('img').remove();
+                var clean = $('slider').find('div').remove();
                 var standarResolution = data.insert;
                 var count = 0;
                 var thumbnail = "";
@@ -45,7 +45,7 @@
                     imgWrap = $('#slider');
                 imgWrap.append(result);
                 
-                //clean = $('mcts1').find('img').remove();
+                clean = $('mcts1').find('div').remove();
                 query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
