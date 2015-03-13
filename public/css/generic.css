@@ -11,5 +11,6 @@ h2 {display:inline;}
 .div2 li {padding-top:6px;padding-bottom:6px;}
 .floatLeft {float:left;}
 .slider-nav img{width:100px;}
-.slider-nav {width:800px;}
 .slider-for img{width:640px;height:640px;}
+.slider-nav {width:50%;margin: 0 auto;}
+.slider-for {width:50%;margin: 0 auto;}
