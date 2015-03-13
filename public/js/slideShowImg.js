@@ -40,6 +40,7 @@
                 var slideTag = document.getElementById("slider"); 
                 var imgTag = slideTag.getElementsByTagName("img");
                 var imgTagSrc = [];
+                var results = [];
                 for (var i = 0; i < imgTag.length; i++) { 
                     imgTagSrc.push(imgTag[i].getAttribute("src")); 
                 }
@@ -52,7 +53,7 @@
                     result = compiledTemplate({insert: query}),
                     imgWrap = $('#slider');
                 //imgWrap.append(result);
-
+                results.push(result);
                 //thumbnails
                 var slideTagThumb = document.getElementById("mcts1"); 
                 var imgTagThumb = slideTagThumb.getElementsByTagName("img");
@@ -65,11 +66,11 @@
                 query = imgTagThumbSrc;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
-                result = compiledTemplate({insert: query});
+                var resulte = compiledTemplate({insert: query});
                 imgWrap = $('#mcts1');
-
+                results.push(result2);
                 //imgWrap.append(result);
-                populateSlider(result);
+                populateSlider(results);
             });
         }
 
