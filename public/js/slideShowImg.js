@@ -66,7 +66,7 @@
                 query = imgTagThumbSrc;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
-                var resulte = compiledTemplate({insert: query});
+                var result2 = compiledTemplate({insert: query});
                 imgWrap = $('#mcts1');
                 results.push(result2);
                 //imgWrap.append(result);
