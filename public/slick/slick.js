@@ -52,7 +52,7 @@
                 autoplay: false,
                 autoplaySpeed: 3000,
                 centerMode: false,
-                centerPadding: '50px',
+                centerPadding: '0px',
                 cssEase: 'ease',
                 customPaging: function(slider, i) {
                     return '<button type="button" data-role="none">' + (i + 1) + '</button>';
@@ -102,7 +102,7 @@
                 $nextArrow: null,
                 $prevArrow: null,
                 slideCount: null,
-                slideWidth: 50,
+                slideWidth: null,
                 $slideTrack: null,
                 $slides: null,
                 sliding: false,
