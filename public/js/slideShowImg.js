@@ -60,7 +60,7 @@
                 var imgTagThumb = slideTagThumb.getElementsByTagName("img");
                 var imgTagThumbSrc = [];
                 for (var i = 0; i < imgTagThumb.length; i++) { 
-                    imgTagThumbSrc.push(imgTag[i].getAttribute("src")); 
+                    imgTagThumbSrc.push(imgTagThumb[i].getAttribute("src")); 
                 }
                 imgTagThumbSrc.push(thumbnail);
                 document.getElementById("mcts1").innerHTML = '';
