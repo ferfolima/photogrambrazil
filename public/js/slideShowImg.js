@@ -20,8 +20,7 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                var clean = $('slider').find('div').remove();
-                alert(clean);
+                //var clean = $('slider').find('div').remove();
                 var standarResolution = data.insert;
                 var count = 0;
                 var thumbnail = "";
@@ -45,6 +44,7 @@
                     result = compiledTemplate({insert: query}),
                     imgWrap = $('#slider');
                 imgWrap.append(result);
+                alert(result);
                 
                 clean = $('mcts1').find('div').remove();
                 query = thumbnail;
@@ -55,6 +55,7 @@
 
                 imgWrap.append(result);
                 populateSlider();
+                alert(result);
             });
         }
 
