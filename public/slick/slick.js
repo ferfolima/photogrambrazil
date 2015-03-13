@@ -366,7 +366,7 @@
             clearInterval(_.autoPlayTimer);
         }
 
-        if (_.paused !== true) {
+        if (_.slideCount > _.options.slidesToShow && _.paused !== true) {
             _.autoPlayTimer = setInterval(_.autoPlayIterator,
                 _.options.autoplaySpeed);
         }
@@ -421,7 +421,7 @@
 
         var _ = this;
 
-        if (_.options.arrows === true) {
+        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
 
             _.$prevArrow = $(_.options.prevArrow);
             _.$nextArrow = $(_.options.nextArrow);
@@ -447,7 +447,7 @@
         var _ = this,
             i, dotString;
 
-        if (_.options.dots === true) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
 
             dotString = '<ul class="' + _.options.dotsClass + '">';
 
@@ -985,7 +985,7 @@
 
         var _ = this;
 
-        if (_.options.arrows === true) {
+        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
             _.$prevArrow.on('click.slick', {
                 message: 'previous'
             }, _.changeSlide);
@@ -1000,7 +1000,7 @@
 
         var _ = this;
 
-        if (_.options.dots === true) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
             $('li', _.$dots).on('click.slick', {
                 message: 'index'
             }, _.changeSlide);
@@ -1099,14 +1099,14 @@
 
         var _ = this;
 
-        if (_.options.arrows === true) {
+        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
 
             _.$prevArrow.show();
             _.$nextArrow.show();
 
         }
 
-        if (_.options.dots === true) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
 
             _.$dots.show();
 
@@ -1831,14 +1831,14 @@
 
         var _ = this;
 
-        if (_.options.arrows === true) {
+        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
 
             _.$prevArrow.hide();
             _.$nextArrow.hide();
 
         }
 
-        if (_.options.dots === true) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
 
             _.$dots.hide();
 
