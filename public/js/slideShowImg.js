@@ -21,6 +21,7 @@
         mostRecent: function() {
             socket.on('insert', function (data) {
                 var clean = $('slider').find('div').remove();
+                alert(clean);
                 var standarResolution = data.insert;
                 var count = 0;
                 var thumbnail = "";
@@ -53,7 +54,7 @@
                 imgWrap = $('#mcts1');
 
                 imgWrap.append(result);
-                //populateSlider();
+                populateSlider();
             });
         }
 
