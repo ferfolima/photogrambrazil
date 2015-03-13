@@ -44,7 +44,7 @@
                     imgTagSrc.push(imgTag[i].getAttribute("src")); 
                 }
                 imgTagSrc.push(standardResolution);
-                document.getElementById("slider").innerHTML = '';
+                //document.getElementById("slider").innerHTML = '';
                 var
                     query = imgTagSrc,
                     source = $('#slideShow-tpl').html(),
@@ -61,7 +61,7 @@
                     imgTagThumbSrc.push(imgTagThumb[i].getAttribute("src")); 
                 }
                 imgTagThumbSrc.push(thumbnail);
-                document.getElementById("mcts1").innerHTML = '';
+                //document.getElementById("mcts1").innerHTML = '';
                 query = imgTagThumbSrc;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
