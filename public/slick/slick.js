@@ -366,7 +366,7 @@
             clearInterval(_.autoPlayTimer);
         }
 
-        if (_.slideCount > _.options.slidesToShow && _.paused !== true) {
+        if (_.paused !== true) {
             _.autoPlayTimer = setInterval(_.autoPlayIterator,
                 _.options.autoplaySpeed);
         }
@@ -421,7 +421,7 @@
 
         var _ = this;
 
-        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.arrows === true) {
 
             _.$prevArrow = $(_.options.prevArrow);
             _.$nextArrow = $(_.options.nextArrow);
@@ -447,7 +447,7 @@
         var _ = this,
             i, dotString;
 
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.dots === true) {
 
             dotString = '<ul class="' + _.options.dotsClass + '">';
 
