@@ -12,5 +12,5 @@ h2 {display:inline;}
 .floatLeft {float:left;}
 .slider-nav img{width:100px;}
 .slider-for img{width:640px;height:640px;}
-.slider-nav {margin: 0 auto;}
-.slider-for {margin: 0 auto;}
+.slider-nav {width:100%;margin: 0 auto;}
+.slider-for {width:100%;margin: 0 auto;}
