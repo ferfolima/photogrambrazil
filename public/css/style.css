@@ -33,9 +33,9 @@
 .margin-40{margin-bottom:40px;}
 .more,.button.first{margin-top:40px;}
 .red{background:#e74c3c;color:#fff;}
-.slick-slide .image{padding:10px;}
 .slick-slide img{border:5px solid #FFF;display:block;width:100%;}
 .slick-slide img.slick-loading{border:0 }
+.slick-slider{margin:30px auto 50px;}
 .subheading{color:#555;font-size:12px;font-style:italic;font-weight:400;margin:10px auto;text-align:center;}
 .white{background:#fff;color:#3498db;}
 .white pre,.white hr{background:#3498db !important;}
