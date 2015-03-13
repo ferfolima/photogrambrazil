@@ -80,6 +80,7 @@
     float: left;
 
     height: 640px;
+    width: 640px;
     min-height: 1px;
 }
 [dir='rtl'] .slick-slide
