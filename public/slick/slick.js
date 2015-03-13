@@ -1831,14 +1831,14 @@
 
         var _ = this;
 
-        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.arrows === true) {
 
             _.$prevArrow.hide();
             _.$nextArrow.hide();
 
         }
 
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.dots === true) {
 
             _.$dots.hide();
 
