@@ -33,22 +33,25 @@
         </script>
 
         <script type="text/javascript">
-            function populateSlider() {
-                    $('.slider-for').slick({
-                      slidesToShow: 1,
-                      slidesToScroll: 1,
-                      arrows: false,
-                      fade: true,
-                      asNavFor: '.slider-nav'
-                    });
-                    $('.slider-nav').slick({
-                      slidesToShow: 3,
-                      slidesToScroll: 1,
-                      asNavFor: '.slider-for',
-                      dots: true,
-                      centerMode: true,
-                      focusOnSelect: true
-                    });
+            $(document).ready(function(){
+                $('.slider-for').slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: false,
+                  fade: true,
+                  asNavFor: '.slider-nav'
+                });
+                $('.slider-nav').slick({
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  asNavFor: '.slider-for',
+                  dots: true,
+                  centerMode: true,
+                  focusOnSelect: true
+                });
+            });
+            function populateSlider(addWrap) {
+                $('.slider-nav').slick('slickAdd',addWrap);
             }
         </script>
     </section>

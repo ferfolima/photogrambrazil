@@ -51,7 +51,7 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query}),
                     imgWrap = $('#slider');
-                imgWrap.append(result);
+                //imgWrap.append(result);
 
                 //thumbnails
                 var slideTagThumb = document.getElementById("mcts1"); 
@@ -68,8 +68,8 @@
                 result = compiledTemplate({insert: query});
                 imgWrap = $('#mcts1');
 
-                imgWrap.append(result);
-                populateSlider();
+                //imgWrap.append(result);
+                populateSlider(result);
             });
         }
 
