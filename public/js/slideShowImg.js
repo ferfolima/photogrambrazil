@@ -20,10 +20,10 @@
          */
         mostRecent: function() {
             socket.on('insert', function (data) {
-                var standarResolution = data.insert;
+                var standardResolution = data.insert;
                 var count = 0;
                 var thumbnail = "";
-                standarResolution.split("/").forEach(function (item){
+                standardResolution.split("/").forEach(function (item){
                     count += 1;
                     if(count == 6){
                         thumbnail += "s150x150/" + item + "/";
