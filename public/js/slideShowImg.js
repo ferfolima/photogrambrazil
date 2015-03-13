@@ -52,8 +52,6 @@
                     result = compiledTemplate({insert: query}),
                     imgWrap = $('#slider');
                 imgWrap.append(result);
-                alert(result);
-                
 
                 //thumbnails
                 var slideTagThumb = document.getElementById("mcts1"); 
@@ -72,7 +70,6 @@
 
                 imgWrap.append(result);
                 populateSlider();
-                alert(result);
             });
         }
 
