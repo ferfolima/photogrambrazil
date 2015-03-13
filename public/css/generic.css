@@ -3,12 +3,12 @@
 
 body {background:#000;font:normal 0.9em Arial; margin:0; padding:0; padding-bottom:60px;}
 h2 {display:inline;}
-.div1, .div2 {width:320px;margin:0 auto;background-color:black; }
+.div1, .div2 {margin:0 auto;background-color:black; }
 .div1 {margin-top:30px;margin-bottom:60px;text-align:center;line-height:20px;}
 .div1 P {font-size:18px;}
 .div1 a, .div2 a {color:#07C;}
 .div2 {margin-top:20px;}
 .div2 li {padding-top:6px;padding-bottom:6px;}
 .floatLeft {float:left;}
-.slider-nav img{width:50px;}
-.slider-for img{width:320px;height:320px;}
+.slider-nav img{width:100px;}
+.slider-for img{width:640px;height:640px;}
