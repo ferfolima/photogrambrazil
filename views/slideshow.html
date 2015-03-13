@@ -27,7 +27,9 @@
         {{/each}}
         </script>
         <script id="slideShowThumbs" type="text/x-handlebars-template">
-            <div><img src="{{insert}}" title="{{insert}}"/></div>
+        {{#each insert}}
+            <div><img src="{{this}}" title="{{this}}"/></div>
+        {{/each}}
         </script>
 
         <script type="text/javascript">

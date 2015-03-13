@@ -36,6 +36,7 @@
                     }
                 });
 
+                //slides
                 var slideTag = document.getElementById("slider"); 
                 var imgTag = slideTag.getElementsByTagName("img");
                 var imgTagSrc = [];
@@ -54,8 +55,18 @@
                 imgWrap.append(result);
                 alert(result);
                 
-                clean = $('mcts1').find('div').remove();
-                query = thumbnail;
+
+                //thumbnails
+                var slideTagThumb = document.getElementById("slider"); 
+                var imgTagThumb = slideTagThumb.getElementsByTagName("img");
+                var imgTagThumbSrc = [];
+                document.getElementById("slider").innerHTML;
+                for (var i = 0; i < imgTagThumb.length; i++) { 
+                    imgTagThumbSrc.push(imgTag[i].getAttribute("src")); 
+                }
+                imgTagThumbSrc.push(thumbnail);
+                document.getElementById("mcts1").innerHTML = '';
+                query = imgTagThumbSrc;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 result = compiledTemplate({insert: query});
