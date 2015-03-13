@@ -102,7 +102,7 @@
                 $nextArrow: null,
                 $prevArrow: null,
                 slideCount: null,
-                slideWidth: null,
+                slideWidth: 50,
                 $slideTrack: null,
                 $slides: null,
                 sliding: false,
