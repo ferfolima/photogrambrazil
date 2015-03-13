@@ -53,7 +53,7 @@
                 imgWrap = $('#mcts1');
 
                 imgWrap.append(result);
-                populateSlider();
+                //populateSlider();
             });
         }
 
