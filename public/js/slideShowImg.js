@@ -37,17 +37,16 @@
                 });
 
                 //slides
-                var slideTag = document.getElementById("slider"); 
-                var imgTag = slideTag.getElementsByTagName("img");
-                var imgTagSrc = [];
-                var results = [];
-                for (var i = 0; i < imgTag.length; i++) { 
-                    imgTagSrc.push(imgTag[i].getAttribute("src")); 
-                }
-                imgTagSrc.push(standardResolution);
+                //var slideTag = document.getElementById("slider"); 
+                //var imgTag = slideTag.getElementsByTagName("img");
+                //var imgTagSrc = [];
+                //for (var i = 0; i < imgTag.length; i++) { 
+                //    imgTagSrc.push(imgTag[i].getAttribute("src")); 
+                //}
+                //imgTagSrc.push(standardResolution);
                 //document.getElementById("slider").innerHTML = '';
                 var
-                    query = imgTagSrc,
+                    query = standardResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query}),
@@ -55,15 +54,15 @@
                 //imgWrap.append(result);
                 results.push(result);
                 //thumbnails
-                var slideTagThumb = document.getElementById("mcts1"); 
-                var imgTagThumb = slideTagThumb.getElementsByTagName("img");
-                var imgTagThumbSrc = [];
-                for (var i = 0; i < imgTagThumb.length; i++) { 
-                    imgTagThumbSrc.push(imgTagThumb[i].getAttribute("src")); 
-                }
-                imgTagThumbSrc.push(thumbnail);
+                //var slideTagThumb = document.getElementById("mcts1"); 
+                //var imgTagThumb = slideTagThumb.getElementsByTagName("img");
+                //var imgTagThumbSrc = [];
+                //for (var i = 0; i < imgTagThumb.length; i++) { 
+                //    imgTagThumbSrc.push(imgTagThumb[i].getAttribute("src")); 
+                //}
+                //imgTagThumbSrc.push(thumbnail);
                 //document.getElementById("mcts1").innerHTML = '';
-                query = imgTagThumbSrc;
+                query = thumbnail;
                 source = $('#slideShowThumbs').html();
                 compiledTemplate = Handlebars.compile(source);
                 var result2 = compiledTemplate({insert: query});
