@@ -40,7 +40,6 @@
                 var slideTag = document.getElementById("slider"); 
                 var imgTag = slideTag.getElementsByTagName("img");
                 var imgTagSrc = [];
-                document.getElementById("slider").innerHTML;
                 for (var i = 0; i < imgTag.length; i++) { 
                     imgTagSrc.push(imgTag[i].getAttribute("src")); 
                 }
@@ -57,10 +56,9 @@
                 
 
                 //thumbnails
-                var slideTagThumb = document.getElementById("slider"); 
+                var slideTagThumb = document.getElementById("mcts1"); 
                 var imgTagThumb = slideTagThumb.getElementsByTagName("img");
                 var imgTagThumbSrc = [];
-                document.getElementById("slider").innerHTML;
                 for (var i = 0; i < imgTagThumb.length; i++) { 
                     imgTagThumbSrc.push(imgTag[i].getAttribute("src")); 
                 }
