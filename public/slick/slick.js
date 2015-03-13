@@ -985,7 +985,7 @@
 
         var _ = this;
 
-        if (_.options.arrows === true &&) {
+        if (_.options.arrows === true) {
             _.$prevArrow.on('click.slick', {
                 message: 'previous'
             }, _.changeSlide);
