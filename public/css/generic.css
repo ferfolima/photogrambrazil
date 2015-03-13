@@ -3,14 +3,14 @@
 
 body {background:#000;font:normal 0.9em Arial; margin:0; padding:0; padding-bottom:60px;}
 h2 {display:inline;}
-.div1, .div2 {width:100%; margin:0 auto;background-color:blue; }
+.div1, .div2 {margin:0 auto;background-color:blue; }
 .div1 {margin-top:30px;margin-bottom:60px;text-align:center;line-height:20px;}
 .div1 P {font-size:18px;}
 .div1 a, .div2 a {color:#07C;}
 .div2 {margin-top:20px;}
 .div2 li {padding-top:6px;padding-bottom:6px;}
 .floatLeft {float:left;}
-.slider-nav img{width:100px;}
+.slider-nav img{width:100px;margin: 0 auto;}
 .slider-for img{width:640px;height:640px;margin: 0 auto;}
 .slider-nav {width:90%;margin: 0 auto;}
 .slider-for {width:100%;margin: 0 auto;}
