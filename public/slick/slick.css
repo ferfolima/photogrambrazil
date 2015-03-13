@@ -78,11 +78,11 @@
 {
     display: none;
     float: left;
+    height: 640px;
+    width: 640px;
 }
 [dir='rtl'] .slick-slide
 {
-    height: 640px;
-    width: 640px;
     float: right;
 }
 .slick-slide img
