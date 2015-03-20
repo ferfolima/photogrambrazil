@@ -98,14 +98,14 @@ app.get('/subscribe', function(req, res) {
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         self.hashtag = parsedRequest['query']['hub.tag'];
-        Instagram.subscriptions.subscribe({
-            object: 'tag',
-            object_id: self.hashtag,
-            aspect: 'media',
-            callback_url: 'http://test-gram.herokuapp.com/callback',
-            type: 'subscription',
-            id: '#'
-        });
+        self.tagid = Instagram.subscriptions.subscribe({
+                        object: 'tag',
+                        object_id: self.hashtag,
+                        aspect: 'media',
+                        callback_url: 'http://test-gram.herokuapp.com/callback',
+                        type: 'subscription',
+                        id: '#'
+                    });
 
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
@@ -148,7 +148,6 @@ app.post('/callback', function(req, res) {
     // Grab the hashtag "tag.object_id"
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
-      self.tagid = tag.subscription_id;
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
       sendMessage(url);
 
