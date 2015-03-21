@@ -32,6 +32,7 @@
                     imgWrap = $('#imgContent');
 
                 imgWrap.html(result);
+                alert(result);
             });
         },
 
