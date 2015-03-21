@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3700;
-var io = require('socket.io')(app.listen(port));
+var io = require('socket.io').listen(app.listen(port));
 var Instagram = require('instagram-node-lib');
 var http = require('http');
 var url = require('url')
@@ -45,7 +45,6 @@ Instagram.set('maxSockets', 10);
 //Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () {
   io.set("transports", [
     'websocket'
     , 'xhr-polling'
@@ -54,7 +53,6 @@ io.configure(function () {
     , 'jsonp-polling'
   ]);
   io.set("polling duration", 10);
-});
 
 /**
  * Set your app main configuration
