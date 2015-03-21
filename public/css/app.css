@@ -560,6 +560,22 @@ body {
   	overflow-x: hidden;
 }
 
+body::after{
+  content: "";
+  background: url('../images/logo-square.jpg') no-repeat center 65% fixed;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;   
+}
+
 img {
   	max-width: 100%;
 }
@@ -631,7 +647,6 @@ a:hover {
 ************/
 .logo {
 	background: #fff;
-  background-origin:content-box;
 }
 .logo img {
   	display: block;
@@ -683,7 +698,7 @@ a:hover {
 ************/
 .aboutWrap {
   	position: absolute;
-  	top: 58px;
+  	top: 110px;
   	right: 0;
   	width: 100%;
   	z-index: 50;
@@ -701,8 +716,10 @@ a:hover {
 }
 
 #about {
-  	background: rgba(255,255,255, 0.9);
-  	max-width: 700px;
+  	background: rgba(255,255,255, 0.7);
+    /*background-image: url('/images/logo-square.jpg');*/
+  	max-width: 520px;
+    height: 320px;
   	margin: 0 auto;
   	padding: 2%;
   	-moz-box-shadow: inset 6px 4px 10px -7px #000;
