@@ -91,18 +91,30 @@
 
 			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
 			<center>
-				<div id="assinar">
-					<form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
-						<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
-						<input type="submit" name="submit" value=" Assinar " onclick="document.getElementById('assinar').style.display = 'none';document.getElementById('cancelar').style.display = 'block';">
-					</form>
-				</div>
-				<div if="cancelar">
-					<form class="desc" action="http://test-gram.heroku.com/unsubscribe/" method="GET">
-						<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
-						<input type="submit" name="submit" value="Cancelar" onclick="document.getElementById('assinar').style.display = 'block';document.getElementById('cancelar').style.display = 'none';">
-					</form>
-				</div>
+				<form name="chooseHash" class="desc" method="GET">
+					<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
+					<input type="submit" name="submit" value="Assinar">
+					<input type="submit" name="submit" value="Cancelar">
+				</form>
+
+				<script type="text/javascript">
+				$(function(){
+				    $('form[name="chooseHash"] input[type="submit"]').click(function(event){
+				           var $form = $('form[name="chooseHash"]');
+				           if($(this).val()=='Assinar'){
+				               $form.attr('action','http://test-gram.heroku.com/subscribe/');
+				           }
+				            else{
+				                $form.attr('action','http://test-gram.heroku.com/unsubscribe/');
+				            }
+				    });
+				    
+				    $('form[name="myform"]').submit(function(event){
+				        alert("form action : " + $(this).attr('action'));
+				        event.preventDefault();
+				    });
+				});
+				</script>
 			</center>
 		</div>
 	</div>
