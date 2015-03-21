@@ -631,6 +631,7 @@ a:hover {
 ************/
 .logo {
 	background: #fff;
+  background-origin:content-box;
 }
 .logo img {
   	display: block;
