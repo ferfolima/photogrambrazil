@@ -698,8 +698,9 @@ a:hover {
 ************/
 .aboutWrap {
   	position: absolute;
-  	top: 110px;
+  	top: 100px;
   	right: 0;
+    left: 3px;
   	width: 100%;
   	z-index: 50;
   	transform: translateX(-10000px);
@@ -717,9 +718,8 @@ a:hover {
 
 #about {
   	background: rgba(255,255,255, 0.7);
-    /*background-image: url('/images/logo-square.jpg');*/
-  	max-width: 520px;
-    height: 320px;
+  	max-width: 455px;
+    height: 288px;
   	margin: 0 auto;
   	padding: 2%;
   	-moz-box-shadow: inset 6px 4px 10px -7px #000;
