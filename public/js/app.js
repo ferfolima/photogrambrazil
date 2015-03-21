@@ -12,8 +12,8 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
-            this.mostRecent();
             this.getData();
+            this.mostRecent();
             this.aboutInfo();
             this.mobileNav();
         },

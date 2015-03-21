@@ -98,16 +98,14 @@ app.get('/subscribe', function(req, res) {
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         self.hashtag = parsedRequest['query']['hub.tag'];
-        var jsonSubscription = Instagram.subscriptions.subscribe({
+        self.tagid = JSON.parse(Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: self.hashtag,
             aspect: 'media',
             callback_url: 'http://test-gram.herokuapp.com/callback',
             type: 'subscription',
             id: '#'
-        });
-
-        self.tagid = JSON.parse(jsonSubscription).id;
+        })).id;
 
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
