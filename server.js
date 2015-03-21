@@ -45,7 +45,6 @@ Instagram.set('maxSockets', 10);
 //Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-var io.require()
 io.configure(function () {
   io.set("transports", [
     'websocket'
