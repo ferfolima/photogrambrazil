@@ -119,7 +119,6 @@ app.get('/subscribe', function(req, res) {
         });
     }
 
-    var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
     res.redirect('http://test-gram.herokuapp.com');
     return res.end();
 });
