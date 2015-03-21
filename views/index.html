@@ -83,22 +83,26 @@
 			<span class="btClose Hdb Hfr" id="js-closeAbout">
 				<a href="#close" title="Fechar janela" class="Hir">close</a>
 			</span>
-			<!-- <h1 class="tit">Faca seu evento com o Test-gram</h1>
+			<h1 class="tit">Faca seu evento com o Test-gram</h1>
 			<p class="desc">Videos. Fotos. Momentos.</p>
 			<p class="desc">Com <a href="http://test-gram.heroku.com" title="test-Gram">Test-gram</a> voce podera deixar seu evento muito mais animado e divertido.</p>
 
 			<p class="desc"> <strong class="Hfwb">Test-gram</strong> ira pedir fotos para o instagram e esperar a resposta, procurando por fotos e post que tenham a hashtag desejada. </p>
 
-			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p> -->
+			<p class="desc">Se voce curtir o Test-gram, conte para o seu amigo sobre a sua experencia e nos ajude a espalhar para todos sobre essa maravilhosa ferramenta!</p>
 			<center>
-				<form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
-					<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
-					<input type="submit" name="submit" value="Assinar">
-				</form>
-				<form class="desc" action="http://test-gram.heroku.com/unsubscribe/" method="GET">
-					<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
-					<input type="submit" name="submit" value="Cancelar">
-				</form>
+				<div id="assinar" style="display:block">
+					<form class="desc" action="http://test-gram.heroku.com/subscribe/" method="GET">
+						<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
+						<input type="submit" name="submit" value=" Assinar " onclick="document.getElementById('assinar').style.display = 'none';document.getElementById('cancelar').style.display = 'block';">
+					</form>
+				</div>
+				<div if="cancelar" style="display:none">
+					<form class="desc" action="http://test-gram.heroku.com/unsubscribe/" method="GET">
+						<input type="text" name="hub.tag" value="Hashtag" style="color:#d3d3d3" onblur="if(this.value == '') {this.style.color='#d3d3d3'; this.value='Hashtag'}" onfocus="if (this.value == 'Hashtag') {this.style.color='#000000'; this.value=''}">
+						<input type="submit" name="submit" value="Cancelar" onclick="document.getElementById('assinar').style.display = 'block';document.getElementById('cancelar').style.display = 'none';">
+					</form>
+				</div>
 			</center>
 		</div>
 	</div>

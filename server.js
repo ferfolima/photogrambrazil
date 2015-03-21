@@ -106,9 +106,8 @@ app.get('/subscribe', function(req, res) {
             type: 'subscription',
             id: '#'
         });
-
-        var parsedJson = JSON.parse(jsonSubscription);
-        self.tagid = parsedJson.id;
+        
+        self.tagid = JSON.parse(jsonSubscription).id;
 
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
