@@ -29,8 +29,8 @@ var clientID = '159e54fed6354cacae99784052811c29',
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://test-gram.herokuapp.com/callback');
-Instagram.set('redirect_uri', 'http://test-gram.herokuapp.com/');
+Instagram.set('callback_url', 'http://photogrambrazil.herokuapp.com/callback');
+Instagram.set('redirect_uri', 'http://photogrambrazil.herokuapp.com/');
 Instagram.set('maxSockets', 10);
 
 /**
@@ -102,7 +102,7 @@ app.get('/subscribe', function(req, res) {
             object: 'tag',
             object_id: self.hashtag,
             aspect: 'media',
-            callback_url: 'http://test-gram.herokuapp.com/callback',
+            callback_url: 'http://photogrambrazil.herokuapp.com/callback',
             type: 'subscription',
             id: '#'
         });
@@ -119,7 +119,7 @@ app.get('/subscribe', function(req, res) {
         });
     }
 
-    res.redirect('http://test-gram.herokuapp.com');
+    res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
 });
 
@@ -138,7 +138,7 @@ app.get('/unsubscribe', function(req, res) {
         object: 'tag',
         id: self.tagid
     });
-    res.redirect('http://test-gram.herokuapp.com');
+    res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
 });
 /**

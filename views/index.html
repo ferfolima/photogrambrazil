@@ -34,7 +34,7 @@
                 //alert ("The check box is checked.");
                 $.ajax({  
 			         type: "POST",  
-			         url: "http://test-gram.herokuapp.com/insert",  
+			         url: "http://photogrambrazil.herokuapp.com/insert",  
 			         data: "insert=" + checkbox.value,  
 			         success: function(response){  
 			             $('#info').html("OK! Data Sent with Response:" + response);  
@@ -47,7 +47,7 @@
             else {
                 $.ajax({  
 			         type: "POST",  
-			         url: "http://test-gram.herokuapp.com/remove",  
+			         url: "http://photogrambrazil.herokuapp.com/remove",  
 			         data: "remove=" + checkbox.value,  
 			         success: function(response){  
 			             $('#info').html("OK! Data Sent with Response:" + response);  
@@ -101,11 +101,11 @@
 				    $('form[name="chooseHash"] input[type="submit"]').click(function(event){
 				           var $form = $('form[name="chooseHash"]');
 				           if($(this).val()=='Assinar'){
-				               $form.attr('action','http://test-gram.heroku.com/subscribe/');
+				               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
 				               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
 				           }
 				            else{
-				                $form.attr('action','http://test-gram.heroku.com/unsubscribe/');
+				                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
 				            }
 				    });
 				    
