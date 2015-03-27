@@ -658,17 +658,19 @@ a:hover {
 ************/
 
 .nav {
-  	position: fixed;
+  position: fixed;
 	bottom: 15px;
 	right:15px;
+  width:150px;
 	background: rgba(255,255,255, 0.9);
+  border: 1px solid #999;
 }
 
 .nav a {
 	display: block;
-	padding: 2% 20%% 2% 20%%;
+	padding: 2% 20% 2% 20%;
+  text-align: center;
 	font-size: 18px;
-	font-size: 1.1rem;
 }
 .nav .latest { 
 	font-weight: bold;
@@ -678,17 +680,19 @@ a:hover {
 }
 
 .nav-left {
-    position: fixed;
+  position: fixed;
   bottom: 15px;
   left:15px;
+  width:150px;
   background: rgba(255,255,255, 0.9);
+  border: 1px solid #999;
 }
 
 .nav-left a {
   display: block;
-  padding: 2% 20%% 2% 20%%;
+  padding: 2% 20% 2% 20%;
+  text-align: center;
   font-size: 18px;
-  font-size: 1.1rem;
 }
 .nav-left .latest { 
   font-weight: bold;
@@ -714,9 +718,9 @@ a:hover {
 }
 
 /***********
-* @about
+* @assinar
 ************/
-.aboutWrap {
+.assinarWrap {
   	position: absolute;
   	top: 100px;
   	right: 0;
@@ -729,14 +733,14 @@ a:hover {
   	-ms-transform: translateX(-10000px);
 }
 
-.aboutWrap.active {
+.assinarWrap.active {
   	transform: translateX(0px);
   	-webkit-transform: translateX(0px);
   	-moz-transform: translateX(0px);
   	-ms-transform: translateX(0px);
 }
 
-#about {
+#assinar {
   	background: rgba(255,255,255, 0.7);
   	max-width: 455px;
     height: 288px;
@@ -747,22 +751,22 @@ a:hover {
   	box-shadow: inset 6px 4px 10px -7px #000;
 }
 
-#about .tit {
+#assinar .tit {
   	font-size: 28px;
   	font-size: 1.8rem;
 }
-#about .desc {
+#assinar .desc {
   	font-size: 15px;
   	font-size: 0.9rem;
   	margin: 15px 0;
 }
 
-#about .tit, 
-#about .desc {
+#assinar .tit, 
+#assinar .desc {
   	color: #1d1d1d;
 }
 
-#about .desc a {
+#assinar .desc a {
   	font-weight: bold;
   	color: #333;
   	text-decoration: underline;

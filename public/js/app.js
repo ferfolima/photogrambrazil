@@ -14,7 +14,7 @@
         init: function() {
             this.mostRecent();
             this.getData();
-            this.aboutInfo();
+            this.assinarInfo();
             this.mobileNav();
             this.startSlideshow();
         },
@@ -102,39 +102,36 @@
         },
 
         /**
-         * [about view interaction show/hide]
+         * [assinar view interaction show/hide]
          */
-        aboutInfo: function() {
-            var about = $('.aboutWrap'),
-                btClose = $('#js-closeAbout').find('a'),
-                bt = $('#js-btAbout');
-                /*user = localStorage.getItem('user');
+        assinarInfo: function() {
+            var assinar = $('.assinarWrap'),
+                btClose = $('#js-closeAssinar').find('a'),
+                bt = $('#js-btAssinar');
+                user = localStorage.getItem('user');
 
             if( user ) {
-                about.removeClass('active');
+                assinar.removeClass('active');
             } else {
                 localStorage.setItem('user', 'visited');
-            }*/
+            }
 
             btClose.on('click', function(e) {
                 e.preventDefault();
-                about.removeClass('active');
+                assinar.removeClass('active');
             });
 
             bt.on('click', function(e) {
                 e.preventDefault();
-                if( !about.hasClass('active') ) {
-                    about.addClass('active');
+                if( !assinar.hasClass('active') ) {
+                    assinar.addClass('active');
                 } else {
-                    about.removeClass('active');
+                    assinar.removeClass('active');
                 }
             });
 
         },
 
-        /**
-         * [about view interaction show/hide]
-         */
         startSlideshow: function() {
             var bt = $('#js-btSlideshow');
             
