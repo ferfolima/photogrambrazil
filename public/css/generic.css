@@ -4,7 +4,7 @@
 body {zoom:0.9; background:#000;font:normal 0.9em Arial; margin:0; padding:0;}
 h1 {display:inline; color:white; font-size: 100px;}
 .div1 {margin:0 auto;background-color:black;margin-top:50px;}
-.slider-nav img{width:100px;margin: 0 auto;border: 10px solid #fff;}
-.slider-for img{width:640px;height:640px;margin: 0 auto;}
+.slider-nav img{width:100px;margin: 0 auto;}
+.slider-for img{width:640px;height:640px;margin: 0 auto; border: 10px solid #fff;}
 .slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}
 .slider-for {width:100%;margin: 0 auto;}
