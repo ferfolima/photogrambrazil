@@ -107,14 +107,14 @@
         assinarInfo: function() {
             var assinar = $('.assinarWrap'),
                 btClose = $('#js-closeAssinar').find('a'),
-                bt = $('#js-btAssinar');
+                bt = $('#js-btAssinar'),
                 user = localStorage.getItem('user');
 
             if( user ) {
                 assinar.removeClass('active');
-            } else {
+            } /*else {
                 localStorage.setItem('user', 'visited');
-            }
+            }*/
 
             btClose.on('click', function(e) {
                 e.preventDefault();

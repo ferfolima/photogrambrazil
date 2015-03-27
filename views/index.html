@@ -102,10 +102,11 @@
 				           var $form = $('form[name="chooseHash"]');
 				           if($(this).val()=='Assinar'){
 				               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
+				               localStorage.setItem('user', 'visited');
 				               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
 				           }
 				            else{
-				            	localStorage.removeItem('user');
+				            	localStorage.removeItem('user);
 				                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
 				            }
 				    });
