@@ -63,12 +63,14 @@
                 //}
                 //imgTagThumbSrc.push(thumbnail);
                 //document.getElementById("mcts1").innerHTML = '';
-                query = thumbnail;
-                source = $('#slideShowThumbs').html();
-                compiledTemplate = Handlebars.compile(source);
-                var result2 = compiledTemplate({insert: query});
-                imgWrap = $('#mcts1');
-                results.push(result2);
+                
+                //query = thumbnail;
+                //source = $('#slideShowThumbs').html();
+                // compiledTemplate = Handlebars.compile(source);
+                // var result2 = compiledTemplate({insert: query});
+                // imgWrap = $('#mcts1');
+                // results.push(result2);
+
                 //imgWrap.append(result);
                 populateSlider(results);
             });
