@@ -13,8 +13,24 @@
 <body> 
     <section id="features">
         <div class="div1" align="center">
-            <div class="slider slider-for" id="slider">
+          <blockquote class="instagram-media" data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            <div style="padding:8px;"> 
+              <div style="text-align:left">
+                <img src="/images/PhotoGRAM.png" style="width:100px;vertical-align:middle"></img>
+                <a style="text-align:left;font-weight: bold;color:rgb(63,114,155);font-size:120%">Photogram</a>
+                <p style="text-align:left;color:rgb(128,133,137);font-size:120%"> Casamento do fulando com a cicrana</p>
+              </div>
+              <div style=" background:#F8F8F8; line-height:0; margin-top:20px; text-align:center; width:100%;"> 
+                
+                <!-- É aqui que será adicionada a foto -->
+                <div class="slider slider-for" id="slider">
+                </div>
+                <!-- É aqui que será adicionada a foto -->
+                </img>
+              </div>
             </div>
+            <p style="text-align:center;font-weight: bold;font-size:350%;color:rgb(63,114,155);margin-top:20px;">#ZecaBaleiro1004</p>
+          </blockquote>
             <!--<div class="slider slider-nav" id="mcts1">
             </div>-->
         </div>
@@ -26,7 +42,6 @@
         <script id="slideShow-tpl" type="text/x-handlebars-template">
             <div><img src="{{insert}}"/></div>
         </script>
-        <p style="color:white; font-size:350%">#ZecaBaleiro1004</p>
         <!--<script id="slideShowThumbs" type="text/x-handlebars-template">
             <div><img src="{{insert}}"/></div>
         </script>-->
@@ -42,17 +57,17 @@
                   autoplaySpeed: 4000,
                   asNavFor: '.slider-nav'
                 });
-                $('.slider-nav').slick({
-                  slidesToShow: 7,
-                  slidesToScroll: 1,
-                  asNavFor: '.slider-for',
-                  dots: true,
-                  focusOnSelect: true
-                });
+                // $('.slider-nav').slick({
+                //   slidesToShow: 7,
+                //   slidesToScroll: 1,
+                //   asNavFor: '.slider-for',
+                //   dots: true,
+                //   focusOnSelect: true
+                // });
             });
             function populateSlider(addWrap) {
                 $('.slider-for').slick('slickAdd',addWrap[0]);
-                $('.slider-nav').slick('slickAdd',addWrap[1]);
+                // $('.slider-nav').slick('slickAdd',addWrap[1]);
             }
         </script>
     </section>
