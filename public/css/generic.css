@@ -4,6 +4,10 @@
 body {zoom:0.9; background:#eee;font:normal 0.9em Arial; margin:0; padding:0;}
 h1 {display:inline; color:white; font-size: 100px;}
 /*.slider-nav img{width:100px;margin: 0 auto;}*/
-/*.slider-for img{width:640px;height:640px;margin: 0 auto}*/
+.slider-for img{width:640px;height:640px;margin: 0 auto}
 /*.slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}*/
 /*.slider-for {width:100%;margin: 0 auto;}*/
+@font-face{
+	font-family: "berlin-sans-fb-demi-bold";
+	src: url("berlin-sans-fb-demi-bold.ttf") format("truetype")
+}

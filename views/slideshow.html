@@ -24,7 +24,10 @@
                 <div style=" background:#F8F8F8; line-height:0; text-align:center; width:100%;"> 
                   
                   <!-- É aqui que será adicionada a foto -->
-                  <div class="slider slider-for" id="slider">
+                  <div class="slider slider-for" id="slider" dir="ltr">
+                    <img src='https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11111261_1622692397964579_258890682_n.jpg'></img>
+                    <img src='https://igcdn-photos-c-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11098304_725598750897026_750474303_n.jpg'></img>
+                    <img src="https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10852759_980557998670211_111711079_n.jpg"></img>
                   </div>
                   <!-- É aqui que será adicionada a foto -->
                 </div>
@@ -53,10 +56,13 @@
                   slidesToShow: 1,
                   slidesToScroll: 1,
                   arrows: false,
-                  fade: true,
+                  // fade: true,
+                  // speed: 1000,
+                  // cssEase: 'linear',
                   autoplay: true,
-                  autoplaySpeed: 4000
-                  // autoplaySpeed: 4000,
+                  autoplaySpeed: 4000,
+                  ltr: true,
+                  speed: 1000
                   // asNavFor: '.slider-nav'
                 });
                 // $('.slider-nav').slick({
