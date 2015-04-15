@@ -1,13 +1,109 @@
 
 /* For generic page styles. Not for sliders. */
 
-body {zoom:0.9; background:#eee;font:normal 0.9em Arial; margin:0; padding:0;}
-h1 {display:inline; color:white; font-size: 100px;}
+body {
+	zoom:0.9;
+	background:#eee;
+	font:normal 0.9em Arial; 
+	margin:0; 
+	padding:0;
+}
+
+body::after{
+	content: "";
+	background:url('../images/mamaocomacucar.jpg') no-repeat center center fixed;
+	opacity: 0.7;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+h1 {
+	display:inline; 
+	color:white; 
+	font-size: 100px;
+}
+
+section {
+	position: relative;
+}
+
 /*.slider-nav img{width:100px;margin: 0 auto;}*/
-.slider-for img{width:640px;height:640px;margin: 0 auto}
 /*.slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}*/
 /*.slider-for {width:100%;margin: 0 auto;}*/
+.slider-for img{
+	width:640px;
+	height:640px;
+	margin: 0 auto
+}
+
 @font-face{
 	font-family: "berlin-sans-fb-demi-bold";
 	src: url("berlin-sans-fb-demi-bold.ttf") format("truetype")
+}
+
+.berlin-font{
+	font-family: "berlin-sans-fb-demi-bold";
+	font-style: italic;
+	font-weight: bold;
+	text-align:center;
+	font-size:48px;
+	color:rgb(63,114,155);
+	margin: -20px 0 0 0
+}
+
+.outter-box{
+	/*background:#ddd; */
+	background: rgba(221,221,221,0.4);
+	border:0; 
+	border-radius:3px; 
+	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
+	margin: 1px; 
+	width:640px;
+	padding: 50px 50px;
+}
+
+.inner-box{
+	background:#FFF; 
+	border:0; 
+	border-radius:3px; 
+	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
+	margin: 1px; 
+	width:100%;
+}
+
+.div-central{
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	height: 30%; 
+	width: 50%; 
+	margin: 0.25% 0 0 -25%;
+}
+
+.title{
+	text-align:left; 
+	font-size:120%;
+}
+
+.title img{
+	width:100px;
+	vertical-align:middle
+}
+
+.title a{
+	font-weight:bold;
+	color:rgb(63,114,155)
+}
+
+.title p{
+	color:rgb(128,133,137);
+	display:inline
 }
