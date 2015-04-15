@@ -46,13 +46,13 @@ section {
 
 @font-face{
 	font-family: "berlin-sans-fb-demi-bold";
-	src: url("berlin-sans-fb-demi-bold.ttf") format("truetype")
+	src: url("../font/berlin-sans-fb-demi-bold.ttf") format("truetype")
 }
 
 .berlin-font{
 	font-family: "berlin-sans-fb-demi-bold";
 	font-style: italic;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	text-align:center;
 	font-size:48px;
 	color:rgb(63,114,155);
