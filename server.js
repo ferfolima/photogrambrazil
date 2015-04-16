@@ -61,7 +61,7 @@ io.configure(function () {
  * Set your app main configuration
  */
 app.configure(function(){
-    app.use(wwwhisper());
+    app.use(wwwhisper(false));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
