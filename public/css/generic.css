@@ -9,9 +9,9 @@ body {
 	padding:0;
 }
 
-/*body::after{
+body::after{
 	content: "";
-	background:url('../images/mamaocomacucar.jpg') no-repeat center center fixed;
+	background:url('../images/bg.jpg') repeat 0 0;
 	opacity: 0.7;
 	top: 0;
 	left: 0;
@@ -19,11 +19,7 @@ body {
 	right: 0;
 	position: absolute;
 	z-index: -1;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}*/
+}
 
 h1 {
 	display:inline; 
