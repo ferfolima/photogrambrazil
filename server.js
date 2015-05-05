@@ -131,7 +131,7 @@ app.get('/unsubscribe', function(req, res) {
     var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-        var jsonSubscription = Instagram.subscription.subscribe({
+        var jsonSubscription = Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: hashtag,
             aspect: 'media',
