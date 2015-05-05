@@ -22,8 +22,8 @@ var pub = __dirname + '/public',
  */
 var clientID = '159e54fed6354cacae99784052811c29',
     clientSecret = '39169f06d11a46798ce098db118c5aa7',
-    hashtag = '',
-    tagid = '';
+    hashtag = '';
+    // tagid = '';
 
 /**
  * Set the configuration
@@ -110,7 +110,7 @@ app.get('/subscribe', function(req, res) {
             id: '#'
         });
 
-        self.tagid = JSON.parse(jsonSubscription).id;
+        // self.tagid = JSON.parse(jsonSubscription).id;
         
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
@@ -130,8 +130,8 @@ app.get('/unsubscribe', function(req, res) {
     // var self = this;
     var tagid, parsedRequest;
     parsedRequest = url.parse(req.url, true);
-    if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
-       tagid = parsedRequest['query']['hub.tagid'];
+    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+       tagid = parsedRequest['query']['hub.tag'];
        console.log("\n\n\n" + tagid + "\n\n\n");
        Instagram.tags.unsubscribe({ id: tagid });
     }
