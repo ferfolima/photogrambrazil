@@ -131,9 +131,18 @@ app.get('/unsubscribe', function(req, res) {
     var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-        var hashtag = parsedRequest['query']['hub.tag'];
-        console.log("\n\n\n" + hashtag + "\n\n\n");
-        Instagram.tags.unsubscribe({id: hashtag});
+        var jsonSubscription = Instagram.tags.subscribe({
+            object: 'tag',
+            object_id: hashtag,
+            aspect: 'media',
+            callback_url: 'http://photogrambrazil.herokuapp.com/callback',
+            type: 'subscription',
+            id: '#'
+        });
+
+        var tagid = JSON.parse(jsonSubscription).id;
+        console.log("\n\n\n" + tagid + "\n\n\n");
+        Instagram.tags.unsubscribe({id: tagid});
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
