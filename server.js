@@ -127,17 +127,15 @@ app.get('/subscribe', function(req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
-    var self = this;
-    //var tagid, parsedRequest;
-    //parsedRequest = url.parse(req.url, true);
-    //if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
-    //    tagid = parsedRequest['query']['hub.tagid'];
-    //    Instagram.subscriptions.unsubscribe({ id: tagid });
-    //}
-    //res.redirect('http://test-gram.herokuapp.com');
-    //return res.end();
-    console.log("\n\n\n" + self.tagid + "\n\n\n");
-    Instagram.tags.unsubscribe({id: self.tagid});
+    // var self = this;
+    var tagid, parsedRequest;
+    parsedRequest = url.parse(req.url, true);
+    if (parsedRequest['query']['hub.tagid'] != null && parsedRequest['query']['hub.tagid'].length > 0) {
+       tagid = parsedRequest['query']['hub.tagid'];
+       console.log("\n\n\n" + tagid + "\n\n\n");
+       Instagram.tags.unsubscribe({ id: tagid });
+    }
+    // Instagram.tags.unsubscribe({id: self.tagid});
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
 });
