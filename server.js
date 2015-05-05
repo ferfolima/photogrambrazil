@@ -96,14 +96,14 @@ app.get('/callback', function(req, res){
 });
 
 app.get('/subscribe', function(req, res) {
-    var self = this;
+    // var self = this;
     var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-        self.hashtag = parsedRequest['query']['hub.tag'];
+        var hashtag = parsedRequest['query']['hub.tag'];
         var jsonSubscription = Instagram.tags.subscribe({
             object: 'tag',
-            object_id: self.hashtag,
+            object_id: hashtag,
             aspect: 'media',
             callback_url: 'http://photogrambrazil.herokuapp.com/callback',
             type: 'subscription',
@@ -128,14 +128,14 @@ app.get('/subscribe', function(req, res) {
 
 app.get('/unsubscribe', function(req, res) {
     // var self = this;
-    var tagid, parsedRequest;
+    var parsedRequest;
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-       tagid = parsedRequest['query']['hub.tag'];
-       console.log("\n\n\n" + tagid + "\n\n\n");
-       Instagram.tags.unsubscribe({ id: tagid });
+        var hashtag = parsedRequest['query']['hub.tag'];
+        console.log("\n\n\n" + hashtag + "\n\n\n");
+        Instagram.tags.unsubscribe({id: hashtag});
     }
-    // Instagram.tags.unsubscribe({id: self.tagid});
+
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
 });
