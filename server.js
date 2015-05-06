@@ -141,7 +141,7 @@ app.get('/unsubscribe', function(req, res) {
         });
 
         var tagid = JSON.parse(jsonSubscription).id;
-        console.log("\n\n\n" + tagid + "\n\n\n");
+        console.log("\n\n\n" + jsonSubscription + "\n\n\n");
         Instagram.tags.unsubscribe({id: tagid});
     }
 
