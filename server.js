@@ -133,9 +133,9 @@ app.get('/unsubscribe', function(req, res) {
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
         // Instagram.subscriptions.unsubscribe({object: 'tag', id: null});
-        JSON.parse(Instagram.subscriptions.list(), function(obj)){
+        JSON.parse(Instagram.subscriptions.list(), function(obj){
             console.log("O tal do ID é: " + obj[0].id);
-        }
+        });
 
         // JSON.parse(jsonSubscription).id;
     }
