@@ -140,18 +140,6 @@ app.get('/unsubscribe', function(req, res) {
 
     // }
 
-    var value;
-    var A = function(callback) {
-      setTimeout(function() {
-        value = JSON.parse(Instagram.subscriptions.list());
-        callback();
-      }, 2000);
-    };
-    var B = function(callback) {
-      console.log("======= " + value + " ======");
-      callback();
-    };
-
     var queue = function(funcs) {
         (function next() {
             if(funcs.length > 0) {
@@ -160,6 +148,27 @@ app.get('/unsubscribe', function(req, res) {
             }
         })();
     };
+
+    var obj = {
+        value: null
+    };
+
+    queue([
+        function(callback) {
+            var self = this;
+            setTimeout(function() {
+                self.value = JSON.parse(Instagram.subscriptions.list());
+                callback();
+            }, 2000);
+        },
+        function(callback) {
+            console.log("======= " + this.value + " ======");
+            callback();
+        },
+        function() {
+            console.log("======= " + obj.value + " ======");
+        }
+    ], obj);
 
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
