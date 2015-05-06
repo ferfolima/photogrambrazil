@@ -139,10 +139,10 @@ app.get('/unsubscribe', function(req, res) {
           setTimeout(function() {
             value = JSON.parse(Instagram.subscriptions.list());
             callback();
-          }, 200);
+          }, 1000);
         };
         var B = function() {
-          console.log("sera que deu?" + value + "vou ficar emocionado");
+          console.log("sera que deu? " + value + " vou ficar emocionado");
         };
 
         A(function() {
