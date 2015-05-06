@@ -152,10 +152,10 @@ app.post('/callback', function(req, res) {
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
       //self.tagid = tag.subscription_id;
-        if(!(tag.subscription_id in dictTagId)){
-            dictTagId[tag.object_id] = tag.subscription_id;
+        if(!(tag.subscription_id in this.dictTagId)){
+            this.dictTagId[tag.object_id] = tag.subscription_id;
         }
-        for(var teste in dictTagId){
+        for(var teste in this.dictTagId){
             console.log("dictTagId: " + teste);
         }
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
