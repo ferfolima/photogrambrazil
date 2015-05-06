@@ -140,11 +140,11 @@ app.get('/unsubscribe', function(req, res) {
 
     // }
 
-    var queue = function(funcs) {
+
+    var queue = function(funcs, scope) {
         (function next() {
             if(funcs.length > 0) {
-                var f = funcs.shift();
-                f(next);
+                funcs.shift().apply(scope || {}, [next].concat(Array.prototype.slice.call(arguments, 0)));
             }
         })();
     };
@@ -153,20 +153,21 @@ app.get('/unsubscribe', function(req, res) {
         value: null
     };
 
+
     queue([
         function(callback) {
             var self = this;
             setTimeout(function() {
                 self.value = JSON.parse(Instagram.subscriptions.list());
                 callback();
-            }, 2000);
+            }, 200);
         },
-        function(callback) {
-            console.log("======= " + this.value + " ======");
-            callback();
-        },
+        // function(callback, add) {
+            // console.log(this.value + add);
+            // callback();
+        // },
         function() {
-            console.log("======= " + obj.value + " ======");
+            console.log(obj.value);
         }
     ], obj);
 
