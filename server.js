@@ -142,7 +142,7 @@ app.get('/unsubscribe', function(req, res) {
           }, 200);
         };
         var B = function() {
-          console.log(value[1].id);
+          console.log(value);
         };
 
         A(function() {
