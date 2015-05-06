@@ -128,32 +128,16 @@ app.get('/subscribe', function(req, res) {
 
 app.get('/unsubscribe', function(req, res) {
 
+    var list = JSON.parse(Instagram.subscriptions.list());
+
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
         // Instagram.subscriptions.unsubscribe({object: 'tag', id: null});
-        
-        var value;
-        var A = function(callback) {
-          setTimeout(function() {
-            value = JSON.stringify(Instagram.subscriptions.list());
-            callback();
-          }, 1000);
-        };
-        var B = function() {
-          console.log("sera que deu? " + value + " vou ficar emocionado");
-        };
 
-        A(function() {
-          B();
-        });
+        console.log("O tal do ID é: " + list[1].id + "entendeu?");
 
-        // JSON.parse(Instagram.subscriptions.list(), function(result){
-        //     console.log("O tal do ID é: " + result[1].id + "entendeu?");
-        // })(result);
-
-        // JSON.parse(jsonSubscription).id;
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
