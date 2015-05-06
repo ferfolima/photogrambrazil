@@ -138,7 +138,7 @@ app.get('/unsubscribe', function(req, res) {
                     }
                 }
             }
-        })
+        });
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
