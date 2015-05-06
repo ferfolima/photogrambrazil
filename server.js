@@ -98,9 +98,9 @@ app.get('/callback', function(req, res){
 });
 
 app.get('/subscribe', function(req, res) {
-    // var self = this;
-    var parsedRequest;
-    parsedRequest = url.parse(req.url, true);
+    
+    var parsedRequest = url.parse(req.url, true);
+
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.subscribe({
@@ -127,13 +127,14 @@ app.get('/subscribe', function(req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
-    // var self = this;
+
     var parsedRequest = url.parse(req.url, true);
+
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
         // Instagram.subscriptions.unsubscribe({object: 'tag', id: null});
-        // JSON.parse(jsonSubscription).id;
-        window.alert(Instagram.subscriptions.list());
+        var listOfTags = JSON.parse(console.log(Instagram.subscriptions.list()));
+        console.log(listOfTags);
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
