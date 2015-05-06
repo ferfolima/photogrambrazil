@@ -155,6 +155,9 @@ app.post('/callback', function(req, res) {
         if(!(tag.subscription_id in dictTagId)){
             dictTagId[tag.object_id] = tag.subscription_id;
         }
+        for(var teste in dictTagId){
+            console.log("dictTagId: " + teste);
+        }
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
       sendMessage(url);
 
