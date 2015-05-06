@@ -23,7 +23,7 @@ var pub = __dirname + '/public',
 var clientID = '159e54fed6354cacae99784052811c29',
     clientSecret = '39169f06d11a46798ce098db118c5aa7',
     hashtag = '';
-    // tagid = '';
+    subscription = {};
 
 var dictTagId = {};
 
@@ -98,12 +98,12 @@ app.get('/callback', function(req, res){
 });
 
 app.get('/subscribe', function(req, res) {
-    
+    var self = this;
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        Instagram.subscriptions.subscribe({
+        self.subscription[hashtag] = Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: hashtag,
             aspect: 'media',
@@ -127,7 +127,12 @@ app.get('/subscribe', function(req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
-
+    var self = this;
+    console.log("antes");
+    for(var teste in self.subscription){
+        console.log(teste);
+    }
+    console.log("depois");
     // var list = JSON.parse(Instagram.subscriptions.list());
 
     // var parsedRequest = url.parse(req.url, true);
@@ -139,37 +144,7 @@ app.get('/unsubscribe', function(req, res) {
         // console.log("O tal do ID é: " + list + "entendeu?");
 
     // }
-
-
-    var queue = function(funcs, scope) {
-        (function next() {
-            if(funcs.length > 0) {
-                funcs.shift().apply(scope || {}, [next].concat(Array.prototype.slice.call(arguments, 0)));
-            }
-        })();
-    };
-
-    var obj = {
-        value: null
-    };
-
-
-    queue([
-        function(callback) {
-            var self = this;
-            setTimeout(function() {
-                self.value = Instagram.subscriptions.list();
-                callback();
-            }, 200);
-        },
-        function(callback) {
-            console.log(this.value);
-            callback();
-        },
-        function() {
-            console.log(obj.value);
-        }
-    ], obj);
+    // self.value = Instagram.subscriptions.list();
 
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
@@ -178,7 +153,7 @@ app.get('/unsubscribe', function(req, res) {
  * for each new post Instagram send us the data
  */
 app.post('/callback', function(req, res) {
-    var self = this;
+    // var self = this;
     var data = req.body;
 
     // Grab the hashtag "tag.object_id"
