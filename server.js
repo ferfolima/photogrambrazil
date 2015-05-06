@@ -131,8 +131,9 @@ app.get('/unsubscribe', function(req, res) {
     var parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        Instagram.subscriptions.list(function (err, data) { console.log(data); });
+        Instagram.subscriptions.list(function (err, data) { console.log("1, 2, 3, testando" + data); });
         // Instagram.subscriptions.unsubscribe({id: tagid});
+        Instagram.tags.subscriptions.unsubscribe_all();
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
