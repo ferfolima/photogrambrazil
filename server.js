@@ -138,9 +138,7 @@ app.get('/unsubscribe', function(req, res) {
         Instagram.subscriptions.list({
             complete: function(data) {
                 for(i in data){
-                    for(j in i){
-                        console.log(j);
-                    }
+                    console.log(data[i]);
                 }
             }
         })
