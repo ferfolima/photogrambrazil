@@ -158,14 +158,14 @@ app.get('/unsubscribe', function(req, res) {
         function(callback) {
             var self = this;
             setTimeout(function() {
-                self.value = JSON.parse(Instagram.subscriptions.list());
+                self.value = Instagram.subscriptions.list();
                 callback();
             }, 200);
         },
-        // function(callback, add) {
-            // console.log(this.value + add);
-            // callback();
-        // },
+        function(callback) {
+            console.log(this.value);
+            callback();
+        },
         function() {
             console.log(obj.value);
         }
