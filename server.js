@@ -25,6 +25,8 @@ var clientID = '159e54fed6354cacae99784052811c29',
     hashtag = '';
     // tagid = '';
 
+var dictTagId = {};
+
 /**
  * Set the configuration
  */
@@ -131,17 +133,7 @@ app.get('/unsubscribe', function(req, res) {
     var parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        var jsonSubscription = Instagram.subscriptions.subscribe({
-            object: 'tag',
-            object_id: hashtag,
-            aspect: 'media',
-            callback_url: 'http://photogrambrazil.herokuapp.com/callback',
-            type: 'subscription',
-            id: '#'
-        });
-
-        var tagid = JSON.parse(jsonSubscription).id;
-        console.log("\n\n\n" + "\n\tJSON: " + jsonSubscription + "\n\n\n");
+        var tagid = dictTagId[hashtag];
         console.log("\n\n\n" + "\n\tID: " + tagid + "\n\n\n");
         Instagram.tags.unsubscribe({id: tagid});
     }
@@ -160,6 +152,9 @@ app.post('/callback', function(req, res) {
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
       //self.tagid = tag.subscription_id;
+        if(!(tag.subscription_id in dictTagId)){
+            dictTagId[tag.object_id] = tag.subscription_id;
+        }
       var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
       sendMessage(url);
 
