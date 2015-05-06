@@ -138,9 +138,9 @@ app.get('/unsubscribe', function(req, res) {
             callback_url: 'http://photogrambrazil.herokuapp.com/callback',
             type: 'subscription',
             id: '#',
-            complete: function(){
-                var tagid = JSON.parse(jsonSubscription).id;
-                console.log("\n\n\n" + "\n\tJSON: " + jsonSubscription + "\n\n\n");
+            complete: function(data){
+                var tagid = JSON.parse(data).id;
+                console.log("\n\n\n" + "\n\tJSON: " + data + "\n\n\n");
                 console.log("\n\n\n" + "\n\tID: " + tagid + "\n\n\n");
                 Instagram.tags.unsubscribe({id: tagid});    
             }
