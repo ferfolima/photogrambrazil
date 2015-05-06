@@ -137,7 +137,9 @@ app.get('/unsubscribe', function(req, res) {
         var hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.list({
             complete: function(data) {
-                console.log(data);
+                for(i in data){
+                    console.log(i);
+                }
             }
         })
         if(hashtag in self.subscription){
