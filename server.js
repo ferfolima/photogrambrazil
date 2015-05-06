@@ -133,9 +133,15 @@ app.get('/unsubscribe', function(req, res) {
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
         // Instagram.subscriptions.unsubscribe({object: 'tag', id: null});
-        JSON.parse(Instagram.subscriptions.list(), function(result){
-            console.log("O tal do ID é: " + result[1].id + "entendeu?");
-        })(result);
+        var i = Instagram.subscriptions.list();
+        (function(i) {
+            setTimeout(function() {
+              console.log(JSON.parse(i)[1].id);
+            }, 1000);
+          })(i);
+        // JSON.parse(Instagram.subscriptions.list(), function(result){
+        //     console.log("O tal do ID é: " + result[1].id + "entendeu?");
+        // })(result);
 
         // JSON.parse(jsonSubscription).id;
     }
