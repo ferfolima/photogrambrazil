@@ -142,7 +142,7 @@ app.get('/unsubscribe', function(req, res) {
           }, 200);
         };
         var B = function() {
-          console.log(value);
+          console.log("sera que deu?" + value + "vou ficar emocionado");
         };
 
         A(function() {
