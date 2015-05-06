@@ -152,9 +152,14 @@ app.get('/unsubscribe', function(req, res) {
       callback();
     };
 
-    A(function() {
-      B();
-    });
+    var queue = function(funcs) {
+        (function next() {
+            if(funcs.length > 0) {
+                var f = funcs.shift();
+                f(next);
+            }
+        })();
+    };
 
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
