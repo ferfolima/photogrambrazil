@@ -105,10 +105,7 @@ app.get('/subscribe', function(req, res) {
         var hashtag = parsedRequest['query']['hub.tag'];
         Instagram.subscriptions.subscribe({
             object: 'tag',
-            object_id: hashtag,
-            complete: function(data) {
-                self.subscription[hashtag] = data;
-            }
+            object_id: hashtag
             // aspect: 'media',
             // callback_url: 'http://photogrambrazil.herokuapp.com/callback',
             // type: 'subscription',
@@ -141,6 +138,11 @@ app.get('/unsubscribe', function(req, res) {
         // for(var teste in self.subscription){
             // console.log(teste);
         // }
+        Instagram.subscriptions.list({
+            complete: function(data) {
+                self.subscription[hashtag] = JSON.parse(data);
+            }
+        })
         if(hashtag in self.subscription){
             console.log("hashtag: " + hashtag);
             console.log("content: " + self.subscription[hashtag]);
