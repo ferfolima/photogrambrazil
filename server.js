@@ -103,7 +103,7 @@ app.get('/subscribe', function(req, res) {
     parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        var jsonSubscription = Instagram.subscriptions.subscribe({
+        Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: hashtag,
             aspect: 'media',
@@ -111,8 +111,6 @@ app.get('/subscribe', function(req, res) {
             type: 'subscription',
             id: '#'
         });
-
-        // self.tagid = JSON.parse(jsonSubscription).id;
         
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
@@ -133,13 +131,11 @@ app.get('/unsubscribe', function(req, res) {
     var parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        var listTagId = Instagram.subscriptions.list();
-        var test = JSON.parse(listTagId);
-        console.log("\n\n\n" + "\n\tlista ID " + test + "\n\n\n");
+        Instagram.subscriptions.list(function (err, data) { console.log(data); }));
         // Instagram.subscriptions.unsubscribe({id: tagid});
     }
 
-    // res.redirect('http://photogrambrazil.herokuapp.com');
+    res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
 });
 /**
