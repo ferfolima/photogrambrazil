@@ -98,7 +98,6 @@ app.get('/callback', function(req, res){
 });
 
 app.get('/subscribe', function(req, res) {
-    var self = this;
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -127,10 +126,6 @@ app.get('/subscribe', function(req, res) {
 });
 
 app.get('/unsubscribe', function(req, res) {
-    var self = this;
-    
-    // var list = JSON.parse(Instagram.subscriptions.list());
-
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -139,18 +134,12 @@ app.get('/unsubscribe', function(req, res) {
             complete: function(data) {
                 for(i in data){
                     if(data[i].object_id == hashtag){
-                        console.log(data[i].id);
+                        Instagram.subscriptions.unsubscribe({object: 'tag', id: data[i].id});
                     }
                 }
             }
         })
-        if(hashtag in self.subscription){
-            console.log("hashtag: " + hashtag);
-            console.log("content: " + self.subscription[hashtag]);
-            // Instagram.subscriptions.unsubscribe({object: 'tag', id: null});
-        }
     }
-    // self.value = Instagram.subscriptions.list();
 
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
@@ -159,22 +148,13 @@ app.get('/unsubscribe', function(req, res) {
  * for each new post Instagram send us the data
  */
 app.post('/callback', function(req, res) {
-    // var self = this;
     var data = req.body;
 
     // Grab the hashtag "tag.object_id"
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
-      //self.tagid = tag.subscription_id;
-        // if(!(tag.subscription_id in this.dictTagId)){
-        //     this.dictTagId[tag.object_id] = tag.subscription_id;
-        // }
-        // for(var teste in this.dictTagId){
-        //     console.log("dictTagId: " + teste);
-        // }
-      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
-      sendMessage(url);
-
+        var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
+        sendMessage(url);
     });
     res.end();
 });
