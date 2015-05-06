@@ -114,7 +114,7 @@ app.get('/subscribe', function(req, res) {
         
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
-                name: self.hashtag,
+                name: hashtag,
                 complete: function(data) {
                     socket.emit('firstShow', { firstShow: data });
                 }
