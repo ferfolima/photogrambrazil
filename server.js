@@ -147,8 +147,9 @@ app.get('/unsubscribe', function(req, res) {
         callback();
       }, 2000);
     };
-    var B = function() {
+    var B = function(callback) {
       console.log("======= " + value + " ======");
+      callback();
     };
 
     A(function() {
