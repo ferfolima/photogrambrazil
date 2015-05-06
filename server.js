@@ -137,15 +137,14 @@ app.get('/unsubscribe', function(req, res) {
             aspect: 'media',
             callback_url: 'http://photogrambrazil.herokuapp.com/callback',
             type: 'subscription',
-            id: '#'
+            id: '#',
+            complete: function(){
+                var tagid = JSON.parse(jsonSubscription).id;
+                console.log("\n\n\n" + "\n\tJSON: " + jsonSubscription + "\n\n\n");
+                console.log("\n\n\n" + "\n\tID: " + tagid + "\n\n\n");
+                Instagram.tags.unsubscribe({id: tagid});    
+            }
         });
-
-        req.on('data', function(returned){
-            var tagid = JSON.parse(jsonSubscription).id;
-            console.log("\n\n\n" + "\n\tJSON: " + jsonSubscription + "\n\n\n");
-            console.log("\n\n\n" + "\n\tID: " + tagid + "\n\n\n");
-            Instagram.tags.unsubscribe({id: tagid});
-        });    
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
