@@ -103,14 +103,14 @@ app.get('/subscribe', function(req, res) {
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        self.subscription[hashtag] = Instagram.subscriptions.subscribe({
+        self.subscription[hashtag] = JSON.parse(Instagram.subscriptions.subscribe({
             object: 'tag',
             object_id: hashtag,
             aspect: 'media',
             callback_url: 'http://photogrambrazil.herokuapp.com/callback',
             type: 'subscription',
             id: '#'
-        });
+        }));
         
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
@@ -139,7 +139,8 @@ app.get('/unsubscribe', function(req, res) {
             // console.log(teste);
         // }
         if(hashtag in self.subscription){
-            console.log(self.subscription[hashtag]);
+            console.log("hashtag: " + hashtag);
+            console.log("content: " + self.subscription[hashtag]);
             // Instagram.subscriptions.unsubscribe({object: 'tag', id: null});
         }
     }
