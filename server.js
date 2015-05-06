@@ -136,7 +136,7 @@ app.get('/unsubscribe', function(req, res) {
         // var tagid = dictTagId[hashtag];
         // console.log("\n\n\n" + "\n\tID: " + tagid + "\n\n\n");
         // Instagram.subscriptions.unsubscribe({id: tagid});
-        Instagram.subscriptions.unsubscribeAll();
+        Instagram.subscriptions.unsubscribe_all();
     }
 
     res.redirect('http://photogrambrazil.herokuapp.com');
