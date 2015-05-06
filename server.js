@@ -140,7 +140,6 @@ app.get('/unsubscribe', function(req, res) {
 
     // }
 
-    console.log("======antes======");
     var value;
     var A = function(callback) {
       setTimeout(function() {
@@ -149,13 +148,12 @@ app.get('/unsubscribe', function(req, res) {
       }, 2000);
     };
     var B = function() {
-      console.log(value);
+      console.log("======= " + value + " ======");
     };
 
     A(function() {
       B();
     });
-    console.log("======depois======");
 
     res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
