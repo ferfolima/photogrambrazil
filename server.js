@@ -137,7 +137,7 @@ app.get('/unsubscribe', function(req, res) {
         var value;
         var A = function(callback) {
           setTimeout(function() {
-            value = JSON.parse(Instagram.subscriptions.list());
+            value = JSON.stringify(Instagram.subscriptions.list());
             callback();
           }, 1000);
         };
