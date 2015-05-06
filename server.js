@@ -133,13 +133,12 @@ app.get('/unsubscribe', function(req, res) {
     var parsedRequest = url.parse(req.url, true);
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
         var hashtag = parsedRequest['query']['hub.tag'];
-        // var tagid = dictTagId[hashtag];
-        console.log("\n\n\n" + "\n\tID: " + Instagram.subscriptions.list() + "\n\n\n");
+        var listTagId = Instagram.subscriptions.list();
+        console.log("\n\n\n" + "\n\tlista ID " + listTagId + "\n\n\n");
         // Instagram.subscriptions.unsubscribe({id: tagid});
-        Instagram.subscriptions.unsubscribe_all();
     }
 
-    res.redirect('http://photogrambrazil.herokuapp.com');
+    // res.redirect('http://photogrambrazil.herokuapp.com');
     return res.end();
 });
 /**
