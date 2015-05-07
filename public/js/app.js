@@ -59,7 +59,7 @@
          */
         renderTemplate: function(data) {
             var lastAnimate, lastSrc, nextSrc, last,
-                current = JSON.parse(data).data[0].images.standard_resolution.url,
+                current = data.data[0].images.standard_resolution.url,
                 w = $(document).width();
                 var clean = $('imgContent').find('a').remove();
                 var
