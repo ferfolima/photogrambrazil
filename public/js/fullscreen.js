@@ -23,40 +23,9 @@ function toggleFullScreen() {
   }
 }
 
-var    keys = [];
-window.executeHotkeyTest = function(callback,keyValues){
-    if(typeof callback !== "function")
-        throw new TypeError("Expected callback as first argument");
-    if(typeof keyValues !== "object" && (!Array.isArray || Array.isArray(keyValues)))
-        throw new TypeError("Expected array as second argument");
-    
-    var allKeysValid = true;
-    
-    for(var i = 0; i < keyValues.length; ++i)
-        allKeysValid = allKeysValid && keys[keyValues[i]];
-
-    if(allKeysValid)
-        callback();
-};
-
-window.addGlobalHotkey = function(callback,keyValues){
-    if(typeof keyValues === "number")
-        keyValues = [keyValues];
-    
-    var fnc = function(cb,val){
-        return function(e){
-            keys[e.keyCode] = true;
-            executeHotkeyTest(cb,val);
-        };        
-    }(callback,keyValues);
-    window.addEventListener('keydown',fnc);
-    return fnc;
-};
-
-window.addEventListener('keyup',function(e){
-    keys[e.keyCode] = false;
-});
-
-addGlobalHotkey(function(){
+document.addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    // alert("deu certo");
     toggleFullScreen();
-},[13,17]);
+  }
+}, false);

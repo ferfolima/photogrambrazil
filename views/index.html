@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<title>Photogram - Seus convidados fazendo a sua festa</title>
 
+	<!-- metas -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta property='og:title' content='Photogram - Seus convidados fazendo a sua festa' />
 	<meta property='og:description' content='Photogram eh o novo aplicativo para tomar conta do seu evento.' />
@@ -15,13 +16,14 @@
 	<meta property='og:type' content='website' />
 	<meta property='og:site_name' content='Photogram' />
 
+	<!-- css -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/app.css">
 
+	<!-- script -->
 	<script src="/js/socket.io.min.js"></script>
 	<script src="/js/jquery.1.9.min.js"></script>
 	<script src="/js/handlebarsjs.1.0.min.js"></script>
-	<script src="/js/app.js"></script>
 	<script type="text/javascript" src="/js/fullscreen.js"></script>
 	<script type="text/javascript" src="/js/appfunctions.js"></script>
 
@@ -111,7 +113,7 @@
 			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
 			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 		</a>
-	</script>	
+	</script>
 	<!--********************************
 	FOOTER
 	*********************************
@@ -125,6 +127,9 @@
 			</ul>
 		</div>
 	</footer>
+
+	<!-- CALL MAIN APP SCRIPT -->	
+	<script src="/js/app.js"></script>
 
 	<!--[if lt IE 9]>
     </div>
