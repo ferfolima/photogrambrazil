@@ -792,19 +792,22 @@ a:hover {
 	padding: 8px;
 }
 
-#imgContent .animated {
+/*#imgContent .animated {
 	position: relative;
 	z-index: 10;
-}
+}*/
 
 #imgContent a {
+  position: relative;
 	float: left;
 	width: 180px;
 	height: 180px;
-	padding: 0.25% 0.25% 0.25% 0.25%;
+	/*padding: 0.25% 0.25% 0.25% 0.25%;*/
+  margin: 5px;
 }
 
 #imgContent img { 
+  position: absolute;
 	-webkit-transition: all 0.5s ease;
 	   -moz-transition: all 0.5s ease;
 	     -o-transition: all 0.5s ease;
