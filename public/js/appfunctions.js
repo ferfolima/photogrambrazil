@@ -33,6 +33,7 @@ $(function(){
            if($(this).val()=='Assinar'){
                $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
                localStorage.setItem('user', 'visited');
+               // window.open('/slideshow/');
            }
             else{
                 $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
