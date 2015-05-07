@@ -16,7 +16,6 @@
             this.getData();
             this.assinarInfo();
             this.mobileNav();
-            this.startSlideshow();
         },
 
         /**
@@ -128,16 +127,6 @@
                 } else {
                     assinar.removeClass('active');
                 }
-            });
-
-        },
-
-        startSlideshow: function() {
-            var bt = $('#js-btSlideshow');
-            
-            bt.on('click', function(e) {
-                e.preventDefault();
-                window.open("http://photogrambrazil.herokuapp.com/slideshow");
             });
 
         },

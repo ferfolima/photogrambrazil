@@ -1,6 +1,5 @@
 function OnChangeCheckbox (checkbox) {
     if (checkbox.checked) {
-        //alert ("The check box is checked.");
         $.ajax({  
 	         type: "POST",  
 	         url: "http://photogrambrazil.herokuapp.com/insert",  
@@ -34,7 +33,6 @@ $(function(){
            if($(this).val()=='Assinar'){
                $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
                localStorage.setItem('user', 'visited');
-               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
            }
             else{
                 $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
