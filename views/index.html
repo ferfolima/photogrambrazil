@@ -4,7 +4,8 @@
 <head>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<!-- fav icon -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
 	<title>Photogram - Seus convidados fazendo a sua festa</title>
 
 	<!-- metas -->
@@ -16,8 +17,7 @@
 	<meta property='og:type' content='website' />
 	<meta property='og:site_name' content='Photogram' />
 
-	<!-- fav icon -->
-	<link rel="shortcut icon" href="/images/favicon.ico">
+
 
 	<!-- css -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
@@ -60,6 +60,44 @@
         }
     </script>
 
+    <script id="firstShow-tpl" type="text/x-handlebars-template">
+	{{#each firstShow}}
+		<a title="@{{user.username}}: {{caption.text}}">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{images.standard_resolution.url}}"/>
+			<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+		</a>
+	{{/each}}
+	</script>
+	<script id="mostRecent-tpl" type="text/x-handlebars-template">
+		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
+			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+		</a>
+	</script>
+	<script type="text/javascript">
+				$(function(){
+				    $('form[name="chooseHash"] input[type="submit"]').click(function(event){
+				           var $form = $('form[name="chooseHash"]');
+				           if($(this).val()=='Assinar'){
+				               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
+				               localStorage.setItem('user', 'visited');
+				               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
+				           }
+				            else{
+				                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
+				                localStorage.removeItem('user');
+				            }
+				    });
+				    
+				    $('form[name="myform"]').submit(function(event){
+				        alert("form action : " + $(this).attr('action'));
+				        event.preventDefault();
+				    });
+				});
+				</script>
+
+	<script src="/js/app.js"></script>
+
 	<!--[if lt IE 9]>
 	<script src="/js/html5shiv.js"></script>
 	<![endif]-->
@@ -94,28 +132,6 @@
 					<input type="submit" name="submit" value="Assinar">
 					<input type="submit" name="submit" value="Cancelar">
 				</form>
-
-				<script type="text/javascript">
-				$(function(){
-				    $('form[name="chooseHash"] input[type="submit"]').click(function(event){
-				           var $form = $('form[name="chooseHash"]');
-				           if($(this).val()=='Assinar'){
-				               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
-				               localStorage.setItem('user', 'visited');
-				               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
-				           }
-				            else{
-				                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
-				                localStorage.removeItem('user');
-				            }
-				    });
-				    
-				    $('form[name="myform"]').submit(function(event){
-				        alert("form action : " + $(this).attr('action'));
-				        event.preventDefault();
-				    });
-				});
-				</script>
 			</center>
 		</div>
 	</div>
@@ -165,21 +181,7 @@
 
 	</div>
 	<!-- <img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />  -->
-
-	<script id="firstShow-tpl" type="text/x-handlebars-template">
-	{{#each firstShow}}
-		<a title="@{{user.username}}: {{caption.text}}">
-			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{images.standard_resolution.url}}"/>
-			<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
-		</a>
-	{{/each}}
-	</script>
-	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
-			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
-			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
-		</a>
-	</script>	
+	
 	<!--********************************
 	FOOTER
 	*********************************
@@ -193,10 +195,6 @@
 			</ul>
 		</div>
 	</footer>
-
-	<!-- CALL MAIN APP SCRIPT -->	
-	<script src="/js/app.js"></script>
-
 	<!--[if lt IE 9]>
     </div>
   <![endif]-->
