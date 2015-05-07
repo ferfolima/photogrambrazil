@@ -645,13 +645,13 @@ a:hover {
 /***********
 * @logo
 ************/
-/*.logo {
+.logo {
 	background: #fff;
 }
 .logo img {
   	display: block;
 	width: 100%;
-}*/
+}
 
 /***********
 * @nav
