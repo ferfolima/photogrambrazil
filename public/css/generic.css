@@ -12,12 +12,18 @@ body {
 body::after{
 	content: "";
 	background:url('../images/bg.jpg') repeat 0 0;
+
+	min-height: 100%;
+	min-width: 1024px;
+
+	width: 120%;
+	height: auto;
+
+	position:fixed;
+	top:0;
+	left:0;
+
 	opacity: 0.7;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
 	z-index: -1;
 }
 
