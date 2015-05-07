@@ -50,6 +50,28 @@
 					<input type="submit" name="submit" value="Assinar">
 					<input type="submit" name="submit" value="Cancelar">
 				</form>
+
+				<script type="text/javascript">
+				$(function(){
+				    $('form[name="chooseHash"] input[type="submit"]').click(function(event){
+				           var $form = $('form[name="chooseHash"]');
+				           if($(this).val()=='Assinar'){
+				               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
+				               localStorage.setItem('user', 'visited');
+				               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
+				           }
+				            else{
+				                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
+				                localStorage.removeItem('user');
+				            }
+				    });
+				    
+				    $('form[name="myform"]').submit(function(event){
+				        alert("form action : " + $(this).attr('action'));
+				        event.preventDefault();
+				    });
+				});
+				</script>
 			</center>
 		</div>
 	</div>
