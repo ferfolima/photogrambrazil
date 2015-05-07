@@ -25,52 +25,11 @@
 	<script src="/js/jquery.1.9.min.js"></script>
 	<script src="/js/handlebarsjs.1.0.min.js"></script>
 	<script type="text/javascript" src="/js/fullscreen.js"></script>
-	<script type="text/javascript">
-        function OnChangeCheckbox (checkbox) {
-            if (checkbox.checked) {
-                //alert ("The check box is checked.");
-                $.ajax({  
-			         type: "POST",  
-			         url: "http://photogrambrazil.herokuapp.com/insert",  
-			         data: "insert=" + checkbox.value,  
-			         success: function(response){  
-			             $('#info').html("OK! Data Sent with Response:" + response);  
-			         },  
-			         error: function(e){  
-			             $('#info').html("OH NOES! Data not sent with Error:" + e);
-			         }  
-			     });
-            }
-            else {
-                $.ajax({  
-			         type: "POST",  
-			         url: "http://photogrambrazil.herokuapp.com/remove",  
-			         data: "remove=" + checkbox.value,  
-			         success: function(response){  
-			             $('#info').html("OK! Data Sent with Response:" + response);  
-			         },  
-			         error: function(e){  
-			             $('#info').html("OH NOES! Data not sent with Error:" + e);
-			         }  
-			     });
-            }
-        }
-    </script>
-
-	<!--[if lt IE 9]>
-	<script src="/js/html5shiv.js"></script>
-	<![endif]-->
+	<script type="text/javascript" src="/js/checkbox.js"></script>
 
 </head>
 <body>
 	<div id="bg"></div>
-	<!--[if lt IE 9]>
-      <p class="browsehappy Hfwb" style="color: black; font-size: 22px;">You are using an <strong style="color: #999;">outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience on Lollagram.</p>
-  <![endif]-->
-
-	<!--[if lt IE 9]>
-      <div class="Hdn">
-  <![endif]-->
 	<!--********************************
 	ASSINAR
 	*********************************-->
@@ -91,28 +50,6 @@
 					<input type="submit" name="submit" value="Assinar">
 					<input type="submit" name="submit" value="Cancelar">
 				</form>
-
-				<script type="text/javascript">
-				$(function(){
-				    $('form[name="chooseHash"] input[type="submit"]').click(function(event){
-				           var $form = $('form[name="chooseHash"]');
-				           if($(this).val()=='Assinar'){
-				               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
-				               localStorage.setItem('user', 'visited');
-				               //var win = window.open('http://test-gram.herokuapp.com/slideshow', '_blank');
-				           }
-				            else{
-				                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
-				                localStorage.removeItem('user');
-				            }
-				    });
-				    
-				    $('form[name="myform"]').submit(function(event){
-				        alert("form action : " + $(this).attr('action'));
-				        event.preventDefault();
-				    });
-				});
-				</script>
 			</center>
 		</div>
 	</div>
