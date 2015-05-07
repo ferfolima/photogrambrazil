@@ -10,6 +10,7 @@ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  overflow: hidden;
 }
 
 /**
@@ -542,9 +543,9 @@ th {
    ========================================================================== */
 * {
   	-webkit-box-sizing: border-box;
-     	   -moz-box-sizing: border-box;
-	    -ms-box-sizing: border-box;
-	        box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	  -ms-box-sizing: border-box;
+	  box-sizing: border-box;
 }
 
 html {
@@ -556,8 +557,33 @@ html {
 body {
 	background: url(../images/bg.jpg) repeat 0 0;
 	font-size: 62.5%;
-  	font-family: 'Open Sans', sans-serif;
-  	overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  /*overflow-x: hidden;*/
+}
+
+html:-webkit-full-screen {
+    background: url(../images/bg.jpg) repeat 0 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html:-moz-full-screen {
+    background: url(../images/bg.jpg) repeat 0 0;
+    font-family: 'Open Sans', sans-serif;
+}
+ 
+html:-webkit-full-screen {
+    background: url(../images/bg.jpg) repeat 0 0;
+    font-family: 'Open Sans', sans-serif;
+}
+ 
+html:-ms-fullscreen {
+    background: url(../images/bg.jpg) repeat 0 0;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%; /* needed to center contents in IE */
+}
+ 
+html:fullscreen {
+    background: red;
 }
 
 body::after{
