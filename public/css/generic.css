@@ -1,29 +1,29 @@
 
 /* For generic page styles. Not for sliders. */
+html {
+	background:#eee;
+}
 
 body {
-	zoom:0.9;
-	background:#eee;
 	font:normal 0.9em Arial; 
-	margin:0; 
-	padding:0;
 	overflow: hidden;
 }
 
-body::after{
-	content: "";
+#bg{
 	background:url('../images/bg.jpg') repeat 0 0;
 
 	min-height: 100%;
 	min-width: 1024px;
 
-	width: 120%;
+	width: 100%;
 	height: auto;
 
 	position:fixed;
 	top:0;
 	left:0;
 
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
 	opacity: 0.7;
 	z-index: -1;
 }
@@ -32,19 +32,6 @@ h1 {
 	display:inline; 
 	color:white; 
 	font-size: 100px;
-}
-
-section {
-	position: relative;
-}
-
-/*.slider-nav img{width:100px;margin: 0 auto;}*/
-/*.slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}*/
-/*.slider-for {width:100%;margin: 0 auto;}*/
-.slider-for img{
-	width:640px;
-	height:640px;
-	margin: 0 auto
 }
 
 @font-face{
@@ -66,21 +53,34 @@ section {
 	font-family: "berlin-sans-fb-demi-bold";
 	font-style: italic;
 	/*font-weight: bold;*/
-	text-align:center;
+	/*text-align:center;*/
 	font-size:20px;
 	color:rgba(0,0,0,0.5);
 	margin: -20px 0 0 0
 }
 
+.div-central{
+	display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
 .outter-box{
-	/*background:#ddd; */
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.middle-box{
 	background: rgba(221,221,221,0.4);
 	border:0; 
 	border-radius:3px; 
-	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
-	margin: 1px; 
-	width:640px;
+	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+	margin:1px;
+	width: 500px;
 	padding: 50px 50px;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 .inner-box{
@@ -88,17 +88,19 @@ section {
 	border:0; 
 	border-radius:3px; 
 	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
-	margin: 1px; 
-	width:100%;
+	margin: 1px;
+
+	margin-left: auto;
+    margin-right: auto;
+    width: 500px;
 }
 
-.div-central{
-	position: absolute; 
-	top: 50%; 
-	left: 50%; 
-	height: 30%; 
-	width: 50%; 
-	margin: 0.25% 0 0 -25%;
+/*.slider-nav img{width:100px;margin: 0 auto;}*/
+/*.slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}*/
+/*.slider-for {width:100%;margin: 0 auto;}*/
+.slider-for img{
+	width:100%;
+	margin: 0 auto;
 }
 
 .title{

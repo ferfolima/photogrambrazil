@@ -552,26 +552,12 @@ html {
   	-webkit-font-smoothing: antialiased;
 }
 
-/* font-family: 'Open Sans', sans-serif; */
-
-body {
-	background: url(../images/bg.jpg) repeat 0 0;
-	font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
-  /*overflow-x: hidden;*/
-}
-
 html:-webkit-full-screen {
     background: url(../images/bg.jpg) repeat 0 0;
     font-family: 'Open Sans', sans-serif;
 }
 
 html:-moz-full-screen {
-    background: url(../images/bg.jpg) repeat 0 0;
-    font-family: 'Open Sans', sans-serif;
-}
- 
-html:-webkit-full-screen {
     background: url(../images/bg.jpg) repeat 0 0;
     font-family: 'Open Sans', sans-serif;
 }
@@ -583,30 +569,40 @@ html:-ms-fullscreen {
 }
  
 html:fullscreen {
-    background: red;
+    background: url(../images/bg.jpg) repeat 0 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
-body::after{
-  content: "";
-  background: url('../images/logo-square.jpg') no-repeat center 65% fixed;
+html {
+  background: url(../images/bg.jpg) repeat 0 0;
+}
 
+#bg {
+  background: url('../images/logo-square.jpg') no-repeat center 65% fixed;
   min-height: 100%;
   min-width: 1024px;
 
-  width: 120%;
+  width: 100%;
   height: auto;
 
   position:fixed;
   top:0;
   left:0;
 
+  filter: alpha(opacity=20);
+  -moz-opacity: 0.2;
   opacity: 0.2;
-  z-index: -1;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+body{
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -656,23 +652,11 @@ a:hover {
 .topFill {
 	position: fixed;
 	top: 0;
-  	left: 13.5%;
 	background: url(../images/top-fill.jpg) repeat-x 0 0;
  	background-size: cover;
 	width: 100%;
 	height: 8px;
 	z-index: 45;
-}
-
-/***********
-* @aside
-************/
-#aside {
-	position: fixed;
-	left: 0;
-	width: 16.66666%;
-	z-index: 40;
-  	border-top: 8px solid #f34e52;
 }
 
 /***********
@@ -821,8 +805,10 @@ a:hover {
 * @Image wrapper
 ************/
 #imgContent {
-	width: 100%;
-	padding: 8px;
+	padding: 8px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
 /*#imgContent .animated {

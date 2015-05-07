@@ -66,7 +66,7 @@
 
 </head>
 <body>
-
+	<div id="bg"></div>
 	<!--[if lt IE 9]>
       <p class="browsehappy Hfwb" style="color: black; font-size: 22px;">You are using an <strong style="color: #999;">outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience on Lollagram.</p>
   <![endif]-->
@@ -74,7 +74,6 @@
 	<!--[if lt IE 9]>
       <div class="Hdn">
   <![endif]-->
-
 	<!--********************************
 	ASSINAR
 	*********************************-->
@@ -126,43 +125,73 @@
 	*********************************-->
 	<div class="topFill"></div>
 
-	<!--********************************
-	ASIDE
-	*********************************-->
-	<aside id="aside">
-		<!-- <header>
-			<h1 class="logo"><a href="#" title="Test-gram - seu evento coberto por seus amigos" class="Hdb"><img src="/images/logo-square.jpg" alt="Test-gram bla bla bla bla" class="Hdib"></a></h1>
-		</header> -->
+	<!-- <header>
+		<h1 class="logo"><a href="#" title="Test-gram - seu evento coberto por seus amigos" class="Hdb"><img src="/images/logo-square.jpg" alt="Test-gram bla bla bla bla" class="Hdib"></a></h1>
+	</header> -->
 
-		<!-- mobile nav button  -->
-		<a href="#mobile-navigation" class="mobNav" id="js-mobNav">
-			<span class="iconBar"></span>
-			<span class="iconBar"></span>
-			<span class="iconBar"></span>
-		</a>
-		 <!-- mobile nav button / end -->
+	<!-- mobile nav button  -->
+	<a href="#mobile-navigation" class="mobNav" id="js-mobNav">
+		<span class="iconBar"></span>
+		<span class="iconBar"></span>
+		<span class="iconBar"></span>
+	</a>
+	 <!-- mobile nav button / end -->
 
-		<nav class="nav">
-			<ul>
-				<li>
-					<a href="#" class="extra" id="js-btAssinar"> Assinar </a>
-				</li>
-			</ul>
-		</nav>
+	<nav class="nav">
+		<ul>
+			<li>
+				<a href="#" class="extra" id="js-btAssinar"> Assinar </a>
+			</li>
+		</ul>
+	</nav>
 
-		<nav class="nav-left">
-			<ul>
-				<li>
-					<a href="#" class="extra" id="js-btSlideshow"> SlideShow </a>
-				</li>
-			</ul>
-		</nav>
-	</aside>
+	<nav class="nav-left">
+		<ul>
+			<li>
+				<a href="#" class="extra" id="js-btSlideshow"> SlideShow </a>
+			</li>
+		</ul>
+	</nav>
 
 	<!-- ********************************
 	IMAGE WRAPPER - content
 	********************************* -->
-	<div id="imgContent" class="Hcf"></div>
+	<div id="imgContent" class="Hcf">
+
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+		<a title="">
+			<input type="checkbox" onclick="OnChangeCheckbox (this)" value=""/>
+			<img src="/images/logo-square.jpg" alt="" />
+		</a>
+
+	</div>
 	<!-- <img class="native-hidden" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />  -->
 
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
