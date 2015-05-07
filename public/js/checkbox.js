@@ -27,6 +27,7 @@ function OnChangeCheckbox (checkbox) {
 	     });
     }
 }
+
 $(function(){
     $('form[name="chooseHash"] input[type="submit"]').click(function(event){
            var $form = $('form[name="chooseHash"]');
