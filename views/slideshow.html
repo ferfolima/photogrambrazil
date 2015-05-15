@@ -10,11 +10,10 @@
     <link rel="alternate stylesheet" type="text/css" href="/css/generic3.css" title="santaclara"/>
     <script src="/js/styleswitcher.js"></script>
     <script src="/js/socket.io.min.js"></script>
-    <script src="/js/handlebarsjs.1.0.min.js"></script>
+    <script src="/js/handlebarsjs.1.0.min.js"></script> 
     <script src="/js/slideShowImg.js"></script>
 </head>
-
-<body> 
+<body>
   <div id="bg"></div>
     <div class="div-central">
       <blockquote class="outter-box">
@@ -23,14 +22,14 @@
             <div class="title">
               <img src="/images/PhotoGRAM_small.png"></img>
               <a>Photogram</a>
-              <p> - Arena Simpatia</p>
+              <p> - Evento</p>
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
               <!-- <div><img src="/images/logo-square.jpg"/></div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
-          <p class="berlin-font">#ArenaSimpatia</p>
+          <p class="berlin-font">#Photogram</p>
         </blockquote>
         </blockquote>
       </blockquote> 
@@ -77,24 +76,66 @@
             $('.slider-for').slick('slickAdd',addWrap[0]);
             // $('.slider-nav').slick('slickAdd',addWrap[1]);
         }
-        function show_sidebar()
-        {
-        document.getElementById('showhide').style.visibility="visible";
-        }
+    </script>
 
-        function hide_sidebar()
-        {
-        setTimeout('document.getElementById(\'showhide\').style.visibility=\'hidden\'',3000);
-        }
+    <script type="text/javascript">
+      var picPropaganda = [];
+      var dir = "/images/propaganda/";
+      var fileextension = ".jpg";
+      $.ajax({
+          //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+          url: dir,
+          success: function (data) {
+              //Lsit all jpg file names in the page
+              $(data).find("a:contains(" + fileextension + ")").each(function () {
+                  var filename = this.href.replace(window.location.host, "").replace("http:///", "");
+                  picPropaganda.push(filename);
+              });
+          }
+      });
+
+      var active = false;
+      var counter = 0;
+
+      function propaganda(){
+        if(active == true){
+            document.getElementById("dimscreen").style.top="-100%";
+            active = false;
+            setTimeout( propaganda, 600000 );
+          }
+          else{
+            document.getElementById("myImg").src = "/" + picPropaganda[counter % picPropaganda.length];
+            counter++;
+            document.getElementById("dimscreen").style.top="0";
+            active = true;
+            setTimeout( propaganda, 6000 );
+          }
+      }
+
+      setTimeout( propaganda, 600000 );
+
     </script>
 </body>
 <footer>
-  <p class="berlin-font2" onMouseOver="show_sidebar()" onMouseOut="hide_sidebar()">Style</p>
-  <!-- <img src="images/PhotoGRAM.png" width="300px" height="200px" onMouseOver="show_sidebar()" onMouseOut="hide_sidebar()"> -->
-  <div class="showhide" id="showhide" style="visibility:hidden">
-    <img src="/images/style_padrao.png" onclick="setActiveStyleSheet('padrao'); return false;"/>
-    <img src="/images/style_mamaocomacucar.png" onclick="setActiveStyleSheet('mamcaocomacucar'); return false;"/>
-    <img src="/images/style_santaclara.png" onclick="setActiveStyleSheet('santaclara'); return false;"/>
+  <div id="menu">
+    <p class="berlin-font2">Style</p>
+    <ul>
+      <table class="showhide" id="showhide">
+      <tr>
+        <td><img src="/images/style_padrao.png" onclick="setActiveStyleSheet('padrao'); return false;"/></td>
+        <td><img src="/images/style_mamaocomacucar.png" onclick="setActiveStyleSheet('mamcaocomacucar'); return false;"/></td>
+        <td><img src="/images/style_santaclara.png" onclick="setActiveStyleSheet('santaclara'); return false;"/></td>
+      </tr>
+      </table>   
+    </ul>
   </div>
 </footer>
+
+<div id="propaganda">
+    <table class="dimscreen" id="dimscreen">
+      <tr>
+        <td><img id="myImg" src=""/></td>
+      </tr>
+    <table>
+</div>
 </html>
