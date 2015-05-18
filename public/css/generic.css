@@ -19,9 +19,9 @@ body {
     float:top;
     background: rgba(0,0,0,0.9);
     -webkit-transition:top 1.5s ease-in-out;
-    -moz-transition: top 1s ease-in-out;
-	-o-transition: top 1s ease-in-out;
-	transition: top 1s ease-in-out;
+    -moz-transition: top 1.5s ease-in-out;
+	-o-transition: top 1.5s ease-in-out;
+	transition: top 1.5s ease-in-out;
     z-index:100;
 }
 
@@ -162,6 +162,9 @@ footer p{
     float:bottom;
     background: rgba(0,0,0,0.6);
     -webkit-transition:bottom .5s ease-in-out;
+    -moz-transition: bottom .5s ease-in-out;
+	-o-transition: bottom .5s ease-in-out;
+	transition: bottom .5s ease-in-out;
     z-index:1;
 }
 #menu:hover{
@@ -183,4 +186,8 @@ footer p{
 .showhide img{
 	border: 1px solid #000;
 	width: 200px;
+}
+
+.showhide img:hover{
+	box-shadow:0 0 1px 0 rgba(255,255,255,0.8),0 0 10px 5px rgba(255,255,255,0.5);
 }

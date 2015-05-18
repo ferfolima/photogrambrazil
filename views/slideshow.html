@@ -101,7 +101,8 @@
         if(active == true){
             document.getElementById("dimscreen").style.top="-100%";
             active = false;
-            setTimeout( propaganda, 600000 );
+            // setTimeout( propaganda, 600000 );
+            setTimeout( propaganda, 10000 );
           }
           else{
             document.getElementById("myImg").src = "/" + picPropaganda[counter % picPropaganda.length];
@@ -112,7 +113,7 @@
           }
       }
 
-      setTimeout( propaganda, 600000 );
+      setTimeout( propaganda, 10000 );
 
     </script>
 </body>
