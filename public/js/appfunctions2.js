@@ -2,7 +2,7 @@ function OnChangeCheckbox (checkbox) {
     if (checkbox.checked) {
         $.ajax({  
 	         type: "POST",  
-	         url: "http://photogrambrazil.herokuapp.com/insert",  
+	         url: "http://photogrambrazil.herokuapp.com/secondaryapp/insert",  
 	         data: "insert=" + checkbox.value,  
 	         success: function(response){  
 	             $('#info').html("OK! Data Sent with Response:" + response);  

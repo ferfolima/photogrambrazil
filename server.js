@@ -127,7 +127,7 @@ app.get('/subscribe', function(req, res) {
         });
     }
 
-    res.redirect('http://photogrambrazil.herokuapp.com');
+    res.redirect(req.get('referer'));
     return res.end();
 });
 
@@ -165,9 +165,15 @@ app.post('/callback', function(req, res) {
     res.end();
 });
 
-app.post('/insert', function(req, res){
+app.post('/mainapp/insert', function(req, res){
     var data = req.body;
-    io.sockets.emit('insert', data);
+    io.sockets.emit('mainapp/insert', data);
+    res.end();
+});
+
+app.post('/secondaryapp/insert', function(req, res){
+    var data = req.body;
+    io.sockets.emit('secondaryapp/insert', data);
     res.end();
 });
 

@@ -19,7 +19,7 @@
          * [ render most recent pics defined by subscribed hashtag ]
          */
         mostRecent: function() {
-            socket.on('mainapp/insert', function (data) {
+            socket.on('secondaryapp/insert', function (data) {
                 var standardResolution = data.insert;
                 var count = 0;
                 var thumbnail = "";
