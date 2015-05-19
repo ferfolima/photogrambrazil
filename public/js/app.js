@@ -22,7 +22,7 @@
          * [ render most recent pics defined by subscribed hashtag ]
          */
         mostRecent: function() {
-            socket.on('firstShow', function (data) {
+            socket.on('mainapp/firstShow', function (data) {
                 var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
@@ -40,7 +40,7 @@
          */
         getData: function() {
             var self = this;
-            socket.on('show', function(data) {
+            socket.on('mainapp/show', function(data) {
                 var url = data.show;
                 $.ajax({
                     url: url,

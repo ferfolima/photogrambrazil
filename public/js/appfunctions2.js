@@ -31,12 +31,12 @@ $(function(){
     $('form[name="chooseHash"] input[type="submit"]').click(function(event){
            var $form = $('form[name="chooseHash"]');
            if($(this).val()=='Assinar'){
-               $form.attr('action','http://photogrambrazil.heroku.com/subscribe/');
+               $form.attr('action','http://photogrambrazil.heroku.com/secondaryapp/subscribe/');
                localStorage.setItem('user', 'visited');
                // window.open('/slideshow/');
            }
             else{
-                $form.attr('action','http://photogrambrazil.heroku.com/unsubscribe/');
+                $form.attr('action','http://photogrambrazil.heroku.com/secondaryapp/unsubscribe/');
                 localStorage.removeItem('user');
             }
     });

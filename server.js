@@ -82,7 +82,8 @@ app.configure(function(){
  * Render your index/view "my choice was not use jade"
  */
 app.get("/views", function(req, res){
-    res.render("index.jade");
+    // res.render("index.jade");
+    res.render("http://www.photogrambrazil.com.br");
 });
 
 app.get("/mainapp/slideshow", function(req, res){
@@ -103,7 +104,7 @@ app.get('/callback', function(req, res){
     var handshake =  Instagram.subscriptions.handshake(req, res);
 });
 
-app.get('/subscribe', function(req, res) {
+app.get('/mainapp/subscribe', function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -121,17 +122,49 @@ app.get('/subscribe', function(req, res) {
             Instagram.tags.recent({
                 name: hashtag,
                 complete: function(data) {
-                    socket.emit('firstShow', { firstShow: data });
+                    socket.emit('mainapp/firstShow', { firstShow: data });
                 }
             });
         });
     }
 
+    dictTagId['mainapp'] = hashtag;
+
     res.redirect(req.get('referer'));
     return res.end();
 });
 
-app.get('/unsubscribe', function(req, res) {
+app.get('/secondaryapp/subscribe', function(req, res) {
+    var parsedRequest = url.parse(req.url, true);
+
+    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+        var hashtag = parsedRequest['query']['hub.tag'];
+        Instagram.subscriptions.subscribe({
+            object: 'tag',
+            object_id: hashtag
+            // aspect: 'media',
+            // callback_url: 'http://photogrambrazil.herokuapp.com/callback',
+            // type: 'subscription',
+            // id: '#'
+        });
+        
+        io.sockets.once('connection', function (socket) {
+            Instagram.tags.recent({
+                name: hashtag,
+                complete: function(data) {
+                    socket.emit('secondaryapp/firstShow', { firstShow: data });
+                }
+            });
+        });
+    }
+
+    dictTagId['secondaryapp'] = hashtag;
+
+    res.redirect(req.get('referer'));
+    return res.end();
+});
+
+app.get('/mainapp/unsubscribe', function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -147,7 +180,31 @@ app.get('/unsubscribe', function(req, res) {
         });
     }
 
-    res.redirect('http://photogrambrazil.herokuapp.com');
+    delete dictTagId['mainapp'];
+
+    res.redirect(req.get('referer'));
+    return res.end();
+});
+
+app.get('/secondaryapp/unsubscribe', function(req, res) {
+    var parsedRequest = url.parse(req.url, true);
+
+    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+        var hashtag = parsedRequest['query']['hub.tag'];
+        Instagram.subscriptions.list({
+            complete: function(data) {
+                for(i in data){
+                    if(data[i].object_id == hashtag){
+                        Instagram.subscriptions.unsubscribe({object: 'tag', id: data[i].id});
+                    }
+                }
+            }
+        });
+    }
+
+    delete dictTagId['secondaryapp'];
+
+    res.redirect(req.get('referer'));
     return res.end();
 });
 /**
@@ -160,7 +217,7 @@ app.post('/callback', function(req, res) {
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
         var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=' + clientID;
-        sendMessage(url);
+        sendMessage(url, tag.object_id);
     });
     res.end();
 });
@@ -187,8 +244,13 @@ app.post('/remove', function(req, res){
  * to do the ajax call based on the url
  * @param  {[string]} url [the url as string with the hashtag]
  */
-function sendMessage(url) {
-  io.sockets.emit('show', { show: url });
+function sendMessage(url, objectId) {
+    if(objectId == dictTagId['mainapp']){
+        io.sockets.emit('mainapp/show', { show: url });
+    }
+    else if(objectId == dictTagId['secondaryapp']){
+        io.sockets.emit('secondaryapp/show', { show: url });
+    }
 }
 
 console.log("Listening on port " + port);
