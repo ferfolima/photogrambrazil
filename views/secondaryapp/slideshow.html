@@ -101,19 +101,19 @@
         if(active == true){
             document.getElementById("dimscreen").style.top="-100%";
             active = false;
-            // setTimeout( propaganda, 600000 );
-            setTimeout( propaganda, 10000 );
+            setTimeout( propaganda, 600000 );
+            // setTimeout( propaganda, 10000 );
           }
           else{
             document.getElementById("myImg").src = "/" + picPropaganda[counter % picPropaganda.length];
             counter++;
             document.getElementById("dimscreen").style.top="0";
             active = true;
-            setTimeout( propaganda, 6000 );
+            setTimeout( propaganda, 10000 );
           }
       }
 
-      setTimeout( propaganda, 10000 );
+      setTimeout( propaganda, 600000 );
 
     </script>
 </body>

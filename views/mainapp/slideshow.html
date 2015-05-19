@@ -22,14 +22,16 @@
             <div class="title">
               <img src="/images/PhotoGRAM_small.png"></img>
               <a>Photogram</a>
-              <p> - Evento1</p>
+              <p> - Mainapp</p>
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
               <!-- <div><img src="/images/logo-square.jpg"/></div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
-          <p class="berlin-font">#Photogram</p>
+            <div id="hashtagTitle">
+              <!-- <p class="berlin-font">#Photogram</p> -->
+            </div>
         </blockquote>
         </blockquote>
       </blockquote> 
@@ -42,6 +44,9 @@
     <script type="text/javascript" src="/slick/slick.js"></script>
     <script type="text/javascript" src="/js/fullscreen.js"></script>
 
+    <script id="set-hashtag" type="text/x-handlebars-template">
+      <p class="berlin-font">"#{{data}}"</p>
+    </script>
     <script id="slideShow-tpl" type="text/x-handlebars-template">
         <div><img src="{{insert}}"/></div>
     </script>
@@ -101,19 +106,19 @@
         if(active == true){
             document.getElementById("dimscreen").style.top="-100%";
             active = false;
-            // setTimeout( propaganda, 600000 );
-            setTimeout( propaganda, 10000 );
+            setTimeout( propaganda, 600000 );
+            // setTimeout( propaganda, 10000 );
           }
           else{
             document.getElementById("myImg").src = "/" + picPropaganda[counter % picPropaganda.length];
             counter++;
             document.getElementById("dimscreen").style.top="0";
             active = true;
-            setTimeout( propaganda, 6000 );
+            setTimeout( propaganda, 10000 );
           }
       }
 
-      setTimeout( propaganda, 10000 );
+      setTimeout( propaganda, 600000 );
 
     </script>
 </body>
