@@ -85,8 +85,12 @@ app.get("/views", function(req, res){
     res.render("index.jade");
 });
 
-app.get("/slideshow", function(req, res){
-    res.render("slideshow.jade");
+app.get("/mainapp/slideshow", function(req, res){
+    res.render("mainapp/slideshow.jade");
+});
+
+app.get("/secondaryapp/slideshow", function(req, res){
+    res.render("secondaryapp/slideshow.jade");
 });
 
 // check subscriptions
