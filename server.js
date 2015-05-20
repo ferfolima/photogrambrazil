@@ -158,7 +158,7 @@ app.get('/secondaryapp/subscribe', function(req, res) {
     }
 
     dictTagId['secondaryapp'] = hashtag;
-    io.sockets.emit('mainapp/slideshow', { data: hashtag });
+    socket.emit('mainapp/slideshow', { hashtagTitle: hashtag });
     res.redirect(req.get('referer'));
     return res.end();
 });
