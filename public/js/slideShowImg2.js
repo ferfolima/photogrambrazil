@@ -12,12 +12,28 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
+            this.setHashtag();
             this.mostRecent();
         },
 
         /**
          * [ render most recent pics defined by subscribed hashtag ]
          */
+
+        setHashtag: function(){
+            socket.on('secondaryapp/slideshow', function (data) {
+                var clean = $('hashtagTitle').find('p').remove();
+                var
+                    query = data,
+                    source = $('#set-hashtag').html(),
+                    compiledTemplate = Handlebars.compile(source),
+                    result = compiledTemplate(query),
+                    imgWrap = $('#hashtagTitle');
+
+                imgWrap.html(result);
+            });
+        },
+
         mostRecent: function() {
             socket.on('secondaryapp/insert', function (data) {
                 var standardResolution = data.insert;

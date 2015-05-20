@@ -22,14 +22,16 @@
             <div class="title">
               <img src="/images/PhotoGRAM_small.png"></img>
               <a>Photogram</a>
-              <p> - Evento2</p>
+              <p> - SecondaryApp</p>
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
               <!-- <div><img src="/images/logo-square.jpg"/></div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
-          <p class="berlin-font">#Photogram</p>
+            <div id="hashtagTitle">
+                <!-- <p class="berlin-font">#Photogram</p> -->
+            </div>
         </blockquote>
         </blockquote>
       </blockquote> 
@@ -42,6 +44,9 @@
     <script type="text/javascript" src="/slick/slick.js"></script>
     <script type="text/javascript" src="/js/fullscreen.js"></script>
 
+    <script id="set-hashtag" type="text/x-handlebars-template">
+      <p class="berlin-font">#{{hashtagTitle}}</p>
+    </script>
     <script id="slideShow-tpl" type="text/x-handlebars-template">
         <div><img src="{{insert}}"/></div>
     </script>
