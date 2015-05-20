@@ -128,7 +128,7 @@ app.get('/mainapp/subscribe', function(req, res) {
     }
 
     dictTagId['mainapp'] = hashtag;
-
+    socket.emit('mainapp/slideshow', { hashtagTitle: hashtag });
     res.redirect(req.get('referer'));
     return res.end();
 });
@@ -158,7 +158,7 @@ app.get('/secondaryapp/subscribe', function(req, res) {
     }
 
     dictTagId['secondaryapp'] = hashtag;
-    socket.emit('mainapp/slideshow', { hashtagTitle: hashtag });
+    socket.emit('secondaryapp/slideshow', { hashtagTitle: hashtag });
     res.redirect(req.get('referer'));
     return res.end();
 });
