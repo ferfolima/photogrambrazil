@@ -129,7 +129,7 @@ app.get(/^\/(mainapp|secondaryapp)\/subscribe/, function(req, res) {
     return res.end();
 });
 
-app.get('/^\/(mainapp|secondaryapp)\/unsubscribe/', function(req, res) {
+app.get(/^\/(mainapp|secondaryapp)\/unsubscribe/, function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
