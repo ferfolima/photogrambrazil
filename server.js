@@ -103,7 +103,37 @@ app.get('/callback', function(req, res){
     var handshake =  Instagram.subscriptions.handshake(req, res);
 });
 
-app.get('/mainapp/subscribe', function(req, res) {
+// app.get('/mainapp/subscribe', function(req, res) {
+//     var parsedRequest = url.parse(req.url, true);
+
+//     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
+//         var hashtag = parsedRequest['query']['hub.tag'];
+//         Instagram.subscriptions.subscribe({
+//             object: 'tag',
+//             object_id: hashtag
+//             // aspect: 'media',
+//             // callback_url: 'http://photogrambrazil.herokuapp.com/callback',
+//             // type: 'subscription',
+//             // id: '#'
+//         });
+        
+//         io.sockets.once('connection', function (socket) {
+//             Instagram.tags.recent({
+//                 name: hashtag,
+//                 complete: function(data) {
+//                     socket.emit('mainapp/firstShow', { firstShow: data });
+//                 }
+//             });
+//         });
+//     }
+
+//     dictTagId['mainapp'] = hashtag;
+//     io.sockets.emit('mainapp/slideshow', { hashtagTitle: hashtag });
+//     res.redirect(req.get('referer'));
+//     return res.end();
+// });
+
+app.get(/^(mainapp|secondaryapp)\/subscribe/, function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -121,44 +151,14 @@ app.get('/mainapp/subscribe', function(req, res) {
             Instagram.tags.recent({
                 name: hashtag,
                 complete: function(data) {
-                    socket.emit('mainapp/firstShow', { firstShow: data });
+                    socket.emit(req.params[0] + '/firstShow', { firstShow: data });
                 }
             });
         });
     }
 
-    dictTagId['mainapp'] = hashtag;
-    io.sockets.emit('mainapp/slideshow', { hashtagTitle: hashtag });
-    res.redirect(req.get('referer'));
-    return res.end();
-});
-
-app.get('/secondaryapp/subscribe', function(req, res) {
-    var parsedRequest = url.parse(req.url, true);
-
-    if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
-        var hashtag = parsedRequest['query']['hub.tag'];
-        Instagram.subscriptions.subscribe({
-            object: 'tag',
-            object_id: hashtag
-            // aspect: 'media',
-            // callback_url: 'http://photogrambrazil.herokuapp.com/callback',
-            // type: 'subscription',
-            // id: '#'
-        });
-        
-        io.sockets.once('connection', function (socket) {
-            Instagram.tags.recent({
-                name: hashtag,
-                complete: function(data) {
-                    socket.emit('secondaryapp/firstShow', { firstShow: data });
-                }
-            });
-        });
-    }
-
-    dictTagId['secondaryapp'] = hashtag;
-    io.sockets.emit('secondaryapp/slideshow', { hashtagTitle: hashtag });
+    dictTagId[req.params[0]] = hashtag;
+    io.sockets.emit(req.params[0] + '/slideshow', { hashtagTitle: hashtag });
     res.redirect(req.get('referer'));
     return res.end();
 });
