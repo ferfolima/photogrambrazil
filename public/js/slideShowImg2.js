@@ -71,14 +71,14 @@
                 //imgWrap.append(result);
                 results.push(result);
                 //thumbnails
-                var slideTagThumb = document.getElementById("mcts1"); 
-                var imgTagThumb = slideTagThumb.getElementsByTagName("img");
-                var imgTagThumbSrc = [];
-                for (var i = 0; i < imgTagThumb.length; i++) { 
-                   imgTagThumbSrc.push(imgTagThumb[i].getAttribute("src")); 
-                }
-                imgTagThumbSrc.push(thumbnail);
-                document.getElementById("mcts1").innerHTML = '';
+                // var slideTagThumb = document.getElementById("mcts1"); 
+                // var imgTagThumb = slideTagThumb.getElementsByTagName("img");
+                // var imgTagThumbSrc = [];
+                // for (var i = 0; i < imgTagThumb.length; i++) { 
+                //    imgTagThumbSrc.push(imgTagThumb[i].getAttribute("src")); 
+                // }
+                // imgTagThumbSrc.push(thumbnail);
+                // document.getElementById("mcts1").innerHTML = '';
                 
                 query = thumbnail;
                 source = $('#slideShowThumbs').html();
