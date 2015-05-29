@@ -1,4 +1,5 @@
 
+
 /* For generic page styles. Not for sliders. */
 html {
 	margin: 0;
@@ -121,8 +122,22 @@ h1 {
     width: 640px;
 }
 
-/*.slider-nav img{width:100px;margin: 0 auto;}*/
-/*.slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}*/
+.slider-nav {
+	position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left:6%;
+    top: 40%;
+    width: 110%;
+    z-index: -1;
+}
+
+.slider-nav img{
+	border-radius:3px; 
+	margin: 1px;
+	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 0 10px 0 rgba(0,0,0,0.15); 
+	width: 40%;
+}
 /*.slider-for {width:100%;margin: 0 auto;}*/
 .slider-for img{
 	width:100%;
