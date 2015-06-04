@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Photogram - Slideshow</title>
@@ -10,7 +10,7 @@
     <link rel="alternate stylesheet" type="text/css" href="/css/generic3.css" title="santaclara"/>
     <script src="/js/styleswitcher.js"></script>
     <script src="/js/socket.io.min.js"></script>
-    <script src="/js/handlebarsjs.1.0.min.js"></script> 
+    <script src="/js/handlebarsjs.1.0.min.js"></script>
     <script src="/js/slideShowImg2.js"></script>
 </head>
 <body>
@@ -22,21 +22,21 @@
             <div class="title">
               <img src="/images/PhotoGRAM_small.png"></img>
               <a>Photogram</a>
-              <p> - SecondaryApp</p>
+              <p> - Secondaryapp</p>
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
+              <!-- <div><img src="/images/logo-square.jpg"/></div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div id="hashtagTitle">
-                <p class="berlin-font">#Secondaryapp</p>
+              <p class="berlin-font">#Secondaryapp</p>
             </div>
         </blockquote>
         </blockquote>
-      </blockquote> 
-    </div>
-
-    <div class="slider slider-nav" id="mcts1">
+      </blockquote>
+        <!--<div class="slider slider-nav" id="mcts1">
+        </div>-->
     </div>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -50,9 +50,9 @@
     <script id="slideShow-tpl" type="text/x-handlebars-template">
         <div><img src="{{insert}}"/></div>
     </script>
-    <script id="slideShowThumbs" type="text/x-handlebars-template">
+    <!--<script id="slideShowThumbs" type="text/x-handlebars-template">
         <div><img src="{{insert}}"/></div>
-    </script>
+    </script>-->
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -66,22 +66,20 @@
               autoplay: true,
               autoplaySpeed: 4000,
               ltr: true,
-              speed: 1000,
-              asNavFor: '.slider-nav'
+              speed: 1000
+              // asNavFor: '.slider-nav'
             });
-            $('.slider-nav').slick({
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              centerMode: true,
-              asNavFor: '.slider-for',
-              dots: false,
-              arrows: false,
-              focusOnSelect: true
-            });
+            // $('.slider-nav').slick({
+            //   slidesToShow: 7,
+            //   slidesToScroll: 1,
+            //   asNavFor: '.slider-for',
+            //   dots: true,
+            //   focusOnSelect: true
+            // });
         });
         function populateSlider(addWrap) {
             $('.slider-for').slick('slickAdd',addWrap[0]);
-            $('.slider-nav').slick('slickAdd',addWrap[1]);
+            // $('.slider-nav').slick('slickAdd',addWrap[1]);
         }
     </script>
 
@@ -134,7 +132,7 @@
         <td><img src="/images/style_mamaocomacucar.png" onclick="setActiveStyleSheet('mamcaocomacucar'); return false;"/></td>
         <td><img src="/images/style_santaclara.png" onclick="setActiveStyleSheet('santaclara'); return false;"/></td>
       </tr>
-      </table>   
+      </table>
     </ul>
   </div>
 </footer>
