@@ -19,19 +19,23 @@
       <blockquote class="outter-box">
         <blockquote class="middle-box">
         <blockquote class="inner-box">
-            <div class="title">
-              <img src="/images/PhotoGRAM_small.png"></img>
-              <a>Photogram</a>
-              <p> - Secondaryapp</p>
-            </div>
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
-              <!-- <div><img src="/images/logo-square.jpg"/></div> -->
+              <!-- <div class = "vaidar">
+                <div class="title">
+                  <img src="/images/PhotoGRAM_small.png"/>
+                  <br>
+                  <a>Photogram</a>
+                  <p> - Secondaryapp</p>
+                </div>
+                <img src="/images/logo-square.jpg"/>
+                <div id="hashtagTitle">
+                  <br><br>
+                  <p class="berlin-font">#Secondaryapp</p>
+                </div>
+              </div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
-            <div id="hashtagTitle">
-              <p class="berlin-font">#Secondaryapp</p>
-            </div>
         </blockquote>
         </blockquote>
       </blockquote>
@@ -48,7 +52,19 @@
       <p class="berlin-font">#{{hashtagTitle}}</p>
     </script>
     <script id="slideShow-tpl" type="text/x-handlebars-template">
-        <div><img src="{{insert}}"/></div>
+      <div class = "fotografia">
+        <div class="title">
+          <img src="/images/PhotoGRAM_small.png"/>
+          <br>
+          <a>Photogram</a>
+          <p> - Secondaryapp</p>
+        </div>
+        <img src="{{insert}}"/>
+        <div id="hashtagTitle">
+          <br><br>
+          <p class="berlin-font">#Secondaryapp</p>
+        </div>
+      </div>
     </script>
     <!--<script id="slideShowThumbs" type="text/x-handlebars-template">
         <div><img src="{{insert}}"/></div>
