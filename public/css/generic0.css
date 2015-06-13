@@ -121,7 +121,7 @@ h1 {
 .slider-for img{
 	width: 600px;
 }
-.vaidar {
+.fotografia {
 	background-color: white;
 	/*-webkit-border-image: url(/images/border.png) 250 round;*/
 	transition: 2s;
@@ -137,7 +137,7 @@ h1 {
 	margin: 0 auto;
 	}
 
-.vaidar div{
+.fotografia div{
 	/*margin-top: 40px;*/
 }
 
