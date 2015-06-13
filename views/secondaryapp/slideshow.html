@@ -56,37 +56,27 @@
 
     <script type="text/javascript">
     $(document).ready(function(){
-      $('.slider-for').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        arrows: false,
-        variableWidth: true,
-        autoPlayTimer: 8,
-        speed:2000,
-        responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
-          }
-        }
-      ],
-      autoplay: true
+        $('.slider-for').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          // fade: true,
+          // speed: 1000,
+          // cssEase: 'linear',
+          autoplay: true,
+          autoplaySpeed: 4000,
+          ltr: true,
+          speed: 1000
+          // asNavFor: '.slider-nav'
         });
-      });
+        // $('.slider-nav').slick({
+        //   slidesToShow: 7,
+        //   slidesToScroll: 1,
+        //   asNavFor: '.slider-for',
+        //   dots: true,
+        //   focusOnSelect: true
+        // });
+    });
         function populateSlider(addWrap) {
             $('.slider-for').slick('slickAdd',addWrap[0]);
             // $('.slider-nav').slick('slickAdd',addWrap[1]);
