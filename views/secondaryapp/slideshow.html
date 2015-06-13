@@ -5,9 +5,9 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/generic.css" title="padrao"/>
-    <link rel="alternate stylesheet" type="text/css" href="/css/generic2.css" title="mamcaocomacucar"/>
-    <link rel="alternate stylesheet" type="text/css" href="/css/generic3.css" title="santaclara"/>
+    <link rel="stylesheet" type="text/css" href="/css/generic0.css" title="padrao"/>
+    <!-- <link rel="alternate stylesheet" type="text/css" href="/css/generic2.css" title="mamcaocomacucar"/> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="/css/generic3.css" title="santaclara"/> -->
     <script src="/js/styleswitcher.js"></script>
     <script src="/js/socket.io.min.js"></script>
     <script src="/js/handlebarsjs.1.0.min.js"></script>
@@ -26,7 +26,11 @@
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
-              <!-- <div><img src="/images/logo-square.jpg"/></div> -->
+              <div><img src="https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11379068_1587980904816307_951966700_n.jpg"/></div>
+              <div><img src="https://igcdn-photos-c-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11352408_1454353331528562_480590043_n.jpg"/></div>
+              <div><img src="https://igcdn-photos-c-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11373734_1596720450576186_1197081014_n.jpg"/></div>
+              <div><img src="https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11385133_1458185561163271_2108543316_n.jpg"/></div>
+              <div><img src="https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11380243_1583397891921525_675768176_n.jpg"/></div>
             </div>
             <!-- É aqui que será adicionada a foto -->
             <div id="hashtagTitle">
@@ -55,27 +59,35 @@
     </script>-->
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('.slider-for').slick({
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false,
-              // fade: true,
-              // speed: 1000,
-              // cssEase: 'linear',
-              autoplay: true,
-              autoplaySpeed: 4000,
-              ltr: true,
-              speed: 1000
-              // asNavFor: '.slider-nav'
-            });
-            // $('.slider-nav').slick({
-            //   slidesToShow: 7,
-            //   slidesToScroll: 1,
-            //   asNavFor: '.slider-for',
-            //   dots: true,
-            //   focusOnSelect: true
-            // });
+      $('.slider-for').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        arrows: false,
+        variableWidth: true,
+        autoPlayTimer: 8,
+        speed:2000,
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ],
+      autoplay: true
         });
         function populateSlider(addWrap) {
             $('.slider-for').slick('slickAdd',addWrap[0]);
