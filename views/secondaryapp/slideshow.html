@@ -21,7 +21,7 @@
         <blockquote class="inner-box">
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
-              <!-- <div class = "fotografi">
+              <!-- <div class = "fotografia">
                 <div class="title">
                   <img src="/images/PhotoGRAM_small.png"/>
                   <br>
@@ -32,8 +32,8 @@
                 <div id="hashtagTitle">
                   <br><br>
                   <p class="berlin-font">#Secondaryapp</p>
-                </div> -->
-              </div>
+                </div>
+              </div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
         </blockquote>
@@ -132,8 +132,8 @@
         if(active == true){
             document.getElementById("dimscreen").style.top="-100%";
             active = false;
-            setTimeout( propaganda, 600000 );
-            // setTimeout( propaganda, 10000 );
+            // setTimeout( propaganda, 600000 );
+            setTimeout( propaganda, 30000 );
           }
           else{
             document.getElementById("myImg").src = "/" + picPropaganda[counter % picPropaganda.length];
@@ -144,7 +144,8 @@
           }
       }
 
-      setTimeout( propaganda, 600000 );
+      // setTimeout( propaganda, 600000 );
+      setTimeout( propaganda, 30000 );
 
     </script>
 </body>
