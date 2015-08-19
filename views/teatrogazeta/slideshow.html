@@ -22,9 +22,9 @@
         <blockquote class="inner-box">
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
-                <!-- <div class = "fotografia">
+                <div class = "fotografia">
                   <div class="title">
-                    <img src="/images/PhotoGRAM_small.png"/>
+                    <img src="/images/hashtagteatrogazeta.jpg"/>
                     <br>
                     <a>Photogram</a>
                     <p> - Teatro Gazeta</p>
@@ -32,9 +32,9 @@
                   <img src="/images/logo-square.jpg"/>
                   <div class="hashid" id="hashid">
                     <img src="/images/logo-teatro-gazeta.png"/>
-                    <p id="hashtagTitle" class="berlin-font">Teste</p>
+                    <p id="hashtagTitle" class="berlin-font"></p>
                   </div>
-                </div> -->
+                </div>
             </div>
             <!-- É aqui que será adicionada a foto -->
         </blockquote>
@@ -104,7 +104,7 @@
         $('.slider-for').slick('slickAdd',addWrap[0]);
 
         var elements = document.getElementsByClassName('fotografia');
-        if(elements.length < 4){
+        if(elements.length < 4 && elemtns.length > 1){
           $('.slider-for').slick('slidesToShow', elements.length, true);
         }
         // $('.slider-nav').slick('slickAdd',addWrap[1]);
