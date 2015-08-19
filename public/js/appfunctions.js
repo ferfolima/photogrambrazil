@@ -1,28 +1,28 @@
 function OnChangeCheckbox (checkbox) {
     if (checkbox.checked) {
-        $.ajax({  
-	         type: "POST",  
-	         url: "http://photogrambrazil.herokuapp.com/mainapp/insert",  
-	         data: "insert=" + checkbox.value,  
-	         success: function(response){  
-	             $('#info').html("OK! Data Sent with Response:" + response);  
-	         },  
-	         error: function(e){  
+        $.ajax({
+	         type: "POST",
+	         url: "http://photogrambrazil.herokuapp.com/mainapp/insert",
+	         data: "insert=" + checkbox.value,
+	         success: function(response){
+	             $('#info').html("OK! Data Sent with Response:" + response);
+	         },
+	         error: function(e){
 	             $('#info').html("OH NOES! Data not sent with Error:" + e);
-	         }  
+	         }
 	     });
     }
     else {
-        $.ajax({  
-	         type: "POST",  
-	         url: "http://photogrambrazil.herokuapp.com/remove",  
-	         data: "remove=" + checkbox.value,  
-	         success: function(response){  
-	             $('#info').html("OK! Data Sent with Response:" + response);  
-	         },  
-	         error: function(e){  
+        $.ajax({
+	         type: "POST",
+	         url: "http://photogrambrazil.herokuapp.com/remove",
+	         data: "remove=" + checkbox.value,
+	         success: function(response){
+	             $('#info').html("OK! Data Sent with Response:" + response);
+	         },
+	         error: function(e){
 	             $('#info').html("OH NOES! Data not sent with Error:" + e);
-	         }  
+	         }
 	     });
     }
 }
@@ -39,7 +39,7 @@ $(function(){
                 localStorage.removeItem('user');
             }
     });
-    
+
     $('form[name="myform"]').submit(function(event){
         alert("form action : " + $(this).attr('action'));
         event.preventDefault();
