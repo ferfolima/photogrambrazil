@@ -1,0 +1,198 @@
+
+/* For generic page styles. Not for sliders. */
+html {
+	margin: 0;
+	background:#eee;
+}
+
+body {
+	margin: 0;
+	font:normal 0.9em Arial; 
+	overflow: hidden;
+}
+
+#dimscreen {
+	position:absolute;
+    width:100%;
+    height:100%;
+    top:-100%;
+    float:top;
+    background: rgba(0,0,0,0.9);
+    -webkit-transition:top 1.5s ease-in-out;
+    -moz-transition: top 1.5s ease-in-out;
+	-o-transition: top 1.5s ease-in-out;
+	transition: top 1.5s ease-in-out;
+    z-index:100;
+}
+
+#dimscreen td{
+	vertical-align: middle;
+	text-align: center;
+}
+
+#dimscreen img{
+	border-radius:3px; 
+	box-shadow:0 0 1px 0 rgba(255,255,255,0.8),0 0 100px 5px rgba(255,255,255,0.5);
+}
+
+#bg {
+  background: url('../images/mamaocomacucar.jpg') no-repeat center center fixed;
+
+  min-height: 100%;
+  min-width: 1024px;
+
+  width: 120%;
+  height: auto;
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  z-index: -1;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+	display:inline; 
+	color:white; 
+	font-size: 100px;
+}
+
+@font-face{
+	font-family: "berlin-sans-fb-demi-bold";
+	src: url("../font/berlin-sans-fb-demi-bold.ttf") format("truetype")
+}
+
+.berlin-font{
+	font-family: "berlin-sans-fb-demi-bold";
+	font-style: italic;
+	/*font-weight: bold;*/
+	text-align:center;
+	font-size:48px;
+	color:rgb(63,114,155);
+	margin: -30px 0 0 0;
+}
+
+.berlin-font2{
+	font-family: "berlin-sans-fb-demi-bold";
+	font-style: italic;
+	/*font-weight: bold;*/
+	/*text-align:center;*/
+	font-size:16px;
+	color:rgba(0,0,0,0.5);
+	margin: -30px 0 0 0;
+}
+
+.div-central{
+	display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.outter-box{
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.middle-box{
+	background: rgba(221,221,221,0.4);
+	border:0; 
+	border-radius:3px; 
+	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+	/*margin:1px;*/
+	width: 640px;
+	/*padding: 50px 50px;*/
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.inner-box{
+	background:#FFF; 
+	border:0; 
+	border-radius:3px; 
+	box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
+	/*margin: 1px;*/
+
+	margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+}
+
+/*.slider-nav img{width:100px;margin: 0 auto;}*/
+/*.slider-nav {width:90%;margin: 0 auto; margin-top: 40px;}*/
+/*.slider-for {width:100%;margin: 0 auto;}*/
+.slider-for img{
+	width:100%;
+	margin: 0 auto;
+}
+
+.title{
+	text-align:left; 
+	font-size:120%;
+}
+
+.title img{
+	width:100px;
+	vertical-align:middle
+}
+
+.title a{
+	font-weight:bold;
+	color:rgb(63,114,155)
+}
+
+.title p{
+	color:rgb(128,133,137);
+	display:inline
+}
+
+footer p{
+	text-align: center;
+	padding-top: 28px;
+}
+
+#menu{
+    position:absolute;
+    width:100%;
+    height:200px;
+    bottom:-185px;
+    float:bottom;
+    background: rgba(0,0,0,0.6);
+    -webkit-transition:bottom .5s ease-in-out;
+    -moz-transition: bottom .5s ease-in-out;
+	-o-transition: bottom .5s ease-in-out;
+	transition: bottom .5s ease-in-out;
+    z-index:1;
+}
+#menu:hover{
+    bottom:0;
+}
+
+.showhide {
+	padding: 0;
+	margin-top: 10px;
+	width: 100%;
+	height: 100%;
+}
+
+.showhide td{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.showhide img{
+	border: 1px solid #000;
+	width: 200px;
+}
+
+.showhide img:hover{
+	box-shadow:0 0 1px 0 rgba(255,255,255,0.8),0 0 10px 5px rgba(255,255,255,0.5);
+}
