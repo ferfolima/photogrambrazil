@@ -31,6 +31,13 @@
                     imgWrap = $('#slider');
                 results.push(result);
                 populateSlider(results);
+
+                var sPageURL = window.location.search.substring(1);
+                var sParameterName = sPageURL.split('=');
+                if (sParameterName[0] == 'hub.tag')
+                {
+                    document.getElementById('hashtagTitle').innerHTML = '#' + sParameterName[1];
+                }
             });
         }
 
