@@ -34,7 +34,7 @@ $(function(){
                $form.attr('action','http://photogrambrazil.heroku.com/teatrogazeta/subscribe/');
                localStorage.setItem('user', 'visited');
                var $hashTag = $('form[name="chooseHash"] input[type="text"]').val();
-               window.open('http://photogrambrazil.heroku.com/teatrogazeta/slideshow/' + $hashTag);
+               window.open('http://photogrambrazil.heroku.com/teatrogazeta/slideshow/?hub.tag=' + $hashTag);
            }
             else{
                 $form.attr('action','http://photogrambrazil.heroku.com/teatrogazeta/unsubscribe/');

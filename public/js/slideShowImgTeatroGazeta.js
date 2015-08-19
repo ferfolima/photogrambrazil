@@ -27,7 +27,7 @@
                     query = data,
                     source = $('#set-hashtag').html(),
                     compiledTemplate = Handlebars.compile(source),
-                    result = compiledTemplate(query),
+                    result2 = compiledTemplate({hashtagTitle: query}),
                     imgWrap = $('#hashtagTitle');
 
                 imgWrap.html(result);
