@@ -22,7 +22,6 @@
 
         setHashtag: function(){
             socket.on('teatrogazeta/slideshow', function (data) {
-                var clean = $('hashtagTitle').find('p').remove();
                 var
                     query = data,
                     source = $('#set-hashtag').html(),
