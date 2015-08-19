@@ -85,7 +85,7 @@ app.get("/", function(req, res){
     res.render("index.jade");
 });
 
-app.get(/^\/(mainapp|secondaryapp)\/slideshow/, function(req, res){
+app.get(/^\/(mainapp|secondaryapp|teatrogazeta)\/slideshow/, function(req, res){
     res.render(req.params[0] + "/slideshow.jade");
 });
 
@@ -99,7 +99,7 @@ app.get('/callback', function(req, res){
     var handshake =  Instagram.subscriptions.handshake(req, res);
 });
 
-app.get(/^\/(mainapp|secondaryapp)\/subscribe/, function(req, res) {
+app.get(/^\/(mainapp|secondaryapp|teatrogazeta)\/subscribe/, function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -112,7 +112,7 @@ app.get(/^\/(mainapp|secondaryapp)\/subscribe/, function(req, res) {
             // type: 'subscription',
             // id: '#'
         });
-        
+
         io.sockets.once('connection', function (socket) {
             Instagram.tags.recent({
                 name: hashtag,
@@ -129,7 +129,7 @@ app.get(/^\/(mainapp|secondaryapp)\/subscribe/, function(req, res) {
     return res.end();
 });
 
-app.get(/^\/(mainapp|secondaryapp)\/unsubscribe/, function(req, res) {
+app.get(/^\/(mainapp|secondaryapp|teatrogazeta)\/unsubscribe/, function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -166,13 +166,13 @@ app.post('/callback', function(req, res) {
     res.end();
 });
 
-app.post(/^\/(mainapp|secondaryapp)\/insert/, function(req, res){
+app.post(/^\/(mainapp|secondaryapp|teatrogazeta)\/insert/, function(req, res){
     var data = req.body;
     io.sockets.emit(req.params[0] + '/insert', data);
     res.end();
 });
 
-app.post(/^\/(mainapp|secondaryapp)\/remove/, function(req, res){
+app.post(/^\/(mainapp|secondaryapp|teatrogazeta)\/remove/, function(req, res){
     var data = req.body;
     io.sockets.emit(req.params[0] + '/remove', data);
     res.end();
@@ -188,6 +188,9 @@ function sendMessage(url, objectId) {
     }
     else if(objectId == dictTagId['secondaryapp']){
         io.sockets.emit('secondaryapp/show', { show: url });
+    }
+    else if(objectId == dictTagId['teatrogazeta']){
+        io.sockets.emit('teatrogazeta/show', { show: url });
     }
 }
 
