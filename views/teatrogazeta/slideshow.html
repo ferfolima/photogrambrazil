@@ -68,45 +68,48 @@
     </script>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-      $('.slider-for').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        arrows: false,
-        variableWidth: true,
-        autoPlaySpeed: 4000,
-        speed:1000,
-        responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 3
+    var elements = document.getElementsByClassName('fotografia');
+    if(elements > 3){
+      $(document).ready(function(){
+        $('.slider-for').slick({
+          centerMode: true,
+          centerPadding: '60px',
+          slidesToShow: 3,
+          arrows: false,
+          variableWidth: true,
+          autoPlaySpeed: 4000,
+          speed:1000,
+          responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
           }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
-          }
-        }
-      ],
-      autoplay: true
+        ],
+        autoplay: true
+          });
         });
-      });
-        function populateSlider(addWrap) {
-            $('.slider-for').slick('slickAdd',addWrap[0]);
-            // $('.slider-nav').slick('slickAdd',addWrap[1]);
-        }
+    }
+    function populateSlider(addWrap) {
+        $('.slider-for').slick('slickAdd',addWrap[0]);
+        // $('.slider-nav').slick('slickAdd',addWrap[1]);
+    }
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       var picPropaganda = [];
       var dir = "/images/propaganda/teatrogazeta/";
       var fileextension = ".jpg";
@@ -144,7 +147,7 @@
       // setTimeout( propaganda, 600000 );
       setTimeout( propaganda, 30000 );
 
-    </script>
+    </script> -->
 
     <!--<script type="text/javascript">
     var sPageURL = window.location.search.substring(1);
@@ -172,11 +175,11 @@
   </div>
 </footer>
 
-<div id="propaganda">
+<!-- <div id="propaganda">
     <table class="dimscreen" id="dimscreen">
       <tr>
         <td><img id="myImg" src=""/></td>
       </tr>
     <table>
-</div>
+</div> -->
 </html>
