@@ -33,8 +33,8 @@ $(function(){
            if($(this).val()=='Assinar'){
                $form.attr('action','http://photogrambrazil.heroku.com/teatrogazeta/subscribe/');
                localStorage.setItem('user', 'visited');
-               //hashTag = $('form[name="chooseHash"] input[type="text"]').val();
-               window.open('http://photogrambrazil.heroku.com/teatrogazeta/slideshow/' + 'teste')
+               var $hashTag = $('form[name="chooseHash"] input[type="text"]').val();
+               window.open('http://photogrambrazil.heroku.com/teatrogazeta/slideshow/' + $hashTag);
            }
             else{
                 $form.attr('action','http://photogrambrazil.heroku.com/teatrogazeta/unsubscribe/');
