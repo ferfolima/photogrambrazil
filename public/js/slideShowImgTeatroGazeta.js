@@ -36,7 +36,10 @@
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')
                 {
-                    document.getElementsByClassName('hashtagTitle').innerHTML = '#' + sParameterName[1];
+                    var elements = document.getElementsByClassName('hashtagTitle');
+                    for (var i = 0; i < elements.length; i++) {
+                      elements[i].innerHTML = '#' + sParameterName[1];
+                    }
                 }
             });
         }
