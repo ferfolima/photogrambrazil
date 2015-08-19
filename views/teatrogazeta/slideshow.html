@@ -22,15 +22,7 @@
         <blockquote class="inner-box">
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
-              <!-- <div class = "fotografia">
-                <div class="title">
-                  <img src="/images/PhotoGRAM_small.png"/>
-                  <br>
-                  <a>Photogram</a>
-                  <p> - Secondaryapp</p>
-                </div>
-                <img src="/images/logo-square.jpg"/>-->
-                <div class = "fotografia">
+                <!-- <div class = "fotografia">
                   <div class="title">
                     <img src="/images/PhotoGRAM_small.png"/>
                     <br>
@@ -38,36 +30,11 @@
                     <p> - Teatro Gazeta</p>
                   </div>
                   <img src="/images/logo-square.jpg"/>
-                </div>
-                <div class = "fotografia">
-                  <div class="title">
-                    <img src="/images/PhotoGRAM_small.png"/>
-                    <br>
-                    <a>Photogram</a>
-                    <p> - Teatro Gazeta</p>
+                  <div class="hashid" id="hashid">
+                    <br><br>
+                    <p id="hashtagTitle" class="berlin-font">Teste</p>
                   </div>
-                  <img src="/images/logo-square.jpg"/>
-                </div>
-                <div class = "fotografia">
-                  <div class="title">
-                    <img src="/images/PhotoGRAM_small.png"/>
-                    <br>
-                    <a>Photogram</a>
-                    <p> - Teatro Gazeta</p>
-                  </div>
-                  <img src="/images/logo-square.jpg"/>
-                </div>
-                <div class = "fotografia">
-                  <div class="title">
-                    <img src="/images/PhotoGRAM_small.png"/>
-                    <br>
-                    <a>Photogram</a>
-                    <p> - Teatro Gazeta</p>
-                  </div>
-                  <img src="/images/logo-square.jpg"/>
-                </div>
-                <div class="hashid" id="hashid">
-                </div>
+                </div> -->
             </div>
             <!-- É aqui que será adicionada a foto -->
         </blockquote>
@@ -82,12 +49,8 @@
     <script type="text/javascript" src="/slick/slick.js"></script>
     <script type="text/javascript" src="/js/fullscreen.js"></script>
 
-    <script id="set-hashtag" type="text/x-handlebars-template">
-      <div id="hashtagTitle">
-        <br><br>
-        <p class="berlin-font">{{insert2}}</p>
-      </div>
-    </script>
+
+
     <script id="slideShow-tpl" type="text/x-handlebars-template">
       <div class = "fotografia">
         <div class="title">
@@ -97,11 +60,12 @@
           <p> - Teatro Gazeta</p>
         </div>
         <img src="{{insert}}"/>
+        <div class="hashid" id="hashid">
+          <br><br>
+          <p class="berlin-font"></p>
+        </div>
       </div>
     </script>
-    <!--<script id="slideShowThumbs" type="text/x-handlebars-template">
-        <div><img src="{{insert}}"/></div>
-    </script>-->
 
     <script type="text/javascript">
     $(document).ready(function(){
@@ -181,6 +145,16 @@
       setTimeout( propaganda, 30000 );
 
     </script>
+
+    <script type="text/javascript">
+    var sPageURL = window.location.search.substring(1);
+    var sParameterName = sPageURL.split('=');
+    if (sParameterName[0] == 'hub.tag')
+    {
+        document.getElementById('hashtagTitle').innerHTML = '#' + sParameterName[1];
+    }
+    </script>
+
 </body>
 <footer>
   <div id="menu">
