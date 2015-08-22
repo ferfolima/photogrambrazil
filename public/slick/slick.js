@@ -50,7 +50,7 @@
                 prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="previous">Previous</button>',
                 nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="next">Next</button>',
                 autoplay: false,
-                autoplaySpeed: 10000,
+                autoplaySpeed: 5000,
                 centerMode: false,
                 centerPadding: '0px',
                 cssEase: 'ease',
