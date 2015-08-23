@@ -141,7 +141,7 @@ h1 {
 	/*margin-top: 40px;*/
 }
 
-.slick-center {
+.slick-active {
 	transition: 2s;
 	-webkit-filter: grayscale(0) blur(0);
 	-webkit-transform: matrix3d(
