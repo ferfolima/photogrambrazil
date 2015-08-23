@@ -142,13 +142,13 @@ h1 {
 }
 
 .slick-center {
-	-webkit-filter: grayscale(0) blur(0) ease-in-out;
+	-webkit-filter: grayscale(0) blur(0);
 	-webkit-transform: matrix3d(
 		1,	0,	0,	0,
 		0,	1,	0,	0,
 		0,	0,	1,	0,
 		0,	0,	0,	1
-	) ease-in-out;
+	);
 	/*border-top: 70px solid #fff;*/
 	/*border-bottom: 70px solid #fff;*/
 	/*border-radius: 0%;*/
