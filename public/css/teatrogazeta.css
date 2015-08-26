@@ -126,15 +126,15 @@ h1 {
 	/*-webkit-border-image: url(/images/border.png) 250 round;*/
 	transition: 2s;
 	-webkit-filter: grayscale(1) blur(5px);
-	-webkit-transform: matrix3d(
+	/*-webkit-transform: matrix3d(
 		0.2,	-0.05,	0,	-0.0006,
 		0,	0.6,	0,	0,
 		0,	0,	1,	0,
 		-10,	15,	0,	1
-	)	;
+	)	;*/
 	/*border-radius: 100%;*/
 	width:600px;
-	margin: 0 auto;
+	margin: 20px auto;
 	}
 
 .fotografia div{
