@@ -124,12 +124,6 @@ h1 {
 .fotografia {
 	background-color: white;
 	/*-webkit-border-image: url(/images/border.png) 250 round;*/
-	/*border-radius: 100%;*/
-	width:600px;
-	margin: 0 auto;
-	}
-
-.slick-slide {
 	transition: 2s;
 	-webkit-filter: grayscale(1) blur(5px);
 	-webkit-transform: matrix3d(
@@ -138,7 +132,10 @@ h1 {
 		0,	0,	1,	0,
 		-10,	15,	0,	1
 	)	;
-}
+	/*border-radius: 100%;*/
+	width:600px;
+	margin: 0 auto;
+	}
 
 .slick-center {
 	transition: 2s;
