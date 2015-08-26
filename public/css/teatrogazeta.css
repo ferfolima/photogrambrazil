@@ -124,19 +124,19 @@ h1 {
 .fotografia {
 	background-color: white;
 	/*-webkit-border-image: url(/images/border.png) 250 round;*/
-	/*transition: 2s;
+	transition: 2s;
 	-webkit-filter: grayscale(1) blur(5px);
 	-webkit-transform: matrix3d(
 		0.2,	-0.05,	0,	-0.0006,
 		0,	0.6,	0,	0,
 		0,	0,	1,	0,
 		-10,	15,	0,	1
-	);*/
+	);
 	width:600px;
 	margin: 0 100px 0 0
 }
 
-/*.slick-center {
+.slick-center {
 	transition: 2s;
 	-webkit-filter: grayscale(0) blur(0);
 	-webkit-transform: matrix3d(
@@ -145,7 +145,7 @@ h1 {
 		0,	0,	1,	0,
 		0,	0,	0,	1
 	)
-}*/
+}
 
 /*.slick-center{
 	margin-left: -100px;
