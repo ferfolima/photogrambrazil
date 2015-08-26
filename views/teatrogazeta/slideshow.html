@@ -116,7 +116,7 @@
     function populateSlider(addWrap) {
         var slideIndex = $('.slick-slide.slick-active').data('slick-index');
         if(slideIndex != 0){
-            $('.slider-for').slick('slickAdd',addWrap[0],slideIndex);
+            $('.slider-for').slick('slickAdd',addWrap[0],slideIndex + 1);
         }
 
         var elements = document.getElementsByClassName('fotografia');
