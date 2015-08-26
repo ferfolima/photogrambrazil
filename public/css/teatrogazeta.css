@@ -137,10 +137,6 @@ h1 {
 	margin: 0 auto;
 	}
 
-.fotografia div{
-	/*margin-top: 40px;*/
-}
-
 .slick-center {
 	transition: 2s;
 	-webkit-filter: grayscale(0) blur(0);
