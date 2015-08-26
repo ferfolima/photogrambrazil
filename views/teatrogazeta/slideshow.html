@@ -22,7 +22,7 @@
         <blockquote class="inner-box">
             <!-- É aqui que será adicionada a foto -->
             <div class="slider slider-for" id="slider" dir="ltr">
-                <!-- <div class = "fotografia">
+                <div class = "fotografia">
                   <div class="title">
                     <img src="/images/PhotoGRAM_small.png"/>
                     <br>
@@ -47,7 +47,7 @@
                     <img src="/images/logo-teatro-gazeta.png"/>
                     <p id="hashtagTitle" class="berlin-font">Photogram</p>
                   </div>
-                </div> -->
+                </div>
             </div>
             <!-- É aqui que será adicionada a foto -->
         </blockquote>
@@ -114,7 +114,10 @@
         });
       });
     function populateSlider(addWrap) {
-        $('.slider-for').slick('slickAdd',addWrap[0],1);
+        var slideIndex = $('.slick-slide.slick-active').data('slick-index');
+        if(slideIndex != 0){
+            $('.slider-for').slick('slickAdd',addWrap[0],slideIndex);
+        }
 
         var elements = document.getElementsByClassName('fotografia');
         if(elements.length < 4 && elements.length > 1){
