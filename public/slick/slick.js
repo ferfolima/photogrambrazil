@@ -244,7 +244,8 @@
 
         _.$slidesCache = _.$slides;
 
-        _.reinit(index_atual);
+        _.reinit();
+        slickGoTo(index_atual);
 
     };
 
