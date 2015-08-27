@@ -213,7 +213,7 @@
             return false;
         }
 
-        _.unload();
+        // _.unload();
 
         if (typeof(index) === 'number') {
             if (index === 0 && _.$slides.length === 0) {
