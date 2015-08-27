@@ -243,7 +243,7 @@
 
         _.$slidesCache = _.$slides;
 
-        _.reinit();
+        // _.reinit();
 
     };
 
