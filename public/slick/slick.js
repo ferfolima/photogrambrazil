@@ -205,6 +205,7 @@
     Slick.prototype.addSlide = Slick.prototype.slickAdd = function(markup, index, addBefore) {
 
         var _ = this;
+        var index_atual = _.currentSlide;
 
         if (typeof(index) === 'boolean') {
             addBefore = index;
@@ -213,7 +214,7 @@
             return false;
         }
 
-        // _.unload();
+        _.unload();
 
         if (typeof(index) === 'number') {
             if (index === 0 && _.$slides.length === 0) {
@@ -243,7 +244,7 @@
 
         _.$slidesCache = _.$slides;
 
-        // _.reinit();
+        _.reinit(index_atual);
 
     };
 
