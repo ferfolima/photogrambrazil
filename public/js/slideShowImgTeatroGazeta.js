@@ -44,7 +44,8 @@
                 {
                     var elements = document.getElementsByClassName('hashtagTitle');
                     for (var i = 0; i < elements.length; i++) {
-                      elements[i].innerHTML = '#' + sParameterName[1];
+                      // elements[i].innerHTML = '#' + sParameterName[1];
+                      elements[i].innerHTML = '#' + this.count;
                     }
                 }
                 this.count++;
