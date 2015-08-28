@@ -1,6 +1,6 @@
 (function() {
     var socket = io.connect('http://photogrambrazil.herokuapp.com');
-
+    var count;
     /**
      * [Namespacing]
      */
@@ -12,6 +12,7 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
+            this.count = 1;
             this.mostRecent();
         },
 
@@ -27,8 +28,13 @@
                     query = standardResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
-                    result = compiledTemplate({insert: query}),
-                    imgWrap = $('#slider');
+                    result = compiledTemplate({insert: query});
+                if(this.count % 2 == 0){
+                  var imgWrap = $('#slider');
+                }
+                else {
+                  var imgWrap = $('#slider2');
+                }
                 results.push(result);
                 populateSlider(results);
 
@@ -41,6 +47,7 @@
                       elements[i].innerHTML = '#' + sParameterName[1];
                     }
                 }
+                this.count++;
             });
         }
 
