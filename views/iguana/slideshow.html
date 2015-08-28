@@ -59,7 +59,7 @@
                   </div>
                 </div>
             </div>
-            <div class="slider slider-for" id="slider2" dir="ltr">
+            <div class="slider slider-for2" id="slider2" dir="ltr">
               <div class = "fotografia">
                 <div class="title">
                   <img src="/images/PhotoGRAM_small.png"/>
@@ -165,13 +165,50 @@
       ],
       autoplay: true
         });
+        $('.slider-for2').slick({
+          // centerMode: true,
+          centerPadding: '60px',
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          arrows: false,
+          variableWidth: true,
+          autoplaySpeed: 4000,
+          speed:1000,
+          responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ],
+        autoplay: true
+          });
       });
-    function populateSlider(addWrap) {
-        $('.slider-for').slick('slickAdd',addWrap[0]);
+    function populateSlider(addWrap,count) {
+        if(count % 2 == 0){
+            $('.slider-for').slick('slickAdd',addWrap[0]);
+        }
+        else{
+            $('.slider-for2').slick('slickAdd',addWrap[0]);
+        }
 
         var elements = document.getElementsByClassName('fotografia');
         if(elements.length < 4 && elements.length > 1){
           $('.slider-for').slick('slidesToShow', elements.length, true);
+          $('.slider-for2').slick('slidesToShow', elements.length, true);
         }
         // $('.slider-nav').slick('slickAdd',addWrap[1]);
     }

@@ -36,7 +36,7 @@
                   var imgWrap = $('#slider2');
                 }
                 results.push(result);
-                populateSlider(results);
+                populateSlider(results,this.count);
 
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
