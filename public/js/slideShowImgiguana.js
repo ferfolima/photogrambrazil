@@ -60,7 +60,7 @@
                   alert(results[i]);
                   if(results[i].indexOf(standardResolution) != -1){
                     alert('equal');
-                    indexToRemove = i;
+                    indexToRemove = i+1;
                     results.splice(indexToRemove,1);
                     break;
                   }
