@@ -1,7 +1,7 @@
 (function() {
     var socket = io.connect('http://photogrambrazil.herokuapp.com');
     var count;
-    var results = [];
+    var results;
     /**
      * [Namespacing]
      */
@@ -13,6 +13,7 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
+            results = [];
             count = 0;
             this.mostRecent();
         },
