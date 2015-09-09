@@ -6,6 +6,7 @@ var io = require('socket.io').listen(app.listen(port));
 var Instagram = require('instagram-node-lib');
 var http = require('http');
 var url = require('url')
+var aws = require('aws-sdk');
 var request = ('request');
 var intervalID;
 
