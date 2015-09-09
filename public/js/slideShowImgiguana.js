@@ -1,7 +1,6 @@
 (function() {
     var socket = io.connect('http://photogrambrazil.herokuapp.com');
     var count;
-    var results;
     /**
      * [Namespacing]
      */
@@ -13,7 +12,6 @@
          * [Application initialization method / call for the methods being initializated in order]
          */
         init: function() {
-            results = [];
             count = 0;
             this.mostRecent();
         },
@@ -24,6 +22,7 @@
 
         mostRecent: function() {
             socket.on('iguana/insert', function (data) {
+                var results = [];
                 var standardResolution = data.insert;
                 var
                     query = standardResolution,
@@ -38,7 +37,7 @@
                   var imgWrap = $('#slider2');
                 }
                 results.push(result);
-                populateSlider(result,count);
+                populateSlider(results,count);
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')
