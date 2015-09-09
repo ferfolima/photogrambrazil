@@ -106,7 +106,7 @@ app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/upload/, function (req, 
   var filename = url.parse(src).pathname.split('/').pop();
 
   http.get(options, function(response) {
-    client.key = req.params[0] + "/" + client.key;
+    client.key = client.key + "/" + req.params[0];
     var request = client.put(filename, {
       'Content-Length': response.headers['content-length'],
       'Content-Type': response.headers['content-type']
