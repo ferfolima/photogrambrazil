@@ -90,8 +90,6 @@ app.get("/", function(req, res){
 });
 
 app.get('/sign_s3', function(req, res){
-  alert(AWS_ACCESS_KEY + "\n" + AWS_SECRET_KEY + "\n" + S3_BUCKET);
-
     aws.config.update({accessKeyId: AWS_ACCESS_KEY, secretAccessKey: AWS_SECRET_KEY});
     var s3 = new aws.S3();
     var s3_params = {
