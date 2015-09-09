@@ -27,9 +27,6 @@ var clientID = '159e54fed6354cacae99784052811c29',
     hashtag = '';
     subscription = {};
 
-// var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
-// var AWS_SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
-// var S3_BUCKET = process.env.S3_BUCKET_NAME;
 var client = knox.createClient({
     key: process.env.AWS_ACCESS_KEY_ID,
     secret: process.env.AWS_SECRET_ACCESS_KEY,
@@ -109,6 +106,7 @@ app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/upload/, function (req, 
   var filename = url.parse(src).pathname.split('/').pop();
 
   http.get(options, function(response) {
+    client.key = req.params[0] + client.key;
     var request = client.put(filename, {
       'Content-Length': response.headers['content-length'],
       'Content-Type': response.headers['content-type']
