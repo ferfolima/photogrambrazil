@@ -58,7 +58,7 @@
                 for(var i = 0; i < results.length; i++){
                   if(results[i].indexOf(standardResolution) != -1){
                     indexToRemove = i;
-                    results.splice(indexToRemove + 1,1);
+                    results.splice(indexToRemove,1);
                     break;
                   }
                 }
@@ -69,7 +69,7 @@
                   var sliderToRemove = '.slider-for2';
                 }
 
-                depopulateSlider(indexToRemove,sliderToRemove);
+                depopulateSlider(indexToRemove+1,sliderToRemove);
                 count--;
             });
         }
