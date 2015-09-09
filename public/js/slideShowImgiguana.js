@@ -55,6 +55,7 @@
             socket.on('iguana/remove', function (data) {
                 var standardResolution = data.insert;
                 var indexToRemove;
+                alert(standardResolution);
                 for(var i = 0; i < results.length; i++){
                   alert(results[i]);
                   if(results[i].contains(standardResolution)){
