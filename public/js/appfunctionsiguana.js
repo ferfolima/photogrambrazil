@@ -30,10 +30,10 @@ function OnChangeCheckbox (checkbox) {
 }
 
 function get_signed_request(file){
-  var file_name = file.substring(file.lastIndexOf('/')+1,file.lastIndexOf('.'));
+  // var file_name = file.substring(file.lastIndexOf('/')+1,file.lastIndexOf('.'));
   var file_type = file.substring(file.lastIndexOf('.')+1);
   var xhr = new XMLHttpRequest();
-   xhr.open("GET", "/sign_s3?file_name="+file_name+"&file_type="+file_type);
+   xhr.open("GET", "/sign_s3?file_name="+file+"&file_type="+file_type);
    xhr.onreadystatechange = function(){
        if(xhr.readyState === 4){
            if(xhr.status === 200){
