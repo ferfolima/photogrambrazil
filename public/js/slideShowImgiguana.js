@@ -38,7 +38,7 @@
                   var imgWrap = $('#slider2');
                 }
                 results.push(result);
-                populateSlider(results,count);
+                populateSlider(result,count);
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')
