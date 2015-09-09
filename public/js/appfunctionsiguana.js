@@ -38,6 +38,7 @@ function get_signed_request(file){
        if(xhr.readyState === 4){
            if(xhr.status === 200){
                var response = JSON.parse(xhr.responseText);
+               alert(responde);
                upload_file(file, response.signed_request, response.url);
            }
            else{
@@ -50,6 +51,7 @@ function get_signed_request(file){
 
 function upload_file(file, signed_request, url){
     var xhr = new XMLHttpRequest();
+    alert(file);
     xhr.open("PUT", signed_request);
     xhr.setRequestHeader('x-amz-acl', 'public-read');
     xhr.onload = function() {
