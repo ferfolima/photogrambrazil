@@ -25,9 +25,9 @@ var clientID = '159e54fed6354cacae99784052811c29',
     hashtag = '';
     subscription = {};
 
-var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
-var AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
-var S3_BUCKET = process.env.S3_BUCKET
+var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
+var AWS_SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+var S3_BUCKET = process.env.S3_BUCKET_NAME;
 
 var dictTagId = {};
 
@@ -90,6 +90,8 @@ app.get("/", function(req, res){
 });
 
 app.get('/sign_s3', function(req, res){
+  alert(AWS_ACCESS_KEY + "\n" + AWS_SECRET_KEY + "\n" + S3_BUCKET);
+
     aws.config.update({accessKeyId: AWS_ACCESS_KEY, secretAccessKey: AWS_SECRET_KEY});
     var s3 = new aws.S3();
     var s3_params = {
