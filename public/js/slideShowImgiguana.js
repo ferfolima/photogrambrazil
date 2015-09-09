@@ -69,7 +69,7 @@
                   var sliderToRemove = '.slider-for2';
                 }
 
-                depopulateSlider(Math.floor(indexToRemove/2)+4,sliderToRemove);
+                depopulateSlider(Math.floor(indexToRemove/2)+3,sliderToRemove);
                 count--;
             });
         }
