@@ -6,7 +6,8 @@ var io = require('socket.io').listen(app.listen(port));
 var Instagram = require('instagram-node-lib');
 var http = require('http');
 var url = require('url')
-var aws = require('aws-sdk');
+// var aws = require('aws-sdk');
+var knox = require('knox');
 var request = ('request');
 var intervalID;
 
@@ -26,9 +27,14 @@ var clientID = '159e54fed6354cacae99784052811c29',
     hashtag = '';
     subscription = {};
 
-var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
-var AWS_SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
-var S3_BUCKET = process.env.S3_BUCKET_NAME;
+// var AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
+// var AWS_SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+// var S3_BUCKET = process.env.S3_BUCKET_NAME;
+var client = knox.createClient({
+    key: process.env.AWS_ACCESS_KEY_ID,
+    secret: process.env.AWS_SECRET_ACCESS_KEY,
+    bucket: process.env.S3_BUCKET_NAME
+});
 
 var dictTagId = {};
 
@@ -90,30 +96,68 @@ app.get("/", function(req, res){
     res.render("index.jade");
 });
 
-app.get('/sign_s3', function(req, res){
-    aws.config.update({accessKeyId: AWS_ACCESS_KEY, secretAccessKey: AWS_SECRET_KEY});
-    var s3 = new aws.S3();
-    var s3_params = {
-        Bucket: S3_BUCKET,
-        Key: req.query.file_name,
-        Expires: 60,
-        ContentType: req.query.file_type,
-        ACL: 'public-read'
-    };
-    s3.getSignedUrl('putObject', s3_params, function(err, data){
-        if(err){
-            console.log(err);
-        }
-        else{
-            var return_data = {
-                signed_request: data,
-                url: 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+req.query.file_name
-            };
-            res.write(JSON.stringify(return_data));
-            res.end();
-        }
+app.get('/upload', function (req, res) {
+  var src = req.query.src;
+  console.log('src: ' + src);
+
+  var options = {
+    host: url.parse(src).host,
+    port: 80,
+    path: url.parse(src).pathname
+  };
+
+  var filename = url.parse(src).pathname.split('/').pop();
+
+  http.get(options, function(response) {
+    var request = client.put(filename, {
+      'Content-Length': response.headers['content-length'],
+      'Content-Type': response.headers['content-type']
     });
+
+    response.on('data', function(data) {
+      request.write(data);
+    }).on('end', function() {
+      request.end();
+    });
+
+    request.on('response', function(resp) {
+      console.log('S3 status:', resp.statusCode, 'url:', request.url);
+      res.send(request.url);
+    });
+
+    request.on('error', function(err) {
+      console.error('Error uploading to s3:', err);
+      res.send("Error uploading to s3");
+    });
+
+  });
+
 });
+
+// app.get('/sign_s3', function(req, res){
+//     aws.config.update({accessKeyId: AWS_ACCESS_KEY, secretAccessKey: AWS_SECRET_KEY});
+//     var s3 = new aws.S3();
+//     var s3_params = {
+//         Bucket: S3_BUCKET,
+//         Key: req.query.file_name,
+//         Expires: 60,
+//         ContentType: req.query.file_type,
+//         ACL: 'public-read'
+//     };
+//     s3.getSignedUrl('putObject', s3_params, function(err, data){
+//         if(err){
+//             console.log(err);
+//         }
+//         else{
+//             var return_data = {
+//                 signed_request: data,
+//                 url: 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+req.query.file_name
+//             };
+//             res.write(JSON.stringify(return_data));
+//             res.end();
+//         }
+//     });
+// });
 
 app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/slideshow/, function(req, res){
     res.render(req.params[0] + "/slideshow.jade");
