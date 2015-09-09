@@ -60,8 +60,11 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query});
                 var indexToRemove;
+                alert(result);
                 for(var i = 0; i < results.length; i++){
+                  alert(results[i]);
                   if(results[i] == result){
+                    alert('equal');
                     indexToRemove = i;
                     results.splice(indexToRemove,1);
                     break;
