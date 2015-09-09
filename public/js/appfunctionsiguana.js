@@ -16,7 +16,7 @@ function OnChangeCheckbox (checkbox) {
     else {
         $.ajax({
 	         type: "POST",
-	         url: "http://photogrambrazil.herokuapp.com/remove",
+	         url: "http://photogrambrazil.herokuapp.com/iguana/remove",
 	         data: "remove=" + checkbox.value,
 	         success: function(response){
 	             $('#info').html("OK! Data Sent with Response:" + response);

@@ -212,6 +212,9 @@
         }
         // $('.slider-nav').slick('slickAdd',addWrap[1]);
     }
+    function depopulateSlider(indexToRemove,sliderToRemove) {
+        $(sliderToRemove).slick('slickRemove',indexToRemove);
+    }
     </script>
 
     <!-- <script type="text/javascript">

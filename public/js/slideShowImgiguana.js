@@ -1,6 +1,7 @@
 (function() {
     var socket = io.connect('http://photogrambrazil.herokuapp.com');
     var count;
+    var results = [];
     /**
      * [Namespacing]
      */
@@ -23,12 +24,12 @@
         mostRecent: function() {
             socket.on('iguana/insert', function (data) {
                 var standardResolution = data.insert;
-                var results = [];
                 var
                     query = standardResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query});
+
                 if(count % 2 == 0){
                   var imgWrap = $('#slider');
                 }
@@ -37,7 +38,6 @@
                 }
                 results.push(result);
                 populateSlider(results,count);
-
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')
@@ -48,6 +48,31 @@
                     }
                 }
                 count++;
+            });
+
+            socket.on('iguana/remove', function (data) {
+                var standardResolution = data.insert;
+                var
+                    query = standardResolution,
+                    source = $('#slideShow-tpl').html(),
+                    compiledTemplate = Handlebars.compile(source),
+                    result = compiledTemplate({insert: query});
+                var indexToRemove;
+                for(var i = 0; i < results.length; i++){
+                  if(results[i] == result){
+                    indexToRemove = i;
+                    results.splice(indexToRemove,1);
+                    break;
+                  }
+                }
+                if(indexToRemove % 2 == 0){
+                  var sliderToRemove = '.slider-for';
+                }
+                else {
+                  var sliderToRemove = '.slider-for2';
+                }
+
+                depopulateSlider(indexToRemove,sliderToRemove);
             });
         }
 
