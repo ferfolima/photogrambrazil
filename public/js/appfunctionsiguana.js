@@ -2,7 +2,7 @@ function OnChangeCheckbox (checkbox) {
     if (checkbox.checked) {
         $.ajax({
 	         type: "POST",
-	         url: "http://photogrambrazil.herokuapp.com/iguana/insert",
+           url: "/iguana/insert",
 	         data: "insert=" + checkbox.value,
 	         success: function(response){
 	             $('#info').html("OK! Data Sent with Response:" + response);
@@ -16,7 +16,7 @@ function OnChangeCheckbox (checkbox) {
     else {
         $.ajax({
 	         type: "POST",
-	         url: "http://photogrambrazil.herokuapp.com/iguana/remove",
+           url: "/iguana/remove",
 	         data: "remove=" + checkbox.value,
 	         success: function(response){
 	             $('#info').html("OK! Data Sent with Response:" + response);
@@ -39,13 +39,13 @@ $(function(){
     $('form[name="chooseHash"] input[type="submit"]').click(function(event){
            var $form = $('form[name="chooseHash"]');
            if($(this).val()=='Assinar'){
-               $form.attr('action','http://photogrambrazil.heroku.com/iguana/subscribe/');
+              $form.attr('action','/iguana/subscribe/');
                localStorage.setItem('user', 'visited');
               //  var $hashTag = $('form[name="chooseHash"] input[type="text"]').val();
               //  window.open('http://photogrambrazil.heroku.com/teatrogazeta/slideshow/?hub.tag=' + $hashTag);
            }
             else{
-                $form.attr('action','http://photogrambrazil.heroku.com/iguana/unsubscribe/');
+                $form.attr('action','/iguana/unsubscribe/');
                 localStorage.removeItem('user');
             }
     });
