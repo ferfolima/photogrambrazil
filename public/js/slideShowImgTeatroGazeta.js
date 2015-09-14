@@ -1,6 +1,6 @@
 (function() {
-    var socket = io.connect('http://photogrambrazil.herokuapp.com');
-    // var socket = io.connect();
+    // var socket = io.connect('http://photogrambrazil.herokuapp.com');
+    var socket = io.connect();
     var count;
     var results;
     /**
@@ -25,14 +25,12 @@
 
         mostRecent: function() {
             socket.on('teatrogazeta/insert', function (data) {
-
                 var standardResolution = data.insert;
                 var
                     query = standardResolution,
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query});
-                  var imgWrap = $('#slider');
                 results.push(result);
                 populateSlider(results[count],count);
                 var sPageURL = window.location.search.substring(1);

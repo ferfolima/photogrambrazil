@@ -9,7 +9,7 @@
     <script src="/js/styleswitcher.js"></script>
     <script src="/js/socket.io.min.js"></script>
     <script src="/js/handlebarsjs.1.0.min.js"></script>
-    <script src="/js/slideShowImgiguana.js"></script>
+    <script src="/js/slideShowImgIguana.js"></script>
 </head>
 <body>
   <div id="bg"></div>
@@ -164,39 +164,39 @@
         }
       ],
       autoplay: true
-        });
-        $('.slider-for2').slick({
-          // centerMode: true,
-          centerPadding: '60px',
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          arrows: false,
-          variableWidth: true,
-          autoplaySpeed: 4000,
-          speed:1000,
-          responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ],
-        autoplay: true
-          });
       });
+      $('.slider-for2').slick({
+        // centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        arrows: false,
+        variableWidth: true,
+        autoplaySpeed: 4000,
+        speed:1000,
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ],
+      autoplay: true
+      });
+    });
     function populateSlider(addWrap,count) {
         if(count % 2 == 0){
             $('.slider-for').slick('slickAdd',addWrap);
@@ -257,30 +257,8 @@
 
     </script> -->
 
-    <!--<script type="text/javascript">
-    var sPageURL = window.location.search.substring(1);
-    var sParameterName = sPageURL.split('=');
-    if (sParameterName[0] == 'hub.tag')
-    {
-        document.getElementById('hashtagTitle').innerHTML = '#' + sParameterName[1];
-    }
-  </script>-->
-
 </body>
 <footer>
-  <!-- <div id="menu">
-    <p class="berlin-font2">Style</p>
-    <ul>
-      <table class="showhide" id="showhide">
-      <tr>
-        <td><img src="/images/style_teatrogazeta.png" onclick="setActiveStyleSheet('teatrogazeta'); return false;"/></td>
-        <td><img src="/images/style_padrao.png" onclick="setActiveStyleSheet('padrao'); return false;"/></td>
-        <td><img src="/images/style_mamaocomacucar.png" onclick="setActiveStyleSheet('mamcaocomacucar'); return false;"/></td>
-        <td><img src="/images/style_santaclara.png" onclick="setActiveStyleSheet('santaclara'); return false;"/></td>
-      </tr>
-      </table>
-    </ul>
-  </div> -->
 </footer>
 
 <!-- <div id="propaganda">

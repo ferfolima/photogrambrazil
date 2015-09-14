@@ -34,7 +34,7 @@
                     result = compiledTemplate({insert: query});
                 var imgWrap = $('#slider');
                 results.push(result);
-                populateSlider(results[count],count);
+                populateSlider(results[count]);
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')

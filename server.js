@@ -30,12 +30,12 @@ var clientID = '159e54fed6354cacae99784052811c29',
     subscription = {};
 
 var client = knox.createClient({
-    key: process.env.AWS_ACCESS_KEY_ID,
-    secret: process.env.AWS_SECRET_ACCESS_KEY,
-    bucket: process.env.S3_BUCKET_NAME
-    // key: "AKIAIOONIYNTAGSDCSPQ",
-    // secret: "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",
-    // bucket: "photogrambrazil"
+    // key: process.env.AWS_ACCESS_KEY_ID,
+    // secret: process.env.AWS_SECRET_ACCESS_KEY,
+    // bucket: process.env.S3_BUCKET_NAME
+    key: "AKIAIOONIYNTAGSDCSPQ",
+    secret: "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",
+    bucket: "photogrambrazil"
 });
 
 var dictTagId = {};

@@ -111,13 +111,14 @@
         });
       });
     function populateSlider(addWrap) {
-        $('.slider-for').slick('slickAdd',addWrap[0]);
-
+        $('.slider-for').slick('slickAdd',addWrap);
         var elements = document.getElementsByClassName('fotografia');
         if(elements.length < 4 && elements.length > 1){
           $('.slider-for').slick('slidesToShow', elements.length, true);
         }
-        // $('.slider-nav').slick('slickAdd',addWrap[1]);
+    }
+    function depopulateSlider(indexToRemove,sliderToRemove) {
+        $(sliderToRemove).slick('slickRemove',indexToRemove);
     }
     </script>
 
@@ -160,33 +161,9 @@
       setTimeout( propaganda, 30000 );
 
     </script> -->
-
-    <!--<script type="text/javascript">
-    var sPageURL = window.location.search.substring(1);
-    var sParameterName = sPageURL.split('=');
-    if (sParameterName[0] == 'hub.tag')
-    {
-        document.getElementById('hashtagTitle').innerHTML = '#' + sParameterName[1];
-    }
-  </script>-->
-
 </body>
 <footer>
-  <!-- <div id="menu">
-    <p class="berlin-font2">Style</p>
-    <ul>
-      <table class="showhide" id="showhide">
-      <tr>
-        <td><img src="/images/style_teatrogazeta.png" onclick="setActiveStyleSheet('teatrogazeta'); return false;"/></td>
-        <td><img src="/images/style_padrao.png" onclick="setActiveStyleSheet('padrao'); return false;"/></td>
-        <td><img src="/images/style_mamaocomacucar.png" onclick="setActiveStyleSheet('mamcaocomacucar'); return false;"/></td>
-        <td><img src="/images/style_santaclara.png" onclick="setActiveStyleSheet('santaclara'); return false;"/></td>
-      </tr>
-      </table>
-    </ul>
-  </div> -->
 </footer>
-
 <!-- <div id="propaganda">
     <table class="dimscreen" id="dimscreen">
       <tr>

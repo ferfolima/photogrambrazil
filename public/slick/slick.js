@@ -1368,6 +1368,7 @@
     Slick.prototype.removeSlide = Slick.prototype.slickRemove = function(index, removeBefore, removeAll) {
 
         var _ = this;
+        var index_atual = _.currentSlide;
 
         if (typeof(index) === 'boolean') {
             removeBefore = index;
@@ -1397,6 +1398,7 @@
         _.$slidesCache = _.$slides;
 
         _.reinit();
+        _.slickGoTo(index_atual+1);
 
     };
 

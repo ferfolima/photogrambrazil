@@ -1,6 +1,6 @@
 (function() {
-    var socket = io.connect('http://photogrambrazil.herokuapp.com');
-    // var socket = io.connect();
+    // var socket = io.connect('http://photogrambrazil.herokuapp.com');
+    var socket = io.connect();
     var count;
     var results;
     /**
@@ -32,15 +32,8 @@
                     source = $('#slideShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query});
-
-                if(count % 2 == 0){
-                  var imgWrap = $('#slider');
-                }
-                else {
-                  var imgWrap = $('#slider2');
-                }
                 results.push(result);
-                populateSlider(results[count],count);
+                populateSlider(results[count]);
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')
