@@ -30,12 +30,12 @@ var clientID = '159e54fed6354cacae99784052811c29',
     subscription = {};
 
 var client = knox.createClient({
-    // key: process.env.AWS_ACCESS_KEY_ID,
-    // secret: process.env.AWS_SECRET_ACCESS_KEY,
-    // bucket: process.env.S3_BUCKET_NAME
-    key: "AKIAIOONIYNTAGSDCSPQ",
-    secret: "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",
-    bucket: "photogrambrazil"
+    key: process.env.AWS_ACCESS_KEY_ID,
+    secret: process.env.AWS_SECRET_ACCESS_KEY,
+    bucket: process.env.S3_BUCKET_NAME
+    // key: "AKIAIOONIYNTAGSDCSPQ",
+    // secret: "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",
+    // bucket: "photogrambrazil"
 });
 
 var dictTagId = {};
@@ -45,10 +45,10 @@ var dictTagId = {};
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-// Instagram.set('callback_url', 'http://photogrambrazil.herokuapp.com/callback');
-Instagram.set('callback_url', 'http://localhost:5000/callback');
-// Instagram.set('redirect_uri', 'http://photogrambrazil.herokuapp.com/');
-Instagram.set('redirect_uri', 'http://localhost:5000/');
+Instagram.set('callback_url', 'http://photogrambrazil.herokuapp.com/callback');
+// Instagram.set('callback_url', 'http://localhost:5000/callback');
+Instagram.set('redirect_uri', 'http://photogrambrazil.herokuapp.com/');
+// Instagram.set('redirect_uri', 'http://localhost:5000/');
 
 Instagram.set('maxSockets', 10);
 
