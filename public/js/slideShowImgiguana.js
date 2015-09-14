@@ -1,5 +1,6 @@
 (function() {
-    var socket = io.connect('http://photogrambrazil.herokuapp.com');
+    // var socket = io.connect('http://photogrambrazil.herokuapp.com');
+    var socket = io.connect();
     var count;
     var results;
     /**

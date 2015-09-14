@@ -45,8 +45,11 @@ var dictTagId = {};
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://photogrambrazil.herokuapp.com/callback');
-Instagram.set('redirect_uri', 'http://photogrambrazil.herokuapp.com/');
+// Instagram.set('callback_url', 'http://photogrambrazil.herokuapp.com/callback');
+Instagram.set('callback_url', 'http://localhost:5000/callback');
+// Instagram.set('redirect_uri', 'http://photogrambrazil.herokuapp.com/');
+Instagram.set('redirect_uri', 'http://localhost:5000/');
+
 Instagram.set('maxSockets', 10);
 
 /**
@@ -98,7 +101,7 @@ app.get("/", function(req, res){
     res.render("index.jade");
 });
 
-app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/upload/, function (req, res) {
+app.get(/^\/(mainapp|teatrogazeta|iguana)\/upload/, function (req, res) {
   var src = req.query.src;
   console.log('src: ' + src);
 
@@ -136,7 +139,7 @@ app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/upload/, function (req, 
 
 });
 
-app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/slideshow/, function(req, res){
+app.get(/^\/(mainapp|teatrogazeta|iguana)\/slideshow/, function(req, res){
     res.render(req.params[0] + "/slideshow.jade");
 });
 
@@ -150,7 +153,7 @@ app.get('/callback', function(req, res){
     var handshake =  Instagram.subscriptions.handshake(req, res);
 });
 
-app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/subscribe/, function(req, res) {
+app.get(/^\/(mainapp|teatrogazeta|iguana)\/subscribe/, function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -180,7 +183,7 @@ app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/subscribe/, function(req
     return res.end();
 });
 
-app.get(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/unsubscribe/, function(req, res) {
+app.get(/^\/(mainapp|teatrogazeta|iguana)\/unsubscribe/, function(req, res) {
     var parsedRequest = url.parse(req.url, true);
 
     if (parsedRequest['query']['hub.tag'] != null && parsedRequest['query']['hub.tag'].length > 0) {
@@ -217,13 +220,13 @@ app.post('/callback', function(req, res) {
     res.end();
 });
 
-app.post(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/insert/, function(req, res){
+app.post(/^\/(mainapp|teatrogazeta|iguana)\/insert/, function(req, res){
     var data = req.body;
     io.sockets.emit(req.params[0] + '/insert', data);
     res.end();
 });
 
-app.post(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/remove/, function(req, res){
+app.post(/^\/(mainapp|teatrogazeta|iguana)\/remove/, function(req, res){
     var data = req.body;
     io.sockets.emit(req.params[0] + '/remove', data);
     res.end();
@@ -236,9 +239,6 @@ app.post(/^\/(mainapp|secondaryapp|teatrogazeta|iguana)\/remove/, function(req, 
 function sendMessage(url, objectId) {
     if(objectId == dictTagId['mainapp']){
         io.sockets.emit('mainapp/show', { show: url });
-    }
-    else if(objectId == dictTagId['secondaryapp']){
-        io.sockets.emit('secondaryapp/show', { show: url });
     }
     else if(objectId == dictTagId['teatrogazeta']){
         io.sockets.emit('teatrogazeta/show', { show: url });

@@ -2,7 +2,7 @@ function OnChangeCheckbox (checkbox) {
     if (checkbox.checked) {
         $.ajax({
 	         type: "POST",
-	         url: "http://photogrambrazil.herokuapp.com/mainapp/insert",
+	         url: "/mainapp/insert",
 	         data: "insert=" + checkbox.value,
 	         success: function(response){
 	             $('#info').html("OK! Data Sent with Response:" + response);
@@ -15,7 +15,7 @@ function OnChangeCheckbox (checkbox) {
     else {
         $.ajax({
 	         type: "POST",
-	         url: "http://photogrambrazil.herokuapp.com/remove",
+	         url: "/mainapp/remove",
 	         data: "remove=" + checkbox.value,
 	         success: function(response){
 	             $('#info').html("OK! Data Sent with Response:" + response);
@@ -31,11 +31,11 @@ $(function(){
     $('form[name="chooseHash"] input[type="submit"]').click(function(event){
            var $form = $('form[name="chooseHash"]');
            if($(this).val()=='Assinar'){
-               $form.attr('action','http://photogrambrazil.heroku.com/mainapp/subscribe/');
+               $form.attr('action','/mainapp/subscribe/');
                localStorage.setItem('user', 'visited');
            }
             else{
-                $form.attr('action','http://photogrambrazil.heroku.com/mainapp/unsubscribe/');
+                $form.attr('action','/mainapp/unsubscribe/');
                 localStorage.removeItem('user');
             }
     });
