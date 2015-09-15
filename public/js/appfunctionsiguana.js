@@ -6,7 +6,7 @@ function OnChangeCheckbox (checkbox) {
 	         data: "insert=" + checkbox.value,
 	         success: function(response){
 	             $('#info').html("OK! Data Sent with Response:" + response);
-               upload_file(checkbox.value);
+              //  upload_file(checkbox.value);
 	         },
 	         error: function(e){
 	             $('#info').html("OH NOES! Data not sent with Error:" + e);

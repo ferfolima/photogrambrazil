@@ -11,7 +11,8 @@
     "jade": "^1.3.1",
     "request": "^2.34.0",
     "socket.io": "^0.9.16",
-    "knox":"*"
+    "knox":"*",
+    "node-printer":"*"
   },
   "engines": {
     "node": "0.10.24",

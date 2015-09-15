@@ -30,12 +30,12 @@ var clientID = '159e54fed6354cacae99784052811c29',
     subscription = {};
 
 var client = knox.createClient({
-    // key: process.env.AWS_ACCESS_KEY_ID,
-    // secret: process.env.AWS_SECRET_ACCESS_KEY,
-    // bucket: process.env.S3_BUCKET_NAME
-    key: "AKIAIOONIYNTAGSDCSPQ",
-    secret: "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",
-    bucket: "photogrambrazil"
+    key: process.env.AWS_ACCESS_KEY_ID,
+    secret: process.env.AWS_SECRET_ACCESS_KEY,
+    bucket: process.env.S3_BUCKET_NAME
+    // key: "AKIAIOONIYNTAGSDCSPQ",
+    // secret: "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",
+    // bucket: "photogrambrazil"
 });
 
 var dictTagId = {};
@@ -223,6 +223,22 @@ app.post('/callback', function(req, res) {
 app.post(/^\/(mainapp|teatrogazeta|iguana)\/insert/, function(req, res){
     var data = req.body;
     io.sockets.emit(req.params[0] + '/insert', data);
+    var fs = require('fs');
+    data['insert'] = data['insert'].replace('https', 'http');
+    var file_name = data['insert'].substring(data['insert'].lastIndexOf('/')+1,data['insert'].length);
+    // var file = fs.createWriteStream('~/Documents' + file_name);
+    var file = fs.createWriteStream(file_name);
+    var request = http.get(data['insert'], function(response) {
+       response.pipe(file);
+       file.on('finish', function() {
+         console.log('File printed succesfully');
+         file.close();  // close() is async, call cb after close completes.
+       });
+    })
+    .on('error', function(err) { // Handle errors
+      console.log('File not printed');
+      fs.unlink(file_name); // Delete the file async. (But we don't check the result)
+    });
     res.end();
 });
 
@@ -236,6 +252,20 @@ app.post(/^\/(mainapp|teatrogazeta|iguana)\/remove/, function(req, res){
  * to do the ajax call based on the url
  * @param  {[string]} url [the url as string with the hashtag]
  */
+
+ // function print_file(file){
+  //  var printer = require('node-printer');
+  //  printer.printFile({filename:file,
+  //   // printer: process.env[3],
+  // 	success:function(jobID){
+  // 		console.log("sent to printer with ID: "+jobID);
+  // 	},
+  // 	error:function(err){
+  //     console.log(err);
+  //   }
+  // });
+ // }
+
 function sendMessage(url, objectId) {
     if(objectId == dictTagId['mainapp']){
         io.sockets.emit('mainapp/show', { show: url });
