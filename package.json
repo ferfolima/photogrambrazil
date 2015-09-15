@@ -4,7 +4,6 @@
   "description": "Photogram",
   "author": "Fernando Teodoro de Lima",
   "dependencies": {
-    "connect-wwwhisper": "*",
     "ejs": "^2.2.4",
     "express": "^3.5.1",
     "instagram-node-lib": "*",
