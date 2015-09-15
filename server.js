@@ -2,7 +2,7 @@ var detectDebug = function() {
     return process.env.NODE_ENV !== 'production';
 };
 var express = require("express");
-// var wwwhisper = require('connect-wwwhisper');
+var wwwhisper = require('connect-wwwhisper');
 var app = express();
 var port = process.env.PORT || 3700;
 var io = require('socket.io').listen(app.listen(port));
@@ -79,7 +79,7 @@ io.configure(function () {
  * Set your app main configuration
  */
 app.configure(function(){
-    // app.use(wwwhisper(false));
+    app.use(wwwhisper(false));
     //access /auth/logout to logout
     app.use(express.bodyParser());
     app.use(express.methodOverride());
