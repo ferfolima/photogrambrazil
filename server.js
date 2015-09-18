@@ -13,8 +13,8 @@ var intervalID;
  * Set the paths for your files
  * @type {[string]}
  */
-var pub = __dirname + '/public',
-    view = __dirname + '/views';
+var pub = __dirname + 'public',
+    view = __dirname + 'views';
 
 /**
  * Set the 'client ID' and the 'client secret' to use on Instagram
