@@ -1,5 +1,5 @@
 (function() {
-    var socket = io.connect('http://photogrambrazil.herokuapp.com');
+    var socket = io.connect();
     // var socket = io.connect();
     /**
      * [Namespacing]

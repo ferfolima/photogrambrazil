@@ -1,9 +1,6 @@
-var detectDebug = function() {
-    return process.env.NODE_ENV !== 'production';
-};
 var express = require("express");
 var app = express();
-var port = process.env.PORT || 3700;
+var port = 80;
 var io = require('socket.io').listen(app.listen(port));
 var Instagram = require('instagram-node-lib');
 var http = require('http');
@@ -29,12 +26,12 @@ var clientID = '159e54fed6354cacae99784052811c29',
     subscription = {};
 
 var client = knox.createClient({
-    key: process.env.AWS_ACCESS_KEY_ID,
-    secret: process.env.AWS_SECRET_ACCESS_KEY,
-    bucket: process.env.S3_BUCKET_NAME
-    // key: "AKIAIOONIYNTAGSDCSPQ",
-    // secret: "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",
-    // bucket: "photogrambrazil"
+    //key: process.env.AWS_ACCESS_KEY_ID,
+    //secret: process.env.AWS_SECRET_ACCESS_KEY,
+    //bucket: process.env.S3_BUCKET_NAME
+    key: "AKIAIOONIYNTAGSDCSPQ",
+    secret: "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",
+    bucket: "photogrambrazil"
 });
 
 var dictTagId = {};
@@ -44,9 +41,9 @@ var dictTagId = {};
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://photogrambrazil.herokuapp.com/callback');
+Instagram.set('callback_url', 'http://ec2-54-207-30-218.sa-east-1.compute.amazonaws.com/callback');
 // Instagram.set('callback_url', 'http://localhost:5000/callback');
-Instagram.set('redirect_uri', 'http://photogrambrazil.herokuapp.com/');
+Instagram.set('redirect_uri', 'http://ec2-54-207-30-218.sa-east-1.compute.amazonaws.com/');
 // Instagram.set('redirect_uri', 'http://localhost:5000/');
 
 Instagram.set('maxSockets', 10);
@@ -220,10 +217,9 @@ app.post('/callback', function(req, res) {
 app.post(/^\/(mainapp|teatrogazeta|iguana)\/insert/, function(req, res){
     var data = req.body;
     io.sockets.emit(req.params[0] + '/insert', data);
-    var fs = require('fs');
+   /* var fs = require('fs');
     data['insert'] = data['insert'].replace('https', 'http');
     var file_name = data['insert'].substring(data['insert'].lastIndexOf('/')+1,data['insert'].length);
-    // var file = fs.createWriteStream('~/Documents' + file_name);
     var file = fs.createWriteStream(file_name);
     var request = http.get(data['insert'], function(response) {
        response.pipe(file);
@@ -235,7 +231,7 @@ app.post(/^\/(mainapp|teatrogazeta|iguana)\/insert/, function(req, res){
     .on('error', function(err) { // Handle errors
       console.log('File not printed');
       fs.unlink(file_name); // Delete the file async. (But we don't check the result)
-    });
+    });*/
     res.end();
 });
 
