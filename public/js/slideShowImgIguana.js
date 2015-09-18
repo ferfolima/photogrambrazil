@@ -33,7 +33,11 @@
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate({insert: query});
                 results.push(result);
-                populateSlider(results[count]);
+		if(count % 2 == 0){
+		    populateSlider(results[count], '.slider-for');
+		} else{
+		    populateSlider(results[count], '.slider-for2');
+		}
                 var sPageURL = window.location.search.substring(1);
                 var sParameterName = sPageURL.split('=');
                 if (sParameterName[0] == 'hub.tag')
