@@ -20,18 +20,18 @@ var pub = __dirname + '/public',
  * Set the 'client ID' and the 'client secret' to use on Instagram
  * @type {String}
  */
-var clientID = '159e54fed6354cacae99784052811c29',
-    clientSecret = '39169f06d11a46798ce098db118c5aa7',
+var clientID = process.env.IG_CLIENT_ID,
+    clientSecret = process.env.IG_CLIENT_SECRET,
     hashtag = '';
     subscription = {};
 
 var client = knox.createClient({
-    //key: process.env.AWS_ACCESS_KEY_ID,
-    //secret: process.env.AWS_SECRET_ACCESS_KEY,
-    //bucket: process.env.S3_BUCKET_NAME
-    key: "AKIAIOONIYNTAGSDCSPQ",
-    secret: "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",
-    bucket: "photogrambrazil"
+    key: process.env.AWS_ACCESS_KEY_ID,
+    secret: process.env.AWS_SECRET_ACCESS_KEY,
+    bucket: process.env.S3_BUCKET_NAME
+    //key: "AKIAIOONIYNTAGSDCSPQ",
+    //secret: "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",
+    //bucket: "photogrambrazil"
 });
 
 var dictTagId = {};
