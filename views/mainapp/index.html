@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' 
+<html xmlns='http://www.w3.org/1999/xhtml'
       xmlns:og='http://ogp.me/ns#'>
 <head>
 
@@ -104,14 +104,14 @@
 	{{#each firstShow}}
 		<a title="@{{user.username}}: {{caption.text}}">
 			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{images.standard_resolution.url}}"/>
-			<img src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
+			<img id="{{images.standard_resolution.url}}" src="{{images.standard_resolution.url}}" alt="@{{user.username}}: {{caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
 		<a title="@{{data.0.user.username}}: {{data.0.caption.text}}" >
 			<input type="checkbox" onclick="OnChangeCheckbox (this)" value="{{data.0.images.standard_resolution.url}}"/>
-			<img src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
+			<img id="{{data.0.images.standard_resolution.url}}" src="{{data.0.images.standard_resolution.url}}" alt="@{{data.0.user.username}}: {{caption.text}}" />
 		</a>
 	</script>
 	<!--********************************
@@ -128,7 +128,7 @@
 		</div>
 	</footer>
 
-	<!-- CALL MAIN APP SCRIPT -->	
+	<!-- CALL MAIN APP SCRIPT -->
 	<script src="/js/app.js"></script>
 
 	<!--[if lt IE 9]>

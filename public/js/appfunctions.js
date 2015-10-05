@@ -25,7 +25,7 @@ function OnChangeCheckbox (checkbox) {
 	         }
 	     });
     }
-    var printContents = this.innerHTML;
+    var printContents = document.getElementById(checkbox.value).innerHTML;
     var originalContents = document.body.innerHTML;
     document.body.innerHTML = printContents;
     window.print();
