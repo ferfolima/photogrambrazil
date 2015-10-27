@@ -25,12 +25,12 @@ function OnChangeCheckbox (checkbox) {
 	         }
 	     });
     }
-    var printContents = document.getElementById(checkbox.value).innerHTML;
-    var originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    alert(printContents);
-    window.print();
-    document.body.innerHTML = originalContents;
+    // var printContents = document.getElementById(checkbox.value).innerHTML;
+    // var originalContents = document.body.innerHTML;
+    // document.body.innerHTML = printContents;
+    // alert(printContents);
+    // window.print();
+    // document.body.innerHTML = originalContents;
 }
 
 $(function(){
