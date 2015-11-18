@@ -1,5 +1,4 @@
 #Photogrambrazil
-=============
 
 ## Intro
 App that consumes Instagram APIs to make a real time photo slideshow.
