@@ -10,6 +10,3 @@ App that consumes Instagram APIs to make a real time photo slideshow.
 
 ## Author
 Fernando Teodoro de Lima
-
-## License
-MIT
